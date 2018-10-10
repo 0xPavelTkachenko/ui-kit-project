@@ -25,6 +25,14 @@ module.exports = {
         test: /\.styl$/,
         exclude: /(node_modules|.git)/,
         use: ['style-loader', 'css-loader', 'stylus-loader']
+      },
+      {
+        test: /\.png$/,
+        exclude: /(node_modules|.git)/,
+        loader: 'file-loader',
+        options: {
+          name: "./img/[name].[ext]"
+        }
       }
     ]
   }
