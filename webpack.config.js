@@ -27,6 +27,14 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'stylus-loader']
       },
       {
+        test: /\.(eot|woff|ttf|svg)$/,
+        exclude: /(node_modules|.git)/,
+        loader: 'file-loader',
+        options: {
+          name: "./fonts/[name].[ext]"
+        }
+      },
+      {
         test: /\.png$/,
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
