@@ -1,0 +1,16 @@
+.toggle
+  &__checkbox
+    display none
+
+  &__pseudo-checkbox
+    width 59px
+    height 24px
+
+    background url('./components/toggle/toggle-sprite.png') 0 0
+
+    cursor pointer
+
+    display inline-block
+
+  &__checkbox:checked + &__pseudo-checkbox
+    background-position 59px 0
