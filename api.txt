@@ -5,3 +5,8 @@ tick-box: {
 toggle: {
   classname
 }
+
+arrow-btn: {
+  classname,
+  mods: ['right', 'disabled']
+}
