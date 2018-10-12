@@ -6,6 +6,12 @@ toggle: {
   classname
 }
 
+btn: {
+  classname,
+  text,
+  mods: ['small', 'red']
+}
+
 arrow-btn: {
   classname,
   mods: ['right', 'disabled']
