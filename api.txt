@@ -10,3 +10,10 @@ arrow-btn: {
   classname,
   mods: ['right', 'disabled']
 }
+
+video: {
+  classname,
+  width,
+  height,
+  src
+}
