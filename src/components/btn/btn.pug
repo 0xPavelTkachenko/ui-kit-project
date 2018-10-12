@@ -1,0 +1,15 @@
+mixin btn(options)
+  -
+    options = options ? options : {};
+    options.classname = options.classname ? options.classname + ' ' : '';
+    options.mods = options.mods ? options.mods : [];
+
+    let mods = '';
+    for (let i = 0; i < options.mods.length; i++) {
+      mods += 'btn_' + options.mods[i];
+      if (i < options.mods.length - 1) {
+        mods += ' ';
+      }
+    }
+
+  button.btn(class=options.classname + mods)=options.text

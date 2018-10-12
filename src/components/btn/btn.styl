@@ -1,0 +1,72 @@
+.btn
+  $width = 118px
+  $height = 32px
+
+  $width-small = 78px
+  $height-small = 22px
+
+  $font-size = 12px
+  $font-size-small = 10px
+
+  $color-diamond = #4EB7A8
+  $color-red = #E75735
+  $color-light-diamond = #71C5B9
+  $color-light-red = #EB785D
+  $color-dark-diamond = #28A290
+  $color-dark-red = #BF3E1F
+
+  position relative
+  overflow hidden
+
+  width $width
+  height $height
+
+  font-size $font-size
+  font-weight bold
+  letter-spacing 0.5px
+  text-transform uppercase
+
+  outline none
+  border-radius 2.5px
+  border 1px solid $color-diamond
+
+  cursor pointer
+
+  color #fff
+  background-color $color-diamond
+  box-shadow 0 3px $color-dark-diamond
+
+  &_small
+    width $width-small
+    height $height-small
+
+    font-size $font-size-small
+
+  &:hover
+    background-color $color-light-diamond
+    box-shadow 0 3px $color-diamond
+
+  &_red
+    border 1px solid $color-red
+    background-color $color-red
+    box-shadow 0 3px $color-dark-red
+
+    &:hover
+      background-color $color-light-red
+      box-shadow 0 3px $color-red
+
+  &:active
+    box-shadow none
+    transform translateY(3px)
+
+  &__ripple
+    animation ripple-effect 0.6s linear
+    background-color rgba(255, 255, 255, 0.75)
+    border-radius 50%
+    position absolute
+    transform scale(0)
+
+  @keyframes ripple-effect
+    to
+      opacity 0
+      transform scale(2.5)
