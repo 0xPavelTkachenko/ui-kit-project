@@ -1,0 +1,18 @@
+mixin video(options)
+  -
+    options = options ? options : {};
+    options.width = options.width ? options.width : 560;
+    options.height = options.height ? options.height : 315;
+    options.src = options.src ? options.src : 'https://www.youtube.com/watch?v=jNQXAC9IVRw';
+
+    options.src = options.src.replace('watch?v=', 'embed/') + '?rel=0';
+
+  iframe.video(
+    class=options.classname,
+    width=options.width,
+    height=options.height,
+    src=options.src,
+    frameborder="0",
+    allow="autoplay; encrypted-media",
+    allowfullscreen
+  )
