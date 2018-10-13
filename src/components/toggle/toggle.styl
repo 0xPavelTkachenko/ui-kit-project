@@ -1,16 +1,146 @@
 .toggle
+  @require '../../fonts/fonts.styl'
+
+  font-family 'Lato'
+
+  $color-diamond = #4EB7A8
+  $color-gray = #E5E5E5
+
   &__checkbox
     display none
 
   &__pseudo-checkbox
-    width 59px
+    width 60px
     height 24px
 
-    background url('./components/toggle/toggle-sprite.png') no-repeat 0 0
+    border-radius 12px
 
     cursor pointer
 
     display inline-block
 
+    overflow hidden
+
+    position relative
+
+  &__circle
+    width 18px
+    height 18px
+    border-radius 50%
+    background-color white
+    position absolute
+    top 50%
+
+  &__checkbox:not(:checked) + &__pseudo-checkbox
+    background-color $color-diamond
+
+    animation to-color-gray 0.2s linear
+    animation-iteration-count 1
+    animation-fill-mode forwards
+
+    -webkit-animation to-color-gray 0.2s linear
+    -webkit-animation-iteration-count 1
+    -webkit-animation-fill-mode forwards
+
+    -o-animation to-color-gray 0.2s linear
+    -o-animation-iteration-count 1
+    -o-animation-fill-mode forwards
+
+    -moz-animation to-color-gray 0.2s linear
+    -moz-animation-iteration-count 1
+    -moz-animation-fill-mode forwards
+
   &__checkbox:checked + &__pseudo-checkbox
-    background-position -59px 0
+    background-color $color-gray
+
+    animation to-color-diamond 0.2s linear
+    animation-iteration-count 1
+    animation-fill-mode forwards
+
+    -webkit-animation to-color-diamond 0.2s linear
+    -webkit-animation-iteration-count 1
+    -webkit-animation-fill-mode forwards
+
+    -o-animation to-color-diamond 0.2s linear
+    -o-animation-iteration-count 1
+    -o-animation-fill-mode forwards
+
+    -moz-animation to-color-diamond 0.2s linear
+    -moz-animation-iteration-count 1
+    -moz-animation-fill-mode forwards
+
+  &__checkbox:not(:checked) + &__pseudo-checkbox > &__circle
+    left unset
+    right 3px
+    transform translateY(-50%)
+
+    animation circle-left 0.2s linear
+    animation-iteration-count 1
+    animation-fill-mode forwards
+
+    -webkit-animation circle-left 0.2s linear
+    -webkit-animation-iteration-count 1
+    -webkit-animation-fill-mode forwards
+
+    -o-animation circle-left 0.2s linear
+    -o-animation-iteration-count 1
+    -o-animation-fill-mode forwards
+
+    -moz-animation circle-left 0.2s linear
+    -moz-animation-iteration-count 1
+    -moz-animation-fill-mode forwards
+
+  &__checkbox:checked + &__pseudo-checkbox > &__circle
+    left 3px
+    right unset
+    transform translateY(-50%)
+
+    animation circle-right 0.2s linear
+    animation-iteration-count 1
+    animation-fill-mode forwards
+
+    -webkit-animation circle-right 0.2s linear
+    -webkit-animation-iteration-count 1
+    -webkit-animation-fill-mode forwards
+
+    -o-animation circle-right 0.2s linear
+    -o-animation-iteration-count 1
+    -o-animation-fill-mode forwards
+
+    -moz-animation circle-right 0.2s linear
+    -moz-animation-iteration-count 1
+    -moz-animation-fill-mode forwards
+
+  &__circle::before
+    content 'ON'
+    color #fff
+    font-weight bold
+    position absolute
+    font-size 12px
+    right 24px
+    top 1px
+
+  &__circle::after
+    content 'OFF'
+    color #fff
+    font-weight bold
+    position absolute
+    font-size 12px
+    left 24px
+    top 1px
+
+  @keyframes circle-left
+    to
+      transform translate(-35px, -50%)
+
+  @keyframes circle-right
+    to
+      transform translate(35px, -50%)
+
+  @keyframes to-color-gray
+    to
+      background-color $color-gray
+
+  @keyframes to-color-diamond
+    to
+      background-color $color-diamond
