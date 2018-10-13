@@ -1,6 +1,6 @@
 tick-box: {
   classname,
-  mods: ['red']
+  modes: ['red']
 }
 
 toggle: {
@@ -10,12 +10,12 @@ toggle: {
 btn: {
   classname,
   text,
-  mods: ['small', 'red']
+  modes: ['small', 'red']
 }
 
 arrow-btn: {
   classname,
-  mods: ['right', 'disabled']
+  modes: ['right', 'disabled']
 }
 
 video: {
@@ -31,5 +31,5 @@ user-profile: {
   facebook,
   twitter,
   dribbble,
-  mods: ['red']
+  modes: ['red']
 }

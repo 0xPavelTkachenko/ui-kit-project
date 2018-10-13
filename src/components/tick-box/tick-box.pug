@@ -2,16 +2,16 @@ mixin tick-box(options)
   -
     options = options ? options : {};
     options.classname = options.classname ? options.classname + ' ' : '';
-    options.mods = options.mods ? options.mods : [];
+    options.modes = options.modes ? options.modes : [];
 
-    let mods = '';
-    for (let i = 0; i < options.mods.length; i++) {
-      mods += 'tick-box_' + options.mods[i];
-      if (i < options.mods.length - 1) {
-        mods += ' ';
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'tick-box_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
       }
     }
 
-  label.tick-box(class=options.classname + mods)
+  label.tick-box(class=options.classname + modes)
     input.tick-box__checkbox(type="checkbox")
     .tick-box__pseudo-checkbox

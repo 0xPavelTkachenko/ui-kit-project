@@ -2,14 +2,14 @@ mixin arrow-btn(options)
   -
     options = options ? options : {};
     options.classname = options.classname ? options.classname + ' ' : '';
-    options.mods = options.mods ? options.mods : [];
+    options.modes = options.modes ? options.modes : [];
 
-    let mods = '';
-    for (let i = 0; i < options.mods.length; i++) {
-      mods += 'arrow-btn_' + options.mods[i];
-      if (i < options.mods.length - 1) {
-        mods += ' ';
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'arrow-btn_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
       }
     }
 
-  button.arrow-btn(class=options.classname + mods)
+  button.arrow-btn(class=options.classname + modes)

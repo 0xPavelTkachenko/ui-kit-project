@@ -2,7 +2,7 @@ mixin user-profile(options)
   -
     options = options ? options : {};
     options.classname = options.classname ? options.classname + ' ' : '';
-    options.mods = options.mods ? options.mods : [];
+    options.modes = options.modes ? options.modes : [];
 
     let photoStyle = '';
     if (options.photo) {
@@ -12,15 +12,15 @@ mixin user-profile(options)
                    'background-position: center;';
     }
 
-    let mods = '';
-    for (let i = 0; i < options.mods.length; i++) {
-      mods += 'user-profile_' + options.mods[i];
-      if (i < options.mods.length - 1) {
-        mods += ' ';
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'user-profile_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
       }
     }
 
-  .user-profile(class=options.classname + mods)
+  .user-profile(class=options.classname + modes)
     .user-profile__photo(style=photoStyle)
     .user-profile__dialog
       .user-profile__triangle
