@@ -1,5 +1,6 @@
 tick-box: {
-  classname
+  classname,
+  mods: ['red']
 }
 
 toggle: {
