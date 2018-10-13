@@ -1,0 +1,104 @@
+.user-profile
+  @require '../../fonts/fonts.styl'
+
+  font-family 'Lato'
+
+  $color-diamond = #4EB7A8
+  $color-red = #E75735
+  $color-gray = #E5E5E5
+  $color-dark-gray = #4F4F4F
+
+  width 267px
+
+  display flex
+  justify-content space-between
+
+  &__photo
+    width 84px
+    height 84px
+
+    border 5px solid $color-gray
+    border-radius 50%
+
+  &__dialog
+    width 163px
+
+    position relative
+
+    background-color $color-diamond
+
+    border-radius 8px
+
+    padding-top 10px
+
+  &__triangle
+    width 0
+    height 0
+
+    border 10px solid transparent
+    border-right 10px solid $color-diamond
+
+    position absolute
+    left -16px
+    top 36px
+
+  &__name, &__job
+    color #fff
+
+    text-align center
+
+  &__name
+    margin-bottom 3px
+
+    letter-spacing 1px
+
+  &__job
+    font-size 10px
+    font-weight bold
+
+    letter-spacing 1px
+
+    text-transform uppercase
+
+    margin-bottom 11px
+
+  &__contacts
+    display flex
+    justify-content space-between
+
+    padding 0 30px
+
+  &__facebook, &__twitter, &__dribbble
+    width 25px
+    height 25px
+
+    display inline-block
+
+    background-image url('./components/user-profile/contacts-sprite.png')
+    background-repeat no-repeat
+
+  &__facebook
+    background-position 0 0
+
+  &__twitter
+    background-position -25px 0
+
+  &__dribbble
+    background-position -50px 0
+
+  &_red
+    .user-profile
+      &__dialog
+        background-color $color-gray
+
+      &__triangle
+        border-right-color $color-gray
+
+      &__name
+        color $color-red
+
+      &__job
+        color $color-dark-gray
+
+      &__facebook, &__twitter, &__dribbble
+        background-image url('./components/user-profile/contacts-sprite_red.png')
