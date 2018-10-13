@@ -4,7 +4,8 @@ tick-box: {
 }
 
 toggle: {
-  classname
+  classname,
+  modes: ['red']
 }
 
 btn: {

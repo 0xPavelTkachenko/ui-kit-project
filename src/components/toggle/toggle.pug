@@ -1,8 +1,18 @@
 mixin toggle(options)
   -
     options = options ? options : {};
+    options.classname = options.classname ? options.classname + ' ' : '';
+    options.modes = options.modes ? options.modes : [];
 
-  label.toggle(class=options.classname)
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'toggle_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  label.toggle(class=options.classname + modes)
     input.toggle__checkbox(type="checkbox")
     .toggle__pseudo-checkbox
       .toggle__circle
