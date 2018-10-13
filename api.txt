@@ -23,3 +23,12 @@ video: {
   height,
   src
 }
+
+user-profile: {
+  classname,
+  photo,
+  facebook,
+  twitter,
+  dribbble,
+  mods: ['red']
+}
