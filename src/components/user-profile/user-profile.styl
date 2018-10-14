@@ -1,12 +1,14 @@
+@require '../speech-bubble/speech-bubble.styl'
+
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+$color-dark-gray = #4F4F4F
+
 .user-profile
   @require '../../fonts/fonts.styl'
 
   font-family 'Lato'
-
-  $color-diamond = #4EB7A8
-  $color-red = #E75735
-  $color-gray = #E5E5E5
-  $color-dark-gray = #4F4F4F
 
   width 267px
 
@@ -20,29 +22,10 @@
     border 5px solid $color-gray
     border-radius 50%
 
-  &__dialog
+  &__info
     width 163px
 
-    position relative
-
-    background-color $color-diamond
-
-    border-radius 8px
-
     padding-top 10px
-
-  &__triangle
-    width 20px
-    height 20px
-
-    background-color $color-diamond
-
-    border-radius 6px
-
-    position absolute
-    left -4px
-    top 50%
-    transform translateY(-50%) rotate(45deg)
 
   &__name, &__job
     color #fff
@@ -88,19 +71,19 @@
   &__dribbble
     background-position -50px 0
 
-  &_red
-    .user-profile
-      &__dialog
-        background-color $color-gray
+.user-profile_red
+  .user-profile
+    &__info
+      background-color $color-gray
 
-      &__triangle
-        background-color $color-gray
+    &__name
+      color $color-red
 
-      &__name
-        color $color-red
+    &__job
+      color $color-dark-gray
 
-      &__job
-        color $color-dark-gray
+    &__facebook, &__twitter, &__dribbble
+      background-image url('./components/user-profile/contacts-sprite_red.png')
 
-      &__facebook, &__twitter, &__dribbble
-        background-image url('./components/user-profile/contacts-sprite_red.png')
+  .speech-bubble__triangle
+    background-color $color-gray

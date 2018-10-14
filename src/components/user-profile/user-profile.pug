@@ -1,3 +1,5 @@
+include ../speech-bubble/speech-bubble.pug
+
 mixin user-profile(options)
   -
     options = options ? options : {};
@@ -22,8 +24,7 @@ mixin user-profile(options)
 
   .user-profile(class=options.classname + modes)
     .user-profile__photo(style=photoStyle)
-    .user-profile__dialog
-      .user-profile__triangle
+    +speech-bubble({classname: 'user-profile__info'})
       .user-profile__name=options.name
       .user-profile__job=options.job
       .user-profile__contacts
