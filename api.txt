@@ -17,7 +17,7 @@ btn: {
 
 arrow-btn: {
   classname,
-  modes: ['right', 'disabled']
+  modes: ['right', 'disabled', 'small']
 }
 
 video: {
