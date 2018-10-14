@@ -34,3 +34,8 @@ user-profile: {
   dribbble,
   modes: ['red']
 }
+
+speech-bubble: {
+  classname,
+  modes: ['red']
+}
