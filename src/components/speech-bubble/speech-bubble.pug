@@ -1,0 +1,17 @@
+mixin speech-bubble(options)
+  -
+    options = options ? options : {};
+    options.classname = options.classname ? options.classname + ' ' : '';
+    options.modes = options.modes ? options.modes : [];
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'speech-bubble_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  .speech-bubble(class=options.classname + modes)
+    .speech-bubble__triangle
+    block

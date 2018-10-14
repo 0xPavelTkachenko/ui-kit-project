@@ -1,0 +1,40 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+
+.speech-bubble
+  min-height 32px
+
+  position relative
+
+  background-color $color-diamond
+
+  border-radius 8px
+
+  &__triangle
+    width 20px
+    height 20px
+
+    background-color $color-diamond
+
+    border-radius 6px
+
+    position absolute
+    left -4px
+    top 50%
+    transform translateY(-50%) rotate(45deg)
+    z-index -1
+
+.speech-bubble_red
+  background-color $color-red
+
+  .speech-bubble
+    &__triangle
+      background-color $color-red
+
+.speech-bubble_gray
+  background-color $color-gray
+
+  .speech-bubble
+    &__triangle
+      background-color $color-gray
