@@ -12,6 +12,10 @@ for (let i = 0; i < btns.length; i++) {
     circle.style.left = e.clientX - rect.left -d/2 + 'px';
     circle.style.top = e.clientY - rect.top - d/2 + 'px';
 
-    this.appendChild(circle);
+    btns[i].appendChild(circle);
+
+    setTimeout(function () {
+      btns[i].removeChild(circle);
+    }, 1500);
   });
 }
