@@ -2,6 +2,10 @@ let btns = document.getElementsByClassName('btn');
 
 for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener('mousedown', function(e) {
+    if (btns[i].getAttribute('type') === 'submit') {
+      return;
+    }
+
     let circle = document.createElement('div');
     circle.classList.add('btn__ripple');
 
