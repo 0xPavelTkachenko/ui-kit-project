@@ -3,6 +3,7 @@ mixin btn(options)
     options = options ? options : {};
     options.classname = options.classname ? options.classname + ' ' : '';
     options.modes = options.modes ? options.modes : [];
+    options.type = options.type ? options.type : 'button';
 
     let modes = '';
     for (let i = 0; i < options.modes.length; i++) {
