@@ -24,17 +24,14 @@ $color-dark-gray = #4F4F4F
 
   &__info
     width 163px
-
     padding-top 10px
 
   &__name, &__job
     color #fff
-
     text-align center
 
   &__name
     margin-bottom 3px
-
     letter-spacing 1px
 
   &__job
@@ -42,7 +39,6 @@ $color-dark-gray = #4F4F4F
     font-weight bold
 
     letter-spacing 1px
-
     text-transform uppercase
 
     margin-bottom 11px
@@ -74,7 +70,7 @@ $color-dark-gray = #4F4F4F
 .user-profile_red
   .user-profile
     &__info
-      background-color $color-gray
+      @extends .speech-bubble_gray
 
     &__name
       color $color-red
@@ -84,6 +80,3 @@ $color-dark-gray = #4F4F4F
 
     &__facebook, &__twitter, &__dribbble
       background-image url('./components/user-profile/contacts-sprite_red.png')
-
-  .speech-bubble__triangle
-    background-color $color-gray
