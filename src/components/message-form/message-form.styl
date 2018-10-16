@@ -1,0 +1,86 @@
+@require '../btn/btn.styl'
+@require '../speech-bubble/speech-bubble.styl'
+
+$color-gray = #E5E5E5
+$color-dark-gray = #4F4F4F
+
+.message-form
+  @require '../../fonts/fonts.styl'
+
+  display inline-block
+
+  &__row
+    display flex
+    align-items flex-start
+    justify-content space-between
+
+  &__row:last-child
+    justify-content flex-end
+
+  &__bubble
+    @extends .speech-bubble_small
+
+    width 72px
+    height 19px
+
+    color #fff
+    font-family 'Lato'
+    font-size 10px
+    text-align center
+    text-transform uppercase
+
+    padding-top 9px
+
+    display none
+
+  &__name, &__email, &__message
+    background-color $color-gray
+
+    border none
+    border-radius 3px
+
+    padding 0
+
+  &__name:focus, &__email:focus, &__message:focus
+    box-shadow 0 0 4px $color-dark-gray inset
+    outline none
+
+  &__name, &__email
+    width 196px
+    height 28px
+
+    padding-left 12px
+
+    margin-bottom 12px
+
+  &__message
+    width 276px
+    height 78px
+
+    resize none
+
+    padding-left 12px
+    padding-top 10px
+
+    margin-bottom 10px
+
+  &__message::placeholder
+    word-spacing -5px
+
+  &__message:-ms-input-placeholder
+    word-spacing -5px
+
+  &__message::-ms-input-placeholder
+    word-spacing -5px
+
+  &__message::-webkit-input-placeholder
+    word-spacing -5px
+
+  &__message:-moz-placeholder
+    word-spacing -5px
+
+  &__message::-moz-placeholder
+    word-spacing -5px
+
+  &__btn
+    float right
