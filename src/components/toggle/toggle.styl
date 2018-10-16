@@ -1,11 +1,31 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+
+@keyframes circle-left
+  to
+    transform translate(-35px, -50%)
+
+@keyframes circle-right
+  to
+    transform translate(35px, -50%)
+
+@keyframes to-color-diamond
+  to
+    background-color $color-diamond
+
+@keyframes to-color-red
+  to
+    background-color $color-red
+
+@keyframes to-color-gray
+  to
+    background-color $color-gray
+
 .toggle
   @require '../../fonts/fonts.styl'
 
   font-family 'Lato'
-
-  $color-diamond = #4EB7A8
-  $color-red = #E75735
-  $color-gray = #E5E5E5
 
   &__checkbox
     display none
@@ -15,13 +35,9 @@
     height 24px
 
     border-radius 12px
-
     cursor pointer
-
     display inline-block
-
     overflow hidden
-
     position relative
 
   &__circle
@@ -130,45 +146,25 @@
     left 24px
     top 1px
 
-  &_red
-    .toggle__checkbox:not(:checked) + .toggle__pseudo-checkbox
-      background-color $color-red
+.toggle_red
+  .toggle__checkbox:not(:checked) + .toggle__pseudo-checkbox
+    background-color $color-red
 
-    .toggle__checkbox:checked + .toggle__pseudo-checkbox
-      background-color $color-gray
+  .toggle__checkbox:checked + .toggle__pseudo-checkbox
+    background-color $color-gray
 
-      animation to-color-red 0.2s linear
-      animation-iteration-count 1
-      animation-fill-mode forwards
+    animation to-color-red 0.2s linear
+    animation-iteration-count 1
+    animation-fill-mode forwards
 
-      -webkit-animation to-color-red 0.2s linear
-      -webkit-animation-iteration-count 1
-      -webkit-animation-fill-mode forwards
+    -webkit-animation to-color-red 0.2s linear
+    -webkit-animation-iteration-count 1
+    -webkit-animation-fill-mode forwards
 
-      -o-animation to-color-red 0.2s linear
-      -o-animation-iteration-count 1
-      -o-animation-fill-mode forwards
+    -o-animation to-color-red 0.2s linear
+    -o-animation-iteration-count 1
+    -o-animation-fill-mode forwards
 
-      -moz-animation to-color-red 0.2s linear
-      -moz-animation-iteration-count 1
-      -moz-animation-fill-mode forwards
-
-  @keyframes circle-left
-    to
-      transform translate(-35px, -50%)
-
-  @keyframes circle-right
-    to
-      transform translate(35px, -50%)
-
-  @keyframes to-color-diamond
-    to
-      background-color $color-diamond
-
-  @keyframes to-color-red
-    to
-      background-color $color-red
-
-  @keyframes to-color-gray
-    to
-      background-color $color-gray
+    -moz-animation to-color-red 0.2s linear
+    -moz-animation-iteration-count 1
+    -moz-animation-fill-mode forwards
