@@ -38,5 +38,5 @@ user-profile: {
 
 speech-bubble: {
   classname,
-  modes: ['red']
+  modes: ['red', 'gray']
 }
