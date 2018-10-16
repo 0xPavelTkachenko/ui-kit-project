@@ -40,3 +40,15 @@ speech-bubble: {
   classname,
   modes: ['red', 'gray', 'small']
 }
+
+message-form: {
+  classname,
+  action,
+  method,
+  successMsg,
+  errorMsg,
+  name: {required, placeholder, value},
+  email: {required, placeholder, value},
+  message: {required, placeholder, value},
+  btn: btn component
+}
