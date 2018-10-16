@@ -2,23 +2,24 @@ $color-diamond = #4EB7A8
 $color-red = #E75735
 $color-gray = #E5E5E5
 
+set_color(color)
+  background-color color
+
+  .speech-bubble
+    &__triangle
+      background-color color
+
 .speech-bubble
-  min-height 28px
-
-  position relative
-
-  background-color $color-diamond
+  set_color($color-diamond)
 
   border-radius 8px
+  min-height 28px
+  position relative
 
   &__triangle
     width 20px
     height 20px
-
-    background-color $color-diamond
-
     border-radius 6px
-
     position absolute
     left -4px
     top 50%
@@ -26,8 +27,4 @@ $color-gray = #E5E5E5
     z-index -1
 
 .speech-bubble_red
-  background-color $color-red
-
-  .speech-bubble
-    &__triangle
-      background-color $color-red
+  set_color($color-red)
