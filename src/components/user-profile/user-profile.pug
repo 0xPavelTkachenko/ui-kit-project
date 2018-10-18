@@ -2,9 +2,9 @@ include ../speech-bubble/speech-bubble.pug
 
 mixin user-profile(options)
   -
-    options = options ? options : {};
-    options.classname = options.classname ? options.classname + ' ' : '';
-    options.modes = options.modes ? options.modes : [];
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
 
     let photoStyle = '';
     if (options.photo) {
@@ -22,7 +22,7 @@ mixin user-profile(options)
       }
     }
 
-  .user-profile(class=options.classname + modes)
+  .user-profile(class=options.classname + " " + modes)
     .user-profile__photo(style=photoStyle)
     +speech-bubble({classname: 'user-profile__info'})
       .user-profile__name=options.name

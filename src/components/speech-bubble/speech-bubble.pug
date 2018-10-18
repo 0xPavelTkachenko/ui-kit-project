@@ -1,8 +1,8 @@
 mixin speech-bubble(options)
   -
-    options = options ? options : {};
-    options.classname = options.classname ? options.classname + ' ' : '';
-    options.modes = options.modes ? options.modes : [];
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
 
     let modes = '';
     for (let i = 0; i < options.modes.length; i++) {
@@ -12,7 +12,7 @@ mixin speech-bubble(options)
       }
     }
 
-  .speech-bubble(class=options.classname + modes)
+  .speech-bubble(class=options.classname + " " + modes)
     .speech-bubble__triangle
     .speech-bubble__content
       block

@@ -1,8 +1,8 @@
 mixin arrow-btn(options)
   -
-    options = options ? options : {};
-    options.classname = options.classname ? options.classname + ' ' : '';
-    options.modes = options.modes ? options.modes : [];
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
 
     let modes = '';
     for (let i = 0; i < options.modes.length; i++) {
@@ -12,4 +12,4 @@ mixin arrow-btn(options)
       }
     }
 
-  button.arrow-btn(class=options.classname + modes, type="button")
+  button.arrow-btn(class=options.classname + " " + modes, type="button")

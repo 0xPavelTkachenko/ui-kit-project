@@ -1,9 +1,9 @@
 mixin btn(options)
   -
-    options = options ? options : {};
-    options.classname = options.classname ? options.classname + ' ' : '';
-    options.modes = options.modes ? options.modes : [];
-    options.type = options.type ? options.type : 'button';
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+    options.type = options.type || 'button';
 
     let modes = '';
     for (let i = 0; i < options.modes.length; i++) {
@@ -13,4 +13,4 @@ mixin btn(options)
       }
     }
 
-  button.btn(class=options.classname + modes, type=options.type, value=options.value)=options.text
+  button.btn(class=options.classname + " " + modes, type=options.type, value=options.value)=options.text

@@ -3,14 +3,14 @@ include ../speech-bubble/speech-bubble.pug
 
 mixin message-form(options)
   -
-    options = options ? options : {};
-    options.name = options.name ? options.name : {};
-    options.email = options.email ? options.email : {};
-    options.message = options.message ? options.message : {};
-    options.btn = options.btn ? options.btn : {};
+    options = options || {};
+    options.name = options.name || {};
+    options.email = options.email || {};
+    options.message = options.message || {};
+    options.btn = options.btn || {};
     options.btn.classname = 'message-form__btn';
-    options.errorMsg = options.errorMsg ? options.errorMsg : 'Error';
-    options.successMsg = options.successMsg ? options.successMsg : 'Thanks!';
+    options.errorMsg = options.errorMsg || 'Error';
+    options.successMsg = options.successMsg || 'Thanks!';
 
     if (options.action) {
       options.btn.type = 'submit';
