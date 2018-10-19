@@ -1,3 +1,5 @@
+'use strict';
+
 import '../btn/btn.js';
 
 let forms = document.querySelectorAll('.message-form');

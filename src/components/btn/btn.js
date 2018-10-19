@@ -1,3 +1,5 @@
+'use strict';
+
 let btns = document.getElementsByClassName('btn');
 
 for (let i = 0; i < btns.length; i++) {
