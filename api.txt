@@ -52,3 +52,15 @@ message-form: {
   message: {required, placeholder, value},
   btn: btn component
 }
+
+slider: {
+  classname,
+  modes: ['red', 'no-bar'],
+  min,
+  max,
+  grid,
+  valueLabel,
+  minMaxLabel,
+  start,
+  step
+}
