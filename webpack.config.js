@@ -27,6 +27,11 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'stylus-loader']
       },
       {
+        test: /\.css$/,
+        exclude: /.git/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
         test: /\.(eot|woff|ttf|svg)$/,
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
