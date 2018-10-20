@@ -1,0 +1,70 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+
+set_color(color)
+  .irs
+    &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
+      background color
+
+    &-bar, &-bar-edge
+      border-color color
+
+.slider
+  @require '../../fonts/fonts.styl'
+
+  set_color($color-diamond)
+
+  font-family 'Lato'
+
+  .irs
+    &-line
+      height 5px
+      background $color-gray
+      border none
+      border-radius 8px
+
+    &-slider
+      width 20px
+      height 20px
+      border none
+      box-shadow none
+
+    &-grid
+      width 98.6842%
+      left 0.557895%
+
+    &-grid-pol
+      display none
+
+    &-grid-text
+      font-size 14px
+      bottom 16px
+
+    &-bar, &-bar-edge
+      height 3px
+
+    &-single
+      padding 3px 10.5px
+      border-radius 6px
+      margin-top -7px
+
+    &-single::after
+      content ''
+      width 10px
+      height 10px
+      display block
+      position absolute
+      left 50%
+      transform translateX(-50%) rotate(45deg)
+      border-radius 3px
+      z-index -1
+      bottom -3px
+
+.slider_no-bar
+  .irs
+    &-bar, &-bar-edge
+      display none
+
+.slider_red
+  set_color($color-red)

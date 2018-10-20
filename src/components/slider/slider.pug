@@ -1,0 +1,24 @@
+mixin slider(options)
+  -
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'slider_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  input.slider(
+    data-extra-classes="slider " + options.classname + " " + modes,
+    data-min=options.min || 0,
+    data-max=options.max || 100,
+    data-grid=options.grid ? "true" : false,
+    data-hide-from-to=!options.valueLabel ? "true" : false,
+    data-hide-min-max=!options.minMaxLabel ? "true" : false,
+    data-from=options.start,
+    data-step=options.step
+  )
