@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -9,6 +10,10 @@ module.exports = {
     filename: 'index.js'
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery'
+    }),
     new HtmlWebPackPlugin({
       filename: 'index.html',
       template: './src/index.pug'
