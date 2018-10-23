@@ -1,0 +1,50 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+
+.dropdown.minict_wrapper
+  @require '../../fonts/fonts.styl'
+
+  font-family 'Lato'
+
+  width 288px
+  height 28px
+
+  background-color $color-gray
+  border none
+  border-radius 3px
+
+  &::before
+    content ''
+    width 33px
+    height 100%
+    background-color $color-diamond
+    border-radius 0 3px 3px 0
+    position absolute
+    top 0
+    right 0
+
+  &::after
+    content ''
+    width 33px
+    height 100%
+    background url('./components/dropdown/dropdown-icon.png') no-repeat center
+    border-radius 0 3px 3px 0
+    cursor pointer
+    transition 0.4s
+
+  &.active::after
+    content ''
+    transform rotate(180deg)
+    transition 0.4s
+
+  span
+    cursor text
+    font-size 14px
+    padding-left 13px
+    padding-top 1px
+    word-spacing -2px
+
+.dropdown_red.minict_wrapper
+  &::before
+    background-color $color-red
