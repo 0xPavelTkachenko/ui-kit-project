@@ -157,7 +157,7 @@
 			// key bindings for the input element
 			this.input.on("focus click", function(e){
 				e.stopPropagation();
-				if(!m.element.prop("disabled")) m._showChoices(); else m.input.blur();
+				if(!m.element.prop("disabled")) m._toggleChoices(); else m.input.blur();
 			}).on("keydown", function(e){
 				// keyboard navigation
 				switch(e.keyCode) {
