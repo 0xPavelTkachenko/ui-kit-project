@@ -64,3 +64,11 @@ slider: {
   start,
   step
 }
+
+dropdown: {
+  classname,
+  modes: ['red'],
+  options: [strings],
+  placeholder,
+  emptyMsg
+}
