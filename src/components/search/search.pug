@@ -1,0 +1,19 @@
+mixin search(options)
+  -
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+    options.placeholder = options.placeholder || 'Search';
+    options.notFoundMsg = options.notFoundMsg || 'I\'ve not found what I\'m looking for...';
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'search_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  .search(class=options.classname + " " + modes)
+    input.search__input(type="search", placeholder=options.placeholder, data-not-found-msg=options.notFoundMsg, value=options.value, maxlength=options.maxLength)
+    .search__btn
