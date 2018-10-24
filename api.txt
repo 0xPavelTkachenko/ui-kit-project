@@ -72,3 +72,12 @@ dropdown: {
   placeholder,
   emptyMsg
 }
+
+search: {
+  classname,
+  modes: ['red', 'not-found'],
+  placeholder,
+  notFoundMsg,
+  value,
+  maxLength
+}
