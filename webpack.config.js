@@ -29,7 +29,23 @@ module.exports = {
       {
         test: /\.styl$/,
         exclude: /(node_modules|.git)/,
-        use: ['style-loader', 'css-loader', 'stylus-loader']
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'resolve-url-loader'
+          },
+          {
+            loader: 'stylus-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
