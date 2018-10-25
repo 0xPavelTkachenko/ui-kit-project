@@ -1,0 +1,32 @@
+mixin news(options)
+  -
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+
+    let imgStyle = '';
+    if (options.img && options.img.src) {
+      options.img.size = options.img.size || 'contain';
+      options.img.x = options.img.x || '0px';
+      options.img.y = options.img.y || '0px';
+
+      imgStyle = 'background-image: url(\'' + options.img.src + '\'); ' +
+                 'background-size: ' + options.img.size + '; '          +
+                 'background-position-x: ' + options.img.x + '; '       +
+                 'background-position-y: ' + options.img.y + '; '       +
+                 'background-repeat: no-repeat;';
+    }
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'news_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  .news(class=options.classname + modes, style=imgStyle)
+    .news__content
+      .news__title=options.title
+      .news__date=options.date
+      .news__description=options.description
