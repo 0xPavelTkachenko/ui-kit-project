@@ -37,12 +37,9 @@ module.exports = {
             loader: 'css-loader'
           },
           {
-            loader: 'resolve-url-loader'
-          },
-          {
             loader: 'stylus-loader',
             options: {
-              sourceMap: true
+              'resolve url': true
             }
           }
         ]
