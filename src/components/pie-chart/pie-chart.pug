@@ -1,0 +1,8 @@
+mixin pie-chart(options)
+  -
+    options = options || {};
+    options.data = options.data || [];
+
+  canvas.pie-chart(class=options.classname)
+    each d in options.data
+      .pie-chart__data(data-value=d.value, data-color=d.color)
