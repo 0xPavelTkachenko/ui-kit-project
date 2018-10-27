@@ -90,3 +90,8 @@ news: {
   description,
   img: {src, size, x, y}
 }
+
+percentage-circle: {
+  classname,
+  modes: ['red']
+}
