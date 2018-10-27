@@ -95,3 +95,8 @@ percentage-circle: {
   classname,
   modes: ['red']
 }
+
+pie-chart: {
+  classname,
+  data: [{value, color}]
+}
