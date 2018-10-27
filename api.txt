@@ -81,3 +81,12 @@ search: {
   value,
   maxLength
 }
+
+news: {
+  classname,
+  modes: ['red'],
+  title,
+  date,
+  description,
+  img: {src, size, x, y}
+}
