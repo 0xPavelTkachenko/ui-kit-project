@@ -19,12 +19,12 @@ mixin info-block(options)
 
     let modes = '';
     for (let i = 0; i < options.modes.length; i++) {
-      modes += 'news_' + options.modes[i];
+      modes += 'info-block_' + options.modes[i];
       if (i < options.modes.length - 1) {
         modes += ' ';
       }
     }
 
-  .info-block(class=options.classname + modes, style=imgStyle)
+  .info-block(class=options.classname + " " + modes, style=imgStyle)
     .info-block__content
       block
