@@ -3,9 +3,9 @@ include ../info-block/info-block.pug
 mixin news(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
+    options.classname = options.classname ? options.classname + ' news' : 'news';
 
-  +info-block({classname: 'news ' + options.classname, modes: options.modes, img: options.img})
+  +info-block(options)
     .news__title=options.title
     .news__date=options.date
     .news__description=options.description
