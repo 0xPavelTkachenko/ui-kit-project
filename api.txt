@@ -100,3 +100,9 @@ pie-chart: {
   classname,
   data: [{value, color}]
 }
+
+info-block: {
+  classname,
+  modes: ['red'],
+  img: {src, size, x, y}
+}
