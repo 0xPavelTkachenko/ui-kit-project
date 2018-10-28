@@ -1,0 +1,16 @@
+include ../info-block/info-block.pug
+include ../btn/btn.pug
+
+mixin event(options)
+  -
+    options = options || {};
+    options.classname = options.classname ? options.classname + ' event' : 'event';
+
+  +info-block(options)
+    .event__date
+      .event__day=options.day
+      .event__month=options.month
+    .event__title=options.title
+    .event__description=options.description
+    .event__btn-wrapper
+      +btn({classname: 'event__btn', text: 'Add to calendar', modes: ['small']})
