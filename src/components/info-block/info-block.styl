@@ -1,0 +1,24 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+
+.info-block
+  @require '../../fonts/fonts.styl'
+
+  font-family 'Lato'
+
+  background-color $color-gray
+  border-radius 3px
+  color #fff
+  overflow hidden
+
+  &__content
+    background-color $color-diamond
+    float right
+    padding 18px 23px 33px 23px
+    width 51.3%
+
+.info-block_red
+  .info-block
+    &__content
+      background-color $color-red
