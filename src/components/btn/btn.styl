@@ -5,10 +5,10 @@ $color-light-red = #EB785D
 $color-dark-diamond = #28A290
 $color-dark-red = #BF3E1F
 
-$width = 118px
+$padding-horizontal = 31.57px
 $height = 32px
 
-$width-small = 78px
+$padding-horizontal-small = 15.73px
 $height-small = 22px
 
 $font-size = 12px
@@ -39,7 +39,7 @@ set_color(color, light-color, dark-color)
   position relative
   overflow hidden
 
-  width $width
+  padding 0 $padding-horizontal
   height $height
 
   font-size $font-size
@@ -81,6 +81,6 @@ set_color(color, light-color, dark-color)
       box-shadow 0 3px $color-red
 
 .btn_small
-  width $width-small
+  padding 0 $padding-horizontal-small
   height $height-small
   font-size $font-size-small
