@@ -1,0 +1,53 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+
+.progress-tracker
+  @require '../../fonts/fonts.styl'
+
+  font-family 'Lato'
+
+  display flex
+  justify-content space-between
+
+  margin 5px auto
+
+  &__step
+    display flex
+    align-items center
+    flex 1 1 0
+
+  &__step:last-child
+    flex-grow 0
+
+  &__step:not(:last-child)::after
+    content ''
+    display block
+    width 100%
+    height 5px
+
+  &__marker
+    display flex
+    justify-content center
+    align-items center
+    width 29px
+    height 29px
+    min-width 29px
+    color #fff
+    background-color $color-gray
+    border-radius 50%
+    font-size 1.1666rem
+    cursor default
+    font-weight bold
+
+  &__step::after
+    background-color $color-gray
+
+  &__step_complete::after, &__step_complete > &__marker, &__step_active > &__marker
+    background-color $color-diamond
+
+.progress-tracker_red
+    .progress-tracker__step_complete::after,
+    .progress-tracker__step_complete > .progress-tracker__marker,
+    .progress-tracker__step_active > .progress-tracker__marker
+      background-color $color-red

@@ -1,0 +1,38 @@
+mixin progress-tracker(options)
+  -
+    options = options || [];
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+    options.stepCount = options.stepCount || 0;
+    options.activeStep = options.activeStep || 0;
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'progress-tracker_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+    if (options.stepCount < 0) {
+      options.stepCount = 0;
+    }
+
+    if (options.activeStep < 0) {
+      options.activeStep = 0;
+    } else if (options.activeStep > options.stepCount) {
+      options.activeStep = options.stepCount
+    }
+
+  .progress-tracker(class=options.classname + " " + modes)
+    - for (let i = 1; i <= options.activeStep; i++)
+    -   if (i !== options.activeStep)
+          .progress-tracker__step.progress-tracker__step_complete
+            .progress-tracker__marker=i
+    -   else
+          .progress-tracker__step.progress-tracker__step_active
+            .progress-tracker__marker=i
+
+    - for (let i = options.activeStep + 1; i <= options.stepCount; i++)
+        .progress-tracker__step
+          .progress-tracker__marker=i
