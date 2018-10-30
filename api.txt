@@ -106,3 +106,10 @@ info-block: {
   modes: ['red'],
   img: {src, size, x, y}
 }
+
+progress-tracker: {
+  classname,
+  modes: ['red'],
+  stepCount,
+  activeStep
+}
