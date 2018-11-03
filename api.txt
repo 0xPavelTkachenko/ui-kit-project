@@ -113,3 +113,14 @@ progress-tracker: {
   stepCount,
   activeStep
 }
+
+map: {
+  classname,
+  modes: ['red'],
+  title,
+  address,
+  center: {lat, lng},
+  marker: {lat, lng},
+  showMarker,
+  zoom
+}
