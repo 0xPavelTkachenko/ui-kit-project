@@ -1,0 +1,67 @@
+$color-diamond = #4EB7A8
+$color-red = #E75735
+
+.map
+  @require '../../fonts/fonts.styl'
+
+  font-family 'Lato'
+
+  width 593px
+  height 272px
+
+  overflow hidden
+  border-radius 3px
+
+  color #fff
+
+  &__map
+    height 203px
+
+  &__footer
+    display flex
+    align-items center
+    justify-content space-between
+
+    height 69px
+    background-color $color-diamond
+
+  &__title
+    margin-left 26px
+
+    font-size 2.5rem
+    word-spacing -2px
+
+  &__address
+    width 140px
+
+    margin-left -170px
+
+    font-weight bold
+    text-transform uppercase
+    letter-spacing 1px
+    word-spacing 1px
+
+  &__btns
+    margin-right 19px
+
+  &__location-btn, &__pin-btn
+    width 30px
+    height 30px
+
+    border none
+    outline none
+
+    cursor pointer
+
+  &__location-btn
+    background url('./map-sprite.png') no-repeat 0 0
+
+    margin-right 14px
+
+  &__pin-btn
+    background url('./map-sprite.png') no-repeat -30px 0
+
+.map_red
+  .map
+    &__footer
+      background-color $color-red

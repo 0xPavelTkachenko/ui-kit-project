@@ -1,0 +1,32 @@
+mixin map(options)
+  -
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+    options.center = options.center || {};
+    options.marker = options.marker || {};
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'map_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  .map(
+    class=options.classname + " " + modes,
+    data-center-lat=options.center.lat,
+    data-center-lng=options.center.lng,
+    data-show-marker=options.showMarker,
+    data-marker-lat=options.marker.lat,
+    data-marker-lng=options.marker.lng,
+    data-zoom=options.zoom
+  )
+    .map__map
+    .map__footer
+      .map__title=options.title
+      .map__address=options.address
+      .map__btns
+        button.map__location-btn(type="button")
+        button.map__pin-btn(type="button")
