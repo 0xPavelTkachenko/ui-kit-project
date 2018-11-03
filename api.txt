@@ -22,8 +22,6 @@ arrow-btn: {
 
 video: {
   classname,
-  width,
-  height,
   src
 }
 
