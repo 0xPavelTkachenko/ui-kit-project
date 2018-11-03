@@ -5,24 +5,22 @@ $color-light-red = #EB785D
 $color-dark-diamond = #28A290
 $color-dark-red = #BF3E1F
 
-$padding-horizontal = 31.57px
+$padding-horizontal = 32.57px
 $height = 32px
 
-$padding-horizontal-small = 15.73px
+$padding-horizontal-small = 16.73px
 $height-small = 22px
 
 $font-size = 12px
 $font-size-small = 10px
 
 set_color(color, light-color, dark-color)
-  border 1px solid color
   background-color color
   box-shadow 0 3px dark-color
 
-  .btn
-    &:hover
-      background-color light-color
-      box-shadow 0 3px color
+  &:hover
+    background-color light-color
+    box-shadow 0 3px color
 
 @keyframes ripple-effect
   to
@@ -48,11 +46,11 @@ set_color(color, light-color, dark-color)
   text-transform uppercase
 
   outline none
+  border none
   border-radius 2.5px
 
   cursor pointer
   color #fff
-  margin-bottom 3px
 
   &:active
     box-shadow none
@@ -70,15 +68,6 @@ set_color(color, light-color, dark-color)
 
 .btn_red
   set_color($color-red, $color-light-red, $color-dark-red)
-
-  border 1px solid $color-red
-  background-color $color-red
-  box-shadow 0 3px $color-dark-red
-
-  .btn
-    &:hover
-      background-color $color-light-red
-      box-shadow 0 3px $color-red
 
 .btn_small
   padding 0 $padding-horizontal-small
