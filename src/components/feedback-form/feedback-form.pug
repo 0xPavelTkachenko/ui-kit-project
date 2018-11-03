@@ -1,0 +1,29 @@
+include ../btn/btn.pug
+include ../speech-bubble/speech-bubble.pug
+
+mixin feedback-form(options)
+  -
+    options = options || {};
+    options.name = options.name || {};
+    options.email = options.email || {};
+    options.message = options.message || {};
+    options.btn = options.btn || {};
+    options.btn.classname = 'message-form__btn';
+    options.errorMsg = options.errorMsg || 'Error';
+    options.successMsg = options.successMsg || 'Thanks!';
+
+    if (options.action) {
+      options.btn.type = 'submit';
+    }
+
+  form.feedback-form(class=options.classname, action=options.action, method=options.method, data-error-msg=options.errorMsg, data-success-msg=options.successMsg)
+    .feedback-form__row
+      input.feedback-form__name(required=options.name.required, type="text", placeholder=options.name.placeholder, value=options.name.value)
+      +speech-bubble({classname: 'feedback-form__bubble'})
+    .feedback-form__row
+      input.feedback-form__email(required=options.email.required, type="text", placeholder=options.email.placeholder, value=options.email.value)
+      +speech-bubble({classname: 'feedback-form__bubble'})
+    .feedback-form__row
+      textarea.feedback-form__message(required=options.message.required, placeholder=options.message.placeholder, value=options.message.value)
+    .feedback-form__row
+      +btn(options.btn)

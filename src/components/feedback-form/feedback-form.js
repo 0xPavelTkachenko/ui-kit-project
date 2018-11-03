@@ -2,17 +2,17 @@
 
 import '../btn/btn.js';
 
-let forms = document.querySelectorAll('.message-form');
+let forms = document.querySelectorAll('.feedback-form');
 
 for (let i = 0; i < forms.length; i++) {
-  let nameField = forms[i].querySelector('.message-form__name');
-  let emailField = forms[i].querySelector('.message-form__email');
-  let messageField = forms[i].querySelector('.message-form__message');
+  let nameField = forms[i].querySelector('.feedback-form__name');
+  let emailField = forms[i].querySelector('.feedback-form__email');
+  let messageField = forms[i].querySelector('.feedback-form__message');
 
-  let nameBubble = forms[i].querySelector('.message-form__name + .message-form__bubble');
-  let emailBubble = forms[i].querySelector('.message-form__email + .message-form__bubble');
+  let nameBubble = forms[i].querySelector('.feedback-form__name + .feedback-form__bubble');
+  let emailBubble = forms[i].querySelector('.feedback-form__email + .feedback-form__bubble');
 
-  forms[i].querySelector('.message-form__btn').addEventListener('mousedown', function() {
+  forms[i].querySelector('.feedback-form__btn').addEventListener('mousedown', function() {
     if (!nameField.hasAttribute('required') || nameField.value) {
       nameBubble.classList.remove('speech-bubble_red');
       nameBubble.style.display = 'block';

@@ -39,7 +39,7 @@ speech-bubble: {
   modes: ['red', 'gray', 'small']
 }
 
-message-form: {
+feedback-form: {
   classname,
   action,
   method,
