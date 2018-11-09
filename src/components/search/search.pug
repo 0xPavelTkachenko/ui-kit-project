@@ -14,6 +14,6 @@ mixin search(options)
       }
     }
 
-  .search(class=options.classname + " " + modes)
+  .search(class=modes + " " + options.classname)
     input.search__input(type="search", placeholder=options.placeholder, data-not-found-msg=options.notFoundMsg, value=options.value, maxlength=options.maxLength)
     .search__btn

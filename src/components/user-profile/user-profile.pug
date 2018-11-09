@@ -22,7 +22,7 @@ mixin user-profile(options)
       }
     }
 
-  .user-profile(class=options.classname + " " + modes)
+  .user-profile(class=modes + " " + options.classname)
     .user-profile__photo(style=photoStyle)
     +speech-bubble({classname: 'user-profile__info'})
       .user-profile__name=options.name

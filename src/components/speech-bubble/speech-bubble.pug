@@ -12,7 +12,7 @@ mixin speech-bubble(options)
       }
     }
 
-  .speech-bubble(class=options.classname + " " + modes)
+  .speech-bubble(class=modes + " " + options.classname)
     .speech-bubble__triangle
     .speech-bubble__content
       block

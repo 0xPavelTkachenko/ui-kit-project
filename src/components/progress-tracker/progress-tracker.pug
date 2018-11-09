@@ -24,7 +24,7 @@ mixin progress-tracker(options)
       options.activeStep = options.stepCount
     }
 
-  .progress-tracker(class=options.classname + " " + modes)
+  .progress-tracker(class=modes + " " + options.classname)
     - for (let i = 1; i <= options.activeStep; i++)
     -   if (i !== options.activeStep)
           .progress-tracker__step.progress-tracker__step_complete

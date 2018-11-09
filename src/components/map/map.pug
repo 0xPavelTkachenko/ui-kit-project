@@ -15,7 +15,7 @@ mixin map(options)
     }
 
   .map(
-    class=options.classname + " " + modes,
+    class=modes + " " + options.classname,
     data-center-lat=options.center.lat,
     data-center-lng=options.center.lng,
     data-show-marker=options.showMarker,

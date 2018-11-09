@@ -12,6 +12,6 @@ mixin tick-box(options)
       }
     }
 
-  label.tick-box(class=options.classname + " " + modes)
+  label.tick-box(class=modes + " " + options.classname)
     input.tick-box__checkbox(type="checkbox")
     .tick-box__pseudo-checkbox
