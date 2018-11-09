@@ -36,7 +36,7 @@ user-profile: {
 
 speech-bubble: {
   classname,
-  modes: ['red', 'gray', 'small']
+  modes: ['red', 'gray']
 }
 
 feedback-form: {
