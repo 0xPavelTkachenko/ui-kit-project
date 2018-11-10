@@ -1,0 +1,93 @@
+@require '../speech-bubble'
+@require '../btn'
+
+$color-diamond = #4EB7A8
+$color-red = #E75735
+$color-gray = #E5E5E5
+$color-light-gray = #F2F2F2
+$color-dark-diamond = #46AB9D
+$color-dark-red = #BF3E1F
+
+.message-form
+  @require '../../fonts'
+
+  font-family 'Lato'
+  overflow hidden
+  border-radius 3px
+  background-color $color-light-gray
+
+  &__name
+    color #fff
+    background-color $color-diamond
+    text-align center
+    font-size 2.5rem
+    padding-top 20px
+    padding-bottom 26px
+    border-bottom 34px solid $color-dark-diamond
+
+  &__container
+    padding 0 22px
+
+  &__row
+    display flex
+    justify-content space-between
+    padding 0 2px
+    margin-bottom -32px
+
+  &__photo
+    width 84px
+    height 84px
+    background-color #fff
+    border 5px solid $color-gray
+    border-radius 50%
+    transform translateY(-50%)
+
+  &__chat-btn, &__camera-btn
+    width 27px
+    height 27px
+    border none
+    outline none
+    cursor pointer
+    margin-top 18px
+
+  &__chat-btn
+    background url('./message-form-sprite.png') no-repeat 0 0
+
+  &__camera-btn
+    background url('./message-form-sprite.png') no-repeat -27px 0
+
+  &__bubble
+    color #868686
+    letter-spacing 1px
+    word-spacing -1px
+    padding 16px 20px 24px 20px
+    margin-bottom 17px
+
+  &__text
+    width 100%
+    color #777777
+    background-color $color-gray
+    border 3px solid #fff
+    border-radius 6px
+    box-sizing border-box
+    padding 17px
+    padding-bottom 35px
+    margin-bottom 13px
+    word-spacing -6.5px
+    resize none
+
+  &__text:focus
+    outline none
+
+  &__btn
+    width 100%
+    margin-bottom 28px
+
+.message-form_red
+  .message-form
+    &__name
+      background-color $color-red
+      border-bottom 34px solid $color-dark-red
+
+    &__btn
+      @extends .btn_red

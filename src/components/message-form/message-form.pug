@@ -1,0 +1,43 @@
+include ../speech-bubble/speech-bubble
+include ../btn/btn
+
+mixin message-form(options)
+  -
+    options = options || {};
+    options.classname = options.classname || '';
+    options.modes = options.modes || [];
+    options.btn = options.btn || {};
+    options.btn.classname = 'message-form__btn';
+
+    let photoStyle = '';
+    if (options.photo && options.photo.src) {
+      options.photo.size = options.photo.size || 'contain';
+      options.photo.x = options.photo.x || '0px';
+      options.photo.y = options.photo.y || '0px';
+
+      photoStyle = 'background-image: url(\'' + options.photo.src + '\'); ' +
+                   'background-size: ' + options.photo.size + '; '          +
+                   'background-position-x: ' + options.photo.x + '; '       +
+                   'background-position-y: ' + options.photo.y + '; '       +
+                   'background-repeat: no-repeat;';
+    }
+
+    let modes = '';
+    for (let i = 0; i < options.modes.length; i++) {
+      modes += 'message-form_' + options.modes[i];
+      if (i < options.modes.length - 1) {
+        modes += ' ';
+      }
+    }
+
+  .message-form(class=modes + " " + options.classname)
+    .message-form__name=options.name
+    .message-form__container
+      .message-form__row
+        button.message-form__chat-btn(type="button")
+        .message-form__photo(style=photoStyle)
+        button.message-form__camera-btn(type="button")
+      +speech-bubble({classname: 'message-form__bubble', modes: ['white', 'top']})
+        | #{options.message}
+      textarea.message-form__text
+      +btn(options.btn)
