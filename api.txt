@@ -122,3 +122,12 @@ map: {
   showMarker,
   zoom
 }
+
+message-form: {
+  classname,
+  modes: ['red'],
+  photo: {src, size, x, y},
+  name,
+  message,
+  btn: btn component
+}
