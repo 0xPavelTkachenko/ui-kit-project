@@ -1,21 +1,13 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin map(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
     options.center = options.center || {};
     options.marker = options.marker || {};
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'map_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  .map(
-    class=modes + " " + options.classname,
+  div(
+    class=getFullClassname('map', options.classname, options.modes),
     data-center-lat=options.center.lat,
     data-center-lng=options.center.lng,
     data-show-marker=options.showMarker,

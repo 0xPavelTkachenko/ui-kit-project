@@ -1,18 +1,10 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin toggle(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'toggle_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  label.toggle(class=modes + " " + options.classname)
+  label(class=getFullClassname('toggle', options.classname, options.modes))
     input.toggle__checkbox(type="checkbox")
     .toggle__pseudo-checkbox
       .toggle__circle

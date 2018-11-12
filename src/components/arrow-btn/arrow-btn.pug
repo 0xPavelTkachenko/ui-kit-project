@@ -1,15 +1,7 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin arrow-btn(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'arrow-btn_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  button.arrow-btn(class=modes + " " + options.classname, type="button")
+  button(class=getFullClassname('arrow-btn', options.classname, options.modes), type="button")

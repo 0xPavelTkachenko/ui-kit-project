@@ -1,9 +1,9 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin percentage-circle(options)
   -
     options = options || {};
     options.percent = options.percent || 0;
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
     if (options.percent < 0) {
       options.percent = 0;
@@ -11,12 +11,7 @@ mixin percentage-circle(options)
       options.percent = 100;
     }
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'percentage-circle_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  .percentage-circle(class=modes + " " + options.classname, data-percent=options.percent)
+  div(
+    class=getFullClassname('percentage-circle', options.classname, options.modes),
+    data-percent=options.percent
+  )

@@ -1,18 +1,10 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin speech-bubble(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'speech-bubble_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  .speech-bubble(class=modes + " " + options.classname)
+  div(class=getFullClassname('speech-bubble', options.classname, options.modes))
     .speech-bubble__triangle
     .speech-bubble__content
       block

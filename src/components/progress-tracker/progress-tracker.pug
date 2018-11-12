@@ -1,18 +1,10 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin progress-tracker(options)
   -
     options = options || [];
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
     options.stepCount = options.stepCount || 0;
     options.activeStep = options.activeStep || 0;
-
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'progress-tracker_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
 
     if (options.stepCount < 0) {
       options.stepCount = 0;
@@ -24,7 +16,7 @@ mixin progress-tracker(options)
       options.activeStep = options.stepCount
     }
 
-  .progress-tracker(class=modes + " " + options.classname)
+  div(class=getFullClassname('progress-tracker', options.classname, options.modes))
     - for (let i = 1; i <= options.activeStep; i++)
     -   if (i !== options.activeStep)
           .progress-tracker__step.progress-tracker__step_complete

@@ -1,20 +1,16 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin dropdown(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
     options.options = options.options || [];
     options.placeholder = options.placeholder || 'Choose An Option';
     options.emptyMsg = options.emptyMsg || 'No results matched your keyword';
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'dropdown_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  select.dropdown(class=modes + " " + options.classname, data-placeholder=options.placeholder, data-emptyMsg=options.emptyMsg)
+  select(
+    class=getFullClassname('dropdown', options.classname, options.modes),
+    data-placeholder=options.placeholder,
+    data-emptyMsg=options.emptyMsg
+  )
     each o in options.options
       option=o

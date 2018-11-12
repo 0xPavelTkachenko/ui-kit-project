@@ -1,17 +1,9 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin tick-box(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'tick-box_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  label.tick-box(class=modes + " " + options.classname)
+  label(class=getFullClassname('tick-box', options.classname, options.modes))
     input.tick-box__checkbox(type="checkbox")
     .tick-box__pseudo-checkbox

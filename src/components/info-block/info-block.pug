@@ -1,8 +1,8 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin info-block(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
     let imgStyle = '';
     if (options.img && options.img.src) {
@@ -17,14 +17,6 @@ mixin info-block(options)
                  'background-repeat: no-repeat;';
     }
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'info-block_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  .info-block(class=modes + " " + options.classname, style=imgStyle)
+  div(class=getFullClassname('info-block', options.classname, options.modes), style=imgStyle)
     .info-block__content
       block

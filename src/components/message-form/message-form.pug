@@ -1,11 +1,11 @@
 include ../speech-bubble/speech-bubble
 include ../btn/btn
 
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin message-form(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
     options.btn = options.btn || {};
     options.btn.classname = 'message-form__btn';
 
@@ -22,15 +22,7 @@ mixin message-form(options)
                    'background-repeat: no-repeat;';
     }
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'message-form_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  .message-form(class=modes + " " + options.classname)
+  div(class=getFullClassname('message-form', options.classname, options.modes))
     .message-form__name=options.name
     .message-form__container
       .message-form__row

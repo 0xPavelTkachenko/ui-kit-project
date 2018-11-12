@@ -1,10 +1,10 @@
 include ../speech-bubble/speech-bubble
 
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
 mixin user-profile(options)
   -
     options = options || {};
-    options.classname = options.classname || '';
-    options.modes = options.modes || [];
 
     let photoStyle = '';
     if (options.photo) {
@@ -14,15 +14,7 @@ mixin user-profile(options)
                    'background-position: center;';
     }
 
-    let modes = '';
-    for (let i = 0; i < options.modes.length; i++) {
-      modes += 'user-profile_' + options.modes[i];
-      if (i < options.modes.length - 1) {
-        modes += ' ';
-      }
-    }
-
-  .user-profile(class=modes + " " + options.classname)
+  div(class=getFullClassname('user-profile', options.classname, options.modes))
     .user-profile__photo(style=photoStyle)
     +speech-bubble({classname: 'user-profile__info'})
       .user-profile__name=options.name
