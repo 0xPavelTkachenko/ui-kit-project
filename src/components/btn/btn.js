@@ -20,9 +20,10 @@ for (let i = 0; i < btns.length; i++) {
 
     btns[i].appendChild(circle);
 
-    setInterval(function () {
+    let int = setInterval(function () {
       if (getComputedStyle(circle).opacity === '0') {
         btns[i].removeChild(circle);
+        clearInterval(int);
       }
     }, 100);
   });
