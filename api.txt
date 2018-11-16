@@ -89,6 +89,15 @@ news: {
   img: {src, size, x, y}
 }
 
+event: {
+  classname,
+  modes: ['color-red'],
+  day,
+  month,
+  title,
+  description
+}
+
 percentage-circle: {
   classname,
   modes: ['color-red']
