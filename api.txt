@@ -36,7 +36,14 @@ user-profile: {
 
 speech-bubble: {
   classname,
-  modes: ['color-red', 'color-gray', 'color-white', 'transform-top']
+  modes: [
+    'color-red',
+    'color-gray',
+    'color-white',
+    'transform-right',
+    'transform-top',
+    'transform-bottom'
+  ]
 }
 
 feedback-form: {

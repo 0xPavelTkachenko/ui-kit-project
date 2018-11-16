@@ -33,9 +33,23 @@ set_color(color)
 .speech-bubble_color-white
   set_color(#fff)
 
+.speech-bubble_transform-right
+  .speech-bubble
+    &__triangle
+      left unset
+      right -4px
+
 .speech-bubble_transform-top
   .speech-bubble
     &__triangle
       left 50%
       top -4px
+      transform translateX(-50%) rotate(45deg)
+
+.speech-bubble_transform-bottom
+  .speech-bubble
+    &__triangle
+      left 50%
+      top unset
+      bottom -4px
       transform translateX(-50%) rotate(45deg)
