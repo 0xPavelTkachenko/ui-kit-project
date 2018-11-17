@@ -1,0 +1,7 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
+mixin calendar(options)
+  -
+    options = options || {};
+
+  div(class=getFullClassname('calendar', options.classname, options.modes))

@@ -1,0 +1,135 @@
+$color-diamond = #4eb7a8
+$color-red = #e75735
+$color-gray = #e5e5e5
+$color-light-gray = #f2f2f2
+$color-dark-diamond = #3cac9f
+$color-dark-red = #d54c2c
+$color-dark-gray = #8b8b8b
+
+set_color(color, dark-color)
+  .datepicker
+    &::before, &--day-name, &--cell.-selected-,
+    &--cell.-selected-.-current-,
+    &--cell.-selected-.-focus-
+      background-color color
+
+    &--cell.-current-
+      color color
+
+    &--nav
+      background-color dark-color
+
+.calendar
+  @require '../../fonts'
+
+  set_color($color-diamond, $color-dark-diamond)
+
+  cursor default
+  border-radius 3px
+  overflow hidden
+
+  .datepicker
+    width 100%
+    font-family 'Lato'
+    border 0
+
+    &::before
+      content attr(data-date)
+      display flex
+      justify-content center
+      align-items center
+      height 137px
+      color #fff
+      font-size 8rem
+
+    &--nav-action
+      margin 0 10px
+
+      svg
+        transform scale(1.5)
+
+        path
+          stroke #fff
+
+    &--nav-title
+      color #fff
+      font-size 2.3rem
+
+    &--nav-title:hover
+      background-color unset
+
+    &--days-names
+      height 34px
+      margin 0
+
+    &--day-name
+      color #fff
+
+    &--cells-days
+      height 250px
+
+    &--content
+      padding 0
+
+    &--nav
+      height 54px
+      padding 0
+      border 0
+
+    &--nav-action:hover
+      background 0
+
+    &--cell
+      height unset
+      color $color-dark-gray
+      background-color $color-light-gray
+      border-radius 0
+      border-bottom 1px solid #fff
+      border-right 1px solid #fff
+      font-size 2rem
+
+    &--cell.-selected-
+      border-bottom 1px solid #fff
+      border-right 1px solid #fff
+
+    &--cell:hover
+      color unset
+      background-color $color-gray
+
+    &--cell-day:nth-child(7n)
+      border-right 0
+
+    &--cell-month:nth-child(3n)
+      border-right 0
+
+    &--cell-year:nth-child(4n)
+      border-right 0
+
+    &--cell.-other-month-
+      color #fff
+
+    &--buttons
+      padding 0
+      padding-left 24px
+      background-color $color-gray
+
+    &--button[data-action='today']
+      -webkit-flex 0
+      -ms-flex 0
+      flex 0
+      justify-content flex-start
+      height 62px
+      color $color-dark-gray
+      background-color $color-gray
+      font-size 1.3rem
+      font-weight bold
+      text-transform uppercase
+      letter-spacing 2px
+      border 0
+      border-radius 3px
+
+    &--button[data-action='today']:hover
+      background-color unset
+
+.calendar_color-red
+  set_color($color-red, $color-dark-red)
