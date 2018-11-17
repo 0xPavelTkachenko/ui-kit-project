@@ -147,3 +147,8 @@ message-form: {
   message,
   btn: btn component
 }
+
+calendar: {
+  classname,
+  modes: ['color-red']
+}
