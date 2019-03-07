@@ -1,7 +1,0 @@
-mixin btn(o)
-  -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "btn_" + o.color : undefined;
-    o.size = typeof o.size === "string" ? "btn_" + o.size : undefined;
-
-  button.btn.js-btn(class=o.color, class=o.size)&attributes(o.attr)=o.text

@@ -9,7 +9,7 @@ class Button {
 
   createRippleEffect(coords) {
     const $button = this._$root;
-    const $ripple = $('<span>').appendTo($button).addClass('btn__ripple');
+    const $ripple = $('<span>').appendTo($button).addClass('button__ripple');
     const size = Math.max($button.outerWidth(), $button.outerHeight());
     const left = coords.x - size / 2;
     const top = coords.y - size / 2;
