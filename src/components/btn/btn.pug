@@ -1,12 +1,7 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin btn(options)
+mixin btn(o)
   -
-    options = options || {};
-    options.type = options.type || 'button';
+    o = o || {};
+    o.color = typeof o.color === "string" ? "btn_" + o.color : undefined;
+    o.size = typeof o.size === "string" ? "btn_" + o.size : undefined;
 
-  button(
-    class=getFullClassname('btn', options.classname, options.modes),
-    type=options.type,
-    value=options.value
-  )=options.text
+  button.btn.js-btn(class=o.color, class=o.size)&attributes(o.attr)=o.text

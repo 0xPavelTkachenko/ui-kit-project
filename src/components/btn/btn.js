@@ -1,30 +1,64 @@
-'use strict';
+import $ from 'jquery';
 
-let btns = document.getElementsByClassName('btn');
+class Button {
+  constructor(root, id) {
+    this._$root = $(root);
+    this._id = id;
+    this._bindEvents();
+  }
 
-for (let i = 0; i < btns.length; i++) {
-  btns[i].addEventListener('mousedown', function(e) {
-    if (btns[i].getAttribute('type') === 'submit') {
-      return;
+  createRippleEffect(coords) {
+    const $button = this._$root;
+    const $ripple = $('<span>').appendTo($button).addClass('btn__ripple');
+    const size = Math.max($button.outerWidth(), $button.outerHeight());
+    const left = coords.x - size / 2;
+    const top = coords.y - size / 2;
+
+    $ripple.css(
+      {
+        width: `${size}px`,
+        height: `${size}px`,
+        left: `${left}px`,
+        top: `${top}px`,
+      },
+    );
+
+    setTimeout(this._tryToRemove.bind(this, $ripple), 100);
+
+    return this;
+  }
+
+  enableRippleEffect() {
+    this._$root.on(`click.Button${this._id}`, this._handleRippleEffect.bind(this));
+    return this;
+  }
+
+  disableRippleEffect() {
+    this._$root.off(`click.Button${this._id}`);
+    return this;
+  }
+
+  toString() {
+    return `{"class": "Button", "id": "${this._id}"}`;
+  }
+
+  _bindEvents() {
+    this._$root.on(`click.Button${this._id}`, this._handleRippleEffect.bind(this));
+  }
+
+  _handleRippleEffect(event) {
+    const x = event.clientX - this._$root.offset().left;
+    const y = event.clientY - this._$root.offset().top;
+    this.createRippleEffect({ x, y });
+  }
+
+  _tryToRemove($ripple) {
+    if ($ripple.css('opacity') === '0') {
+      $ripple.remove();
+    } else {
+      setTimeout(this._tryToRemove.bind(this, $ripple), 100);
     }
-
-    let circle = document.createElement('div');
-    circle.classList.add('btn__ripple');
-
-    let d = Math.max(this.clientWidth, this.clientHeight);
-    circle.style.width = circle.style.height = d + 'px';
-
-    let rect = this.getBoundingClientRect();
-    circle.style.left = e.clientX - rect.left -d/2 + 'px';
-    circle.style.top = e.clientY - rect.top - d/2 + 'px';
-
-    btns[i].appendChild(circle);
-
-    let int = setInterval(function () {
-      if (getComputedStyle(circle).opacity === '0') {
-        btns[i].removeChild(circle);
-        clearInterval(int);
-      }
-    }, 100);
-  });
+  }
 }
+
+export default Button;
