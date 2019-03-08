@@ -1,21 +1,29 @@
+$color-gray = #e5e5e5
+$color-diamond = #4eb7a8
+$color-red = #e75735
+
 .tick-box
+  display inline-block
+  width 2rem
+  height 2rem
+
   &__checkbox
     display none
 
   &__pseudo-checkbox
-    width 27px
-    height 27px
-
-    background url('tick-box-sprite.png') no-repeat 0 0
-
+    width 100%
+    height 100%
+    border-radius 50%
+    background url('./assets/check-mark.png') center center no-repeat
+    background-size 45.83% 33.33%
+    background-color $color-gray
     cursor pointer
-
     display inline-block
 
   &__checkbox:checked + &__pseudo-checkbox
-    background-position -27px 0
+    background-image url('./assets/check-mark-checked.png')
+    background-color $color-diamond
 
-.tick-box_color-red
-  .tick-box
-    &__pseudo-checkbox
-      background-image url('tick-box-sprite_red.png')
+  &_red
+    & ^[0]__checkbox:checked + ^[0]__pseudo-checkbox
+      background-color $color-red

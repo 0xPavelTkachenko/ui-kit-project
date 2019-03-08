@@ -1,9 +1,8 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin tick-box(options)
+mixin tick-box(o)
   -
-    options = options || {};
+    o = o || {};
+    o.color = typeof o.color === "string" ? "tick-box_" + o.color : undefined;
 
-  label(class=getFullClassname('tick-box', options.classname, options.modes))
+  label.tick-box(class=o.color)
     input.tick-box__checkbox(type="checkbox")
-    .tick-box__pseudo-checkbox
+    span.tick-box__pseudo-checkbox
