@@ -1,13 +1,10 @@
-mixin video(options)
+mixin video(o)
   -
-    options = options || {};
-    options.src = options.src || 'https://www.youtube.com/watch?v=jNQXAC9IVRw';
-
-    options.src = options.src.replace('watch?v=', 'embed/') + '?rel=0';
+    o = o || {};
+    o.id = typeof o.id === "string" ? 'https://www.youtube.com/embed/' + o.id + "?rel=0" : undefined;
 
   iframe.video(
-    class=options.classname,
-    src=options.src,
+    src=o.id,
     frameborder="0",
     allow="autoplay; encrypted-media",
     allowfullscreen
