@@ -1,10 +1,9 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin toggle(options)
+mixin toggle(o)
   -
-    options = options || {};
+    o = o || {};
+    o.color = typeof o.color === "string" ? "toggle_" + o.color : undefined;
 
-  label(class=getFullClassname('toggle', options.classname, options.modes))
+  label.toggle(class=o.color)
     input.toggle__checkbox(type="checkbox")
-    .toggle__pseudo-checkbox
-      .toggle__circle
+    span.toggle__pseudo-checkbox
+      span.toggle__circle
