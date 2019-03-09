@@ -1,0 +1,7 @@
+- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
+
+mixin arrow-button(options)
+  -
+    options = options || {};
+
+  button(class=getFullClassname('arrow-button', options.classname, options.modes), type="button")
