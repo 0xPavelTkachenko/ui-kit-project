@@ -1,29 +1,71 @@
+$color-gray = #e5e5e5
+$color-diamond = #4eb7a8
+$color-red = #e75735
+
 .arrow-button
-  width 50px
-  height 50px
-
-  background-image url('arrow-button.png')
-  background-color transparent
-  background-repeat no-repeat
-  background-size contain
-
-  border 0
+  width 4.166666666rem
+  height 4.166666666rem
+  cursor pointer
+  display inline-block
+  background-color #fff
+  border 0.25rem solid $color-diamond
+  border-radius 50%
+  position relative
   outline 0
 
-  cursor pointer
+  &__triangle
+    width 30%
+    height 30%
+    display inline-block
+    border solid $color-diamond
+    border-width 0.25rem 0 0 0.25rem
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-30%, -50%) rotate(-45deg)
 
-  display inline-block
+  &:hover
+    border-color $color-diamond
+    background-color $color-diamond
 
-  &:hover:not(&_disabled)
-    background-image url('arrow-button-hovered.png')
+    & ^[0]__triangle
+      border-color #fff
 
-.arrow-button_transform-right
-  transform: scaleX(-1)
+  &_red
+    border-color $color-red
 
-.arrow-button_state-disabled
-  background-image url('arrow-button-disabled.png')
-  cursor default
+    & ^[0]__triangle
+      border-color $color-red
 
-.arrow-button_size-small
-  width 25px
-  height 25px
+    &:hover
+      border-color $color-red
+      background-color $color-red
+
+      & ^[0]__triangle
+        border-color #fff
+
+  &_disabled
+    cursor default
+    border-color $color-gray
+    background-color $color-gray
+
+    & ^[0]__triangle
+      border-color #fff
+
+    &:hover
+      border-color $color-gray
+      background-color $color-gray
+
+      & ^[0]__triangle
+        border-color #fff
+
+  &_small
+    width 3.125rem
+    height 3.125rem
+    border-width 0.1875rem
+
+    & ^[0]__triangle
+      border-width 0.1875rem 0 0 0.1875rem
+
+  &_right
+    transform scaleX(-1)
