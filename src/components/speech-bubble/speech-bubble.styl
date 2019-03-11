@@ -1,55 +1,57 @@
-$color-diamond = #4EB7A8
-$color-red = #E75735
-$color-gray = #E5E5E5
-
-set_color(color)
-  background-color color
-
-  .speech-bubble
-    &__triangle
-      background-color color
+$color-gray = #e5e5e5
+$color-diamond = #4eb7a8
+$color-red = #e75735
 
 .speech-bubble
-  set_color($color-diamond)
-
-  border-radius 8px
+  background-color $color-diamond
+  border-radius 0.666666666rem
   position relative
 
   &__triangle
-    width 20px
-    height 20px
-    border-radius 6px
+    background-color $color-diamond
+    width 1.666666666rem
+    height 1.666666666rem
+    border-radius 0.5rem
     position absolute
-    left -4px
+    left -0.333333333rem
     top 50%
     transform translateY(-50%) rotate(45deg)
 
-.speech-bubble_color-red
-  set_color($color-red)
+  &__content
+    padding 1.333333333rem 1.666666666rem 2rem 1.666666666rem
 
-.speech-bubble_color-gray
-  set_color($color-gray)
+  &_red
+    background-color $color-red
 
-.speech-bubble_color-white
-  set_color(#fff)
+    & ^[0]__triangle
+      background-color $color-red
 
-.speech-bubble_transform-right
-  .speech-bubble
-    &__triangle
+  &_gray
+    background-color $color-gray
+
+    & ^[0]__triangle
+      background-color $color-gray
+
+  &_white
+    background-color #fff
+
+    & ^[0]__triangle
+      background-color #fff
+
+  &_right
+    & ^[0]__triangle
       left unset
-      right -4px
+      right -0.333333333rem
 
-.speech-bubble_transform-top
-  .speech-bubble
-    &__triangle
+  &_top
+    & ^[0]__triangle
       left 50%
-      top -4px
+      top -0.333333333rem
       transform translateX(-50%) rotate(45deg)
 
-.speech-bubble_transform-bottom
-  .speech-bubble
-    &__triangle
+  &_bottom
+    & ^[0]__triangle
       left 50%
       top unset
-      bottom -4px
+      bottom -0.333333333rem
       transform translateX(-50%) rotate(45deg)

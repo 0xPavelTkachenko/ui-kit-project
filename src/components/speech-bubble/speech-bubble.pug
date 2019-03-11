@@ -1,10 +1,10 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin speech-bubble(options)
+mixin speech-bubble(o)
   -
-    options = options || {};
+    o = o || {};
+    o.color = typeof o.color === "string" ? "speech-bubble_" + o.color : undefined;
+    o.direction = typeof o.direction === "string" ? "speech-bubble_" + o.direction : undefined;
 
-  div(class=getFullClassname('speech-bubble', options.classname, options.modes))
+  .speech-bubble(class=o.color, class=o.direction)
     .speech-bubble__triangle
     .speech-bubble__content
       block
