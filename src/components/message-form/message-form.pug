@@ -1,35 +1,26 @@
 include ../speech-bubble/speech-bubble
-include ../btn/btn
+include ../button/button
 
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin message-form(options)
+mixin message-form(o)
   -
-    options = options || {};
-    options.btn = options.btn || {};
-    options.btn.classname = 'message-form__btn';
+    o = o || {};
+    o.avatar = typeof o.avatar === "string" ? o.avatar : "./assets/no-avatar.png";
+    o.buttonColor = typeof o.color === "string" ? o.color : undefined;
+    o.color = typeof o.color === "string" ? "message-form_" + o.color : undefined;
 
-    let photoStyle = '';
-    if (options.photo && options.photo.src) {
-      options.photo.size = options.photo.size || 'contain';
-      options.photo.x = options.photo.x || '0px';
-      options.photo.y = options.photo.y || '0px';
-
-      photoStyle = 'background-image: url(\'' + options.photo.src + '\'); ' +
-                   'background-size: ' + options.photo.size + '; '          +
-                   'background-position-x: ' + options.photo.x + '; '       +
-                   'background-position-y: ' + options.photo.y + '; '       +
-                   'background-repeat: no-repeat;';
-    }
-
-  div(class=getFullClassname('message-form', options.classname, options.modes))
-    .message-form__name=options.name
+  .message-form(class=o.color)
+    .message-form__name=o.name
     .message-form__container
       .message-form__row
-        button.message-form__chat-btn(type="button")
-        .message-form__photo(style=photoStyle)
-        button.message-form__camera-btn(type="button")
-      +speech-bubble({classname: 'message-form__bubble', modes: ['white', 'top']})
-        | #{options.message}
-      textarea.message-form__text
-      +btn(options.btn)
+        .message-form__chat-wrapper
+          button.message-form__chat(type="button")
+        .message-form__avatar-wrapper
+          img.message-form__avatar(src=o.avatar, alt="avatar")
+        .message-form__camera-wrapper
+          button.message-form__camera(type="button")
+      .message-form__speech-bubble
+        +speech-bubble({color: "white", direction: "top"})
+          | #{o.message}
+      textarea.message-form__textarea
+      .message-form__button
+        +button({text: o.buttonText, color: o.buttonColor})
