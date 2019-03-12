@@ -1,11 +1,14 @@
 include ../info-block/info-block
 
-mixin news(options)
+mixin news(o)
   -
-    options = options || {};
-    options.classname = options.classname ? options.classname + ' news' : 'news';
+    o = o || {};
+    o.infoBlockColor = typeof o.color === "string" ? o.color : undefined;
+    o.color = typeof o.color === "string" ? "news_" + o.color : undefined;
 
-  +info-block(options)
-    .news__title=options.title
-    .news__date=options.date
-    .news__description=options.description
+  .news(class=o.color)
+    +info-block({color: o.infoBlockColor, image: o.image})
+      .news__content
+        .news__title=o.title
+        .news__date=o.date
+        .news__text=o.text
