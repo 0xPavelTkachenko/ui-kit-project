@@ -1,22 +1,10 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin info-block(options)
+mixin info-block(o)
   -
-    options = options || {};
+    o = o || {};
+    o.image = typeof o.image === "string" ? o.image : "./assets/no-image.png";
+    o.color = typeof o.color === "string" ? "info-block_" + o.color : undefined;
 
-    let imgStyle = '';
-    if (options.img && options.img.src) {
-      options.img.size = options.img.size || 'contain';
-      options.img.x = options.img.x || '0px';
-      options.img.y = options.img.y || '0px';
-
-      imgStyle = 'background-image: url(\'' + options.img.src + '\'); ' +
-                 'background-size: ' + options.img.size + '; '          +
-                 'background-position-x: ' + options.img.x + '; '       +
-                 'background-position-y: ' + options.img.y + '; '       +
-                 'background-repeat: no-repeat;';
-    }
-
-  div(class=getFullClassname('info-block', options.classname, options.modes), style=imgStyle)
+  .info-block(class=o.color)
+    img.info-block__image(src=o.image, alt="image")
     .info-block__content
       block
