@@ -18,9 +18,10 @@ mixin message-form(o)
           img.message-form__avatar(src=o.avatar, alt="avatar")
         .message-form__camera-wrapper
           button.message-form__camera(type="button")
-      .message-form__speech-bubble
+      .message-form__speech-bubble-wrapper
         +speech-bubble({color: "white", direction: "top"})
-          | #{o.message}
+          .message-form__message
+            | #{o.message}
       textarea.message-form__textarea
       .message-form__button
         +button({text: o.buttonText, color: o.buttonColor})
