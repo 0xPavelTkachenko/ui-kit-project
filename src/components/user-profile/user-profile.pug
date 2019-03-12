@@ -1,25 +1,23 @@
 include ../speech-bubble/speech-bubble
 
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin user-profile(options)
+mixin user-profile(o)
   -
-    options = options || {};
+    o = o || {};
+    o.avatar = typeof o.avatar === "string" ? o.avatar : "./assets/no-avatar.png";
+    o.speechBubbleColor = typeof o.color === "string" ? o.color : undefined;
+    o.color = typeof o.color === "string" ? "user-profile_" + o.color : undefined;
+    o.speechBubbleDirection = typeof o.direction === "string" ? o.direction : undefined;
+    o.direction = typeof o.direction === "string" ? "user-profile_" + o.direction : undefined;
 
-    let photoStyle = '';
-    if (options.photo) {
-      photoStyle = 'background-image: url(\'' + options.photo + '\'); ' +
-                   'background-size: contain; '                         +
-                   'background-repeat: no-repeat; '                     +
-                   'background-position: center;';
-    }
-
-  div(class=getFullClassname('user-profile', options.classname, options.modes))
-    .user-profile__photo(style=photoStyle)
-    +speech-bubble({classname: 'user-profile__info'})
-      .user-profile__name=options.name
-      .user-profile__job=options.job
-      .user-profile__contacts
-        a.user-profile__facebook(href=options.facebook, target='_blank')
-        a.user-profile__twitter(href=options.twitter, target='_blank')
-        a.user-profile__dribbble(href=options.dribbble, target='_blank')
+  .user-profile(class=o.color, class=o.direction)
+    .user-profile__avatar-wrapper
+      img.user-profile__avatar(src=o.avatar, alt="avatar")
+    .user-profile__speech-bubble-wrapper
+      +speech-bubble({color: o.speechBubbleColor, direction: o.speechBubbleDirection})
+        .user-profile__info
+          .user-profile__name=o.name
+          .user-profile__job=o.job
+          .user-profile__contacts
+            a.user-profile__facebook(href=o.facebook, target="_blank", rel="noopener noreferrer")
+            a.user-profile__twitter(href=o.twitter, target="_blank", rel="noopener noreferrer")
+            a.user-profile__dribbble(href=o.dribbble, target="_blank", rel="noopener noreferrer")
