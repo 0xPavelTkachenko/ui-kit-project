@@ -1,16 +1,20 @@
 include ../info-block/info-block
-include ../btn/btn
+include ../button/button
 
-mixin event(options)
+mixin event(o)
   -
-    options = options || {};
-    options.classname = options.classname ? options.classname + ' event' : 'event';
+    o = o || {};
+    o.infoBlockColor = typeof o.color === "string" ? o.color : undefined;
+    o.buttonColor = typeof o.color === "string" ? o.color : undefined;
+    o.color = typeof o.color === "string" ? "news_" + o.color : undefined;
 
-  +info-block(options)
-    .event__date
-      .event__day=options.day
-      .event__month=options.month
-    .event__title=options.title
-    .event__description=options.description
-    .event__btn-wrapper
-      +btn({classname: 'event__btn', text: 'Add to calendar', modes: ['small']})
+  .event(class=o.color)
+    +info-block({color: o.infoBlockColor, image: o.image})
+      .event__content
+        .event__date
+          .event__day=o.day
+          .event__month=o.month
+        .event__title=o.title
+        .event__text=o.text
+        .event__btn-wrapper
+          +button({color: o.buttonColor, text: o.buttonText, size: "small", padding: "non-padding"})
