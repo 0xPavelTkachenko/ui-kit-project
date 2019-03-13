@@ -1,15 +1,12 @@
-$color-diamond = #4EB7A8
-$color-red = #E75735
+$color-diamond = #4eb7a8
+$color-red = #e75735
 
 .percentage-circle
-  @require '../../fonts/lato'
-
-  font-family 'Lato'
   font-size 4.1666rem
 
   .circle
     stroke $color-diamond
 
-.percentage-circle_color-red
-  .circle
-    stroke $color-red
+  &_red
+    .circle
+      stroke $color-red

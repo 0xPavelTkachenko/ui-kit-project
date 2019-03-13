@@ -1,17 +1,13 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin percentage-circle(options)
+mixin percentage-circle(o)
   -
-    options = options || {};
-    options.percent = options.percent || 0;
+    o = o || {};
+    o.percent = o.percent || 0;
+    o.color = typeof o.color === "string" ? "percentage-circle_" + o.color : undefined;
 
-    if (options.percent < 0) {
-      options.percent = 0;
-    } else if (options.percent > 100) {
-      options.percent = 100;
+    if (o.percent < 0) {
+      o.percent = 0;
+    } else if (o.percent > 100) {
+      o.percent = 100;
     }
 
-  div(
-    class=getFullClassname('percentage-circle', options.classname, options.modes),
-    data-percent=options.percent
-  )
+  .percentage-circle.js-percentage-circle(data-percent=o.percent, class=o.color)
