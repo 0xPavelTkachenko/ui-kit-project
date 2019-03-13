@@ -3,5 +3,6 @@ mixin button(o)
     o = o || {};
     o.color = typeof o.color === "string" ? "button_" + o.color : undefined;
     o.size = typeof o.size === "string" ? "button_" + o.size : undefined;
+    o.padding = typeof o.padding === "string" ? "button_" + o.padding : undefined;
 
-  button.button.js-button(class=o.color, class=o.size)&attributes(o.attr)=o.text
+  button.button.js-button(class=o.color, class=o.size, class=o.padding)&attributes(o.attr)=o.text
