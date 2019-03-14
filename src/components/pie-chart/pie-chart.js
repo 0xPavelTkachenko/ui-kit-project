@@ -29,12 +29,10 @@ class PieChart {
   }
 }
 
-const createPc = function createPieChart(id) {
-  new PieChart(this, id);
-};
-
 const $pieCharts = $('.js-pie-chart');
 
-$pieCharts.each(createPc);
+$pieCharts.each(function createPieChart(id) {
+  new PieChart(this, id);
+});
 
 export default PieChart;
