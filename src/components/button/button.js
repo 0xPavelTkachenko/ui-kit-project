@@ -61,12 +61,10 @@ class Button {
   }
 }
 
-const createBtn = function createButton(id) {
-  new Button(this, id);
-};
-
 const $buttons = $('.js-button');
 
-$buttons.each(createBtn);
+$buttons.each(function createButton(id) {
+  new Button(this, id);
+});
 
 export default Button;
