@@ -29,12 +29,10 @@ class PercentageCircle {
   }
 }
 
-const createPercentage = function createPercentageCircle(id) {
-  new PercentageCircle(this, id);
-};
-
 const $percentageCircles = $('.js-percentage-circle');
 
-$percentageCircles.each(createPercentage);
+$percentageCircles.each(function createPercentageCircle(id) {
+  new PercentageCircle(this, id);
+});
 
 export default PercentageCircle;
