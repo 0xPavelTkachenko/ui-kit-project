@@ -1,75 +1,46 @@
-$color-diamond = #4EB7A8
-$color-red = #E75735
-$color-gray = #E5E5E5
+$color-gray = #e5e5e5
+$color-diamond = #4eb7a8
+$color-red = #e75735
 
 .search
-  width 288px
-  height 28px
-
-  margin 2px
-
+  height 2.333333333rem
   position relative
 
   &__input
     width 100%
     height 100%
-
-    padding 0 45px 0 12px
+    padding 0 3.75rem 0 1rem
     margin 0
     border none
-
     background-color $color-gray
-
-    border-radius 3px
+    border-radius 0.25rem
 
   &__input:focus
     outline none
-    box-shadow 0 0 2px #000
+    box-shadow 0 0 0.166666666rem #000
 
-  &__btn
-    width 33px
+  &__button
+    width 2.75rem
     height 100%
-
     cursor pointer
-
-    background $color-diamond url('search-icon.png') no-repeat center
-
-    border-radius 0 3px 3px 0
-
+    background $color-diamond url('./assets/search-icon.png') no-repeat center
+    border-radius 0 0.25rem 0.25rem 0
     position absolute
     top 0
     right 0
 
-.search_state-not-found
-  .search
-    &__input
-      color #fff
-      background-color $color-diamond
-
-    &__input::placeholder
-      color #fff
-
-    &__input:-ms-input-placeholder
-      color #fff
-
-    &__input::-ms-input-placeholder
-      color #fff
-
-    &__input::-webkit-input-placeholder
-      color #fff
-
-    &__input:-moz-placeholder
-      color #fff
-
-    &__input::-moz-placeholder
-      color #fff
-
-.search_color-red
-  .search
-    &__btn
+  &_red
+    & ^[0]__button
       background-color $color-red
 
-.search_color-red.search_state-not-found
-  .search
-    &__input
+  &_failed
+    & ^[0]__input
+      background-color $color-diamond
+      color #fff
+
+    & ^[0]__input::placeholder
+      color #fff
+
+  &_failed&_red
+    & ^[0]__input
       background-color $color-red

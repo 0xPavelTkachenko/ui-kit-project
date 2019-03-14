@@ -1,11 +1,10 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin search(options)
+mixin search(o)
   -
-    options = options || {};
-    options.placeholder = options.placeholder || 'Search';
-    options.notFoundMsg = options.notFoundMsg || 'I\'ve not found what I\'m looking for...';
+    o = o || {};
+    o.placeholder = o.placeholder || "Search";
+    o.notFoundMessage = o.notFoundMessage || "I've not found what I'm looking for...";
+    o.color = typeof o.color === "string" ? "search_" + o.color : undefined;
 
-  div(class=getFullClassname('search', options.classname, options.modes))
-    input.search__input(type="search", placeholder=options.placeholder, data-not-found-msg=options.notFoundMsg, value=options.value, maxlength=options.maxLength)
-    .search__btn
+  .search.js-search(class=o.color)
+    input.search__input(type="search", data-placeholder=o.placeholder, data-not-found-message=o.notFoundMessage)&attributes(o.attr)
+    .search__button
