@@ -1,49 +1,58 @@
-$color-diamond = #4eb7a8
-$color-red = #e75735
 $color-gray = #e5e5e5
 $color-light-gray = #f2f2f2
-$color-dark-diamond = #3cac9f
-$color-dark-red = #d54c2c
 $color-dark-gray = #8b8b8b
-
-set_color(color, dark-color)
-  .datepicker
-    &::before, &--day-name, &--cell.-selected-,
-    &--cell.-selected-.-current-,
-    &--cell.-selected-.-focus-
-      background-color color
-
-    &--cell.-current-
-      color color
-
-    &--nav
-      background-color dark-color
+$color-diamond = #4eb7a8
+$color-dark-diamond = #3cac9f
+$color-red = #e75735
+$color-dark-red = #d54c2c
 
 .calendar
-  @require '../../fonts/lato'
-
-  set_color($color-diamond, $color-dark-diamond)
-
   cursor default
-  border-radius 3px
+  border-radius 0.25rem
   overflow hidden
 
   .datepicker
     width 100%
-    font-family 'Lato'
     border 0
+
+    &::before, &--day-name, &--cell.-selected-,
+    &--cell.-selected-.-current-,
+    &--cell.-selected-.-focus-
+      background-color $color-diamond
+
+    &--cell
+      height unset
+      color $color-dark-gray
+      background-color $color-light-gray
+      border-radius 0
+      border-bottom 0.083333333rem solid #fff
+      border-right 0.083333333rem solid #fff
+      font-size 2rem
+
+    &--cell.-current-
+      color $color-diamond
+
+    &--cell.-current-.-selected-
+      border-bottom 0.083333333rem solid #fff
+      border-right 0.083333333rem solid #fff
+
+    &--cell.-current-.-selected-, &--cell.-selected-
+      color #fff
+
+    &--nav
+      background-color $color-dark-diamond
 
     &::before
       content attr(data-date)
       display flex
       justify-content center
       align-items center
-      height 137px
+      height 11.41666666rem
       color #fff
       font-size 8rem
 
     &--nav-action
-      margin 0 10px
+      margin 0 0.833333333rem
 
       svg
         transform scale(1.5)
@@ -59,20 +68,20 @@ set_color(color, dark-color)
       background-color unset
 
     &--days-names
-      height 34px
+      height 2.833333333rem
       margin 0
 
     &--day-name
       color #fff
 
     &--cells-days
-      height 250px
+      height 20.83333333rem
 
     &--cells-months
-      height 284px
+      height 23.66666666rem
 
     &--cells-years
-      height 284px
+      height 23.66666666rem
 
     &--years
       height unset
@@ -81,25 +90,12 @@ set_color(color, dark-color)
       padding 0
 
     &--nav
-      height 54px
+      height 4.5rem
       padding 0
       border 0
 
     &--nav-action:hover
       background 0
-
-    &--cell
-      height unset
-      color $color-dark-gray
-      background-color $color-light-gray
-      border-radius 0
-      border-bottom 1px solid #fff
-      border-right 1px solid #fff
-      font-size 2rem
-
-    &--cell.-selected-
-      border-bottom 1px solid #fff
-      border-right 1px solid #fff
 
     &--cell:hover
       color unset
@@ -119,26 +115,36 @@ set_color(color, dark-color)
 
     &--buttons
       padding 0
-      padding-left 24px
+      padding-left 2rem
       background-color $color-gray
 
-    &--button[data-action='today']
+    &--button[data-action="today"]
       -webkit-flex 0
       -ms-flex 0
       flex 0
       justify-content flex-start
-      height 62px
+      height 5.166666666rem
       color $color-dark-gray
       background-color $color-gray
       font-size 1.3rem
       font-weight bold
       text-transform uppercase
-      letter-spacing 2px
+      letter-spacing 0.166666666rem
       border 0
-      border-radius 3px
+      border-radius 0.25rem
 
-    &--button[data-action='today']:hover
+    &--button[data-action="today"]:hover
       background-color unset
 
-.calendar_color-red
-  set_color($color-red, $color-dark-red)
+  &_red
+    .datepicker
+      &::before, &--day-name, &--cell.-selected-,
+      &--cell.-selected-.-current-,
+      &--cell.-selected-.-focus-
+        background-color $color-red
+
+      &--cell.-current-
+        color $color-red
+
+      &--nav
+        background-color $color-dark-red

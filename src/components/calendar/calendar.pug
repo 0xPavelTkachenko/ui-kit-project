@@ -1,7 +1,6 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin calendar(options)
+mixin calendar(o)
   -
-    options = options || {};
+    o = o || {};
+    o.color = typeof o.color === "string" ? "calendar_" + o.color : undefined;
 
-  div(class=getFullClassname('calendar', options.classname, options.modes))
+  .calendar.js-calendar(class=o.color)
