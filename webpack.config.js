@@ -24,7 +24,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|.git)/,
+        exclude: /(node_modules|.git|libs)/,
         loader: 'eslint-loader'
       },
       {
@@ -64,7 +64,7 @@ module.exports = {
         }
       },
       {
-        test: /\.png$/,
+        test: /\.(png|ico)$/,
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
         options: {
