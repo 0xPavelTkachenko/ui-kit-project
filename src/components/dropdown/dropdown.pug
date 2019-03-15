@@ -1,16 +1,11 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin dropdown(options)
+mixin dropdown(o)
   -
-    options = options || {};
-    options.options = options.options || [];
-    options.placeholder = options.placeholder || 'Choose An Option';
-    options.emptyMsg = options.emptyMsg || 'No results matched your keyword';
+    o = o || {};
+    o.data = o.data || [];
+    o.placeholder = o.placeholder || "Choose An Option";
+    o.color = typeof o.color === "string" ? "dropdown_" + o.color : undefined;
 
-  select(
-    class=getFullClassname('dropdown', options.classname, options.modes),
-    data-placeholder=options.placeholder,
-    data-emptyMsg=options.emptyMsg
-  )
-    each o in options.options
-      option=o
+  .dropdown.js-dropdown(class=o.color, data-placeholder=o.placeholder)
+    select
+      each d in o.data
+        option=d
