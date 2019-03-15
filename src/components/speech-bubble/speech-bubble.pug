@@ -2,9 +2,10 @@ mixin speech-bubble(o)
   -
     o = o || {};
     o.color = typeof o.color === "string" ? "speech-bubble_" + o.color : undefined;
+    o.size = typeof o.size === "string" ? "speech-bubble_" + o.size : undefined;
     o.direction = typeof o.direction === "string" ? "speech-bubble_" + o.direction : undefined;
 
-  .speech-bubble(class=o.color, class=o.direction)
+  .speech-bubble(class=o.color, class=o.size, class=o.direction)
     .speech-bubble__triangle
     .speech-bubble__content
       block
