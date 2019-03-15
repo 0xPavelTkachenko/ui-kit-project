@@ -1,29 +1,33 @@
-include ../btn/btn
+include ../button/button
 include ../speech-bubble/speech-bubble
 
-mixin feedback-form(options)
+mixin feedback-form(o)
   -
-    options = options || {};
-    options.name = options.name || {};
-    options.email = options.email || {};
-    options.message = options.message || {};
-    options.btn = options.btn || {};
-    options.btn.classname = 'feedback-form__btn';
-    options.errorMsg = options.errorMsg || 'Error';
-    options.successMsg = options.successMsg || 'Thanks!';
+    o = o || {};
+    o.attr = o.attr || {};
+    o.nameAttr = o.nameAttr || {};
+    o.emailAttr = o.emailAttr || {};
+    o.messageAttr = o.messageAttr || {};
+    o.buttonAttr = o.buttonAttr || {};
+    o.buttonColor = typeof o.color === "string" ? o.color : undefined;
+    o.color = typeof o.color === "string" ? "feedback-form_" + o.color : undefined;
 
-    if (options.action) {
-      options.btn.type = 'submit';
-    }
+  form.feedback-form(class=o.color)&attributes(o.attr)
+    .feedback-form__row
+      input.feedback-form__name&attributes(o.nameAttr)
+      .feedback-form__speech-bubble-wrapper
+        +speech-bubble({size: "small"})
+          .feedback-form__speech-bubble-content
 
-  form.feedback-form(class=options.classname, action=options.action, method=options.method, data-error-msg=options.errorMsg, data-success-msg=options.successMsg)
     .feedback-form__row
-      input.feedback-form__name(required=options.name.required, type="text", placeholder=options.name.placeholder, value=options.name.value)
-      +speech-bubble({classname: 'feedback-form__bubble'})
+      input.feedback-form__email&attributes(o.emailAttr)
+      .feedback-form__speech-bubble-wrapper
+        +speech-bubble({size: "small"})
+          .feedback-form__speech-bubble-content
+
     .feedback-form__row
-      input.feedback-form__email(required=options.email.required, type="text", placeholder=options.email.placeholder, value=options.email.value)
-      +speech-bubble({classname: 'feedback-form__bubble'})
+      textarea.feedback-form__message&attributes(o.messageAttr)
+
     .feedback-form__row
-      textarea.feedback-form__message(required=options.message.required, placeholder=options.message.placeholder, value=options.message.value)
-    .feedback-form__row
-      +btn(options.btn)
+      .feedback-form__button-wrapper
+        +button({text: o.buttonText, color: o.buttonColor, attr: o.buttonAttr})
