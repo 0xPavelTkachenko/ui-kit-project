@@ -16,8 +16,7 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       filename: 'index.html',
-      template: './src/index.pug',
-      functions: require('./src/functions.js')
+      template: './src/index.pug'
     })
   ],
   module: {
