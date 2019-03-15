@@ -1,70 +1,64 @@
-$color-diamond = #4EB7A8
-$color-red = #E75735
-$color-gray = #E5E5E5
-
-set_color(color)
-  .irs
-    &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
-      background color
-
-    &-bar, &-bar-edge
-      border-color color
+$color-gray = #e5e5e5
+$color-diamond = #4eb7a8
+$color-red = #e75735
 
 .slider
-  @require '../../fonts/lato'
-
-  set_color($color-diamond)
-
-  font-family 'Lato'
-
   .irs
+    &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
+      background $color-diamond
+
+    &-bar, &-bar-edge
+      border-color $color-diamond
+
     &-line
-      height 5px
+      height 0.416666666rem
       background $color-gray
       border none
-      border-radius 8px
+      border-radius 0.666666666rem
 
     &-slider
-      width 20px
-      height 20px
+      width 1.666666666rem
+      height 1.666666666rem
+      border-radius 50%
       border none
       box-shadow none
-
-    &-grid
-      width 98.6842%
-      left 0.557895%
 
     &-grid-pol
       display none
 
     &-grid-text
-      font-size 14px
-      bottom 16px
+      font-size 1.166666666rem
+      bottom 1.333333333rem
 
     &-bar, &-bar-edge
-      height 3px
+      height 0.25rem
 
     &-single
-      padding 3px 10.5px
-      border-radius 6px
-      margin-top -7px
+      padding 0.25rem 0.875rem
+      border-radius 0.5rem
+      margin-top -0.583333333rem
 
     &-single::after
-      content ''
-      width 10px
-      height 10px
+      content ""
+      width 0.833333333rem
+      height 0.833333333rem
       display block
       position absolute
       left 50%
       transform translateX(-50%) rotate(45deg)
-      border-radius 3px
+      border-radius 0.25rem
       z-index -1
-      bottom -3px
+      bottom -0.25rem
 
-.slider_state-no-bar
-  .irs
-    &-bar, &-bar-edge
-      display none
+  &_red
+    .irs
+      &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
+        background $color-red
 
-.slider_color-red
-  set_color($color-red)
+      &-bar, &-bar-edge
+        border-color $color-red
+
+  &_non-bar
+    .irs
+      &-bar, &-bar-edge
+        display none

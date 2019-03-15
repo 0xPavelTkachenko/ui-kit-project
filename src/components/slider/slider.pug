@@ -1,16 +1,20 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin slider(options)
+mixin slider(o)
   -
-    options = options || {};
+    o = o || {};
+    o.min = o.min || 0;
+    o.max = o.max || 100;
+    o.grid = o.grid ? "true" : false;
+    o.hideFromTo = o.hideFromTo ? "true" : false;
+    o.hideMinMax = o.hideMinMax ? "true" : false;
+    o.color = typeof o.color === "string" ? " slider_" + o.color : "";
 
-  input.slider(
-    data-extra-classes=getFullClassname('slider', options.classname, options.modes),
-    data-min=options.min || 0,
-    data-max=options.max || 100,
-    data-grid=options.grid ? "true" : false,
-    data-hide-from-to=!options.valueLabel ? "true" : false,
-    data-hide-min-max=!options.minMaxLabel ? "true" : false,
-    data-from=options.start,
-    data-step=options.step
-  )
+  .slider.js-slider(class=o.color)
+    input(
+      data-min=o.min,
+      data-max=o.max,
+      data-grid=o.grid,
+      data-hide-from-to=o.hideFromTo,
+      data-hide-min-max=o.hideMinMax,
+      data-from=o.start,
+      data-step=o.step
+    )
