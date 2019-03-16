@@ -71,5 +71,10 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
+    inline: true,
+    hot: true,
+    port: 80
   }
 }
