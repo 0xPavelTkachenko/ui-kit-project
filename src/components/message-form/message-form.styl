@@ -6,9 +6,7 @@ $color-dark-diamond = #46ab9d
 $color-dark-red = #bf3e1f
 
 .message-form
-  overflow hidden
   border-radius 0.25rem
-  background-color $color-light-gray
 
   &__name
     color #fff
@@ -20,7 +18,8 @@ $color-dark-red = #bf3e1f
     border-bottom 34px solid $color-dark-diamond
 
   &__container
-    padding 0 1.833333333rem
+    padding 0 1.833333333rem 2.333333333rem 1.833333333rem
+    background-color $color-light-gray
 
   &__row
     display flex
@@ -82,9 +81,6 @@ $color-dark-red = #bf3e1f
 
   &__textarea:focus
     outline none
-
-  &__button
-    margin-bottom 2.333333333rem
 
   &_red
     & ^[0]__name

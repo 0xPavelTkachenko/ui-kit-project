@@ -23,5 +23,5 @@ mixin message-form(o)
           .message-form__message
             | #{o.message}
       textarea.message-form__textarea
-      .message-form__button
+      .message-form__button-wrapper
         +button({text: o.buttonText, color: o.buttonColor})
