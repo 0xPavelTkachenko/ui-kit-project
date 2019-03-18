@@ -1,0 +1,27 @@
+include ../speech-bubble/speech-bubble
+include ../button/button
+
+mixin message-box(o)
+  -
+    o = o || {};
+    o.avatar = typeof o.avatar === "string" ? o.avatar : "./assets/no-avatar.png";
+    o.buttonColor = typeof o.color === "string" ? o.color : undefined;
+    o.color = typeof o.color === "string" ? "message-box_" + o.color : undefined;
+
+  .message-box(class=o.color)
+    .message-box__name=o.name
+    .message-box__container
+      .message-box__row
+        .message-box__chat-wrapper
+          button.message-box__chat(type="button")
+        .message-box__avatar-wrapper
+          img.message-box__avatar(src=o.avatar, alt="avatar")
+        .message-box__camera-wrapper
+          button.message-box__camera(type="button")
+      .message-box__speech-bubble-wrapper
+        +speech-bubble({color: "white", direction: "top"})
+          .message-box__message
+            | #{o.message}
+      textarea.message-box__textarea
+      .message-box__button-wrapper
+        +button({text: o.buttonText, color: o.buttonColor})
