@@ -3,17 +3,20 @@ mixin slider(o)
     o = o || {};
     o.min = o.min || 0;
     o.max = o.max || 100;
-    o.grid = o.grid ? "true" : false;
-    o.hideFromTo = o.hideFromTo ? "true" : false;
-    o.hideMinMax = o.hideMinMax ? "true" : false;
+    o.grid = o.grid === true ? "true" : undefined;
+    o.snapGrid = o.snapGrid === true ? "true" : undefined;
+    o.hideBar = o.hideBar === true ? "slider_non-bar" : undefined;
+    o.hideValueLabel = o.hideValueLabel === true ? "true" : undefined;
+    o.hideMinMax = o.hideMinMax === true ? "true" : undefined;
     o.color = typeof o.color === "string" ? " slider_" + o.color : "";
 
-  .slider.js-slider(class=o.color)
+  .slider.js-slider(class=o.color, class=o.hideBar)
     input(
       data-min=o.min,
       data-max=o.max,
       data-grid=o.grid,
-      data-hide-from-to=o.hideFromTo,
+      data-grid-snap=o.snapGrid,
+      data-hide-from-to=o.hideValueLabel,
       data-hide-min-max=o.hideMinMax,
       data-from=o.start,
       data-step=o.step
