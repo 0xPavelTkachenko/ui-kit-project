@@ -64,3 +64,35 @@ $color-dark-red = #bf3e1f
 
   &_non-padding
     padding 0
+
+  &_inversed
+    color $color-diamond
+    background-color #fff
+    border-top 1px solid $color-diamond
+    border-right 1px solid $color-diamond
+    border-left 1px solid $color-diamond
+    box-shadow 0 0.25rem $color-dark-diamond
+
+    &:hover
+      color #fff
+      background-color $color-diamond
+      box-shadow 0 0.25rem $color-dark-diamond
+      border none
+
+    &:active
+      box-shadow none
+
+    &^[0]_red
+      color $color-red
+      border-top 1px solid $color-red
+      border-right 1px solid $color-red
+      border-left 1px solid $color-red
+      box-shadow 0 0.25rem $color-dark-red
+
+      &:hover
+        color #fff
+        background-color $color-red
+        box-shadow 0 0.25rem $color-dark-red
+
+      &:active
+        box-shadow none
