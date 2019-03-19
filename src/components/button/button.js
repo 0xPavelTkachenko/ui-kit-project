@@ -47,8 +47,8 @@ class Button {
   }
 
   _handleRippleEffect(event) {
-    const x = event.clientX - this._$root.offset().left;
-    const y = event.clientY - this._$root.offset().top;
+    const x = event.pageX - this._$root.offset().left;
+    const y = event.pageY - this._$root.offset().top;
     this.createRippleEffect({ x, y });
   }
 
