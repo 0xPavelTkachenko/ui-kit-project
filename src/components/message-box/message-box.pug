@@ -1,4 +1,5 @@
 include ../speech-bubble/speech-bubble
+include ../textarea/textarea
 include ../button/button
 
 mixin message-box(o)
@@ -22,6 +23,7 @@ mixin message-box(o)
         +speech-bubble({color: "white", direction: "top"})
           .message-box__message
             | #{o.message}
-      textarea.message-box__textarea
+      .message-box__textarea-wrapper
+        +textarea()
       .message-box__button-wrapper
         +button({text: o.buttonText, color: o.buttonColor})
