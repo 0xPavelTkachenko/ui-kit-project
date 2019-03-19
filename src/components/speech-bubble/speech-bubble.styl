@@ -3,46 +3,52 @@ $color-diamond = #4eb7a8
 $color-red = #e75735
 
 .speech-bubble
-  background-color $color-diamond
-  border-radius 0.666666666rem
   position relative
 
   &__triangle
-    background-color $color-diamond
     width 1.666666666rem
     height 1.666666666rem
+    background-color $color-diamond
     border-radius 0.5rem
     position absolute
     left -0.333333333rem
     top 50%
     transform translateY(-50%) rotate(45deg)
-    z-index -1
+
+  &__content
+    position relative
+    background-color $color-diamond
+    border-radius 0.666666666rem
 
   &_red
-    background-color $color-red
-
     & ^[0]__triangle
       background-color $color-red
 
-  &_gray
-    background-color $color-gray
+    & ^[0]__content
+      background-color $color-red
 
+  &_gray
     & ^[0]__triangle
       background-color $color-gray
 
-  &_white
-    background-color #fff
+    & ^[0]__content
+      background-color $color-gray
 
+  &_white
     & ^[0]__triangle
       background-color #fff
 
-  &_small
-    border-radius 0.4rem
+    & ^[0]__content
+      background-color #fff
 
+  &_small
     & ^[0]__triangle
       width 0.6rem
       height 0.6rem
       border-radius 0.2rem
+
+    & ^[0]__content
+      border-radius 0.4rem
 
   &_right
     & ^[0]__triangle
