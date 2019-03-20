@@ -1,10 +1,15 @@
 mixin info-block(o)
   -
     o = o || {};
-    o.image = typeof o.image === "string" ? o.image : "./assets/no-image.png";
+    o.image = o.image || {};
+    o.image.src = typeof o.image.src === "string" ? o.image.src : "./assets/no-image.png";
+    o.image.left = typeof o.image.left === "string" ? o.image.left : "50%";
+    o.image.top = typeof o.image.top === "string" ? o.image.top : "50%";
     o.color = typeof o.color === "string" ? "info-block_" + o.color : undefined;
+    
+    const imageStyle = `object-position: ${o.image.left} ${o.image.top}`
 
   .info-block(class=o.color)
-    img.info-block__image(src=o.image, alt="image")
+    img.info-block__image(src=o.image.src, alt="image", style=imageStyle)
     .info-block__content
       block
