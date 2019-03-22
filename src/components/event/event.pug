@@ -6,7 +6,7 @@ mixin event(o)
     o = o || {};
     o.infoBlockColor = typeof o.color === "string" ? o.color : undefined;
     o.buttonColor = typeof o.color === "string" ? o.color : undefined;
-    o.color = typeof o.color === "string" ? "news_" + o.color : undefined;
+    o.color = typeof o.color === "string" ? "event_" + o.color : undefined;
 
   .event(class=o.color)
     +info-block({color: o.infoBlockColor, image: o.image})
