@@ -4,5 +4,9 @@
   "rules": {
     "no-underscore-dangle": 0,
     "no-new": 0
+  },
+
+  "globals": {
+    "ymaps": "readonly"
   }
 }

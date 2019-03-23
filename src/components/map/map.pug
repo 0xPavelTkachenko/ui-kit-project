@@ -1,24 +1,23 @@
-- const getFullClassname = htmlWebpackPlugin.options.functions.getFullClassname;
-
-mixin map(options)
+mixin map(o)
   -
-    options = options || {};
-    options.center = options.center || {};
-    options.marker = options.marker || {};
+    o = o || {};
+    o.center = o.center || {};
+    o.marker = o.marker || {};
+    o.color = typeof o.color === "string" ? "map_" + o.color : undefined;
 
-  div(
-    class=getFullClassname('map', options.classname, options.modes),
-    data-center-lat=options.center.lat,
-    data-center-lng=options.center.lng,
-    data-show-marker=options.showMarker,
-    data-marker-lat=options.marker.lat,
-    data-marker-lng=options.marker.lng,
-    data-zoom=options.zoom
+  .map.js-map(
+    class=o.color,
+    data-center-lat=o.center.lat,
+    data-center-lng=o.center.lng,
+    data-marker-lat=o.marker.lat,
+    data-marker-lng=o.marker.lng,
+    data-show-marker=o.showMarker ? "true" : false,
+    data-zoom=o.zoom
   )
-    .map__map
+    .map__window
     .map__footer
-      .map__title=options.title
-      .map__address=options.address
-      .map__btns
-        button.map__location-btn(type="button")
-        button.map__pin-btn(type="button")
+      .map__title=o.title
+      .map__address=o.address
+      .map__buttons
+        button.map__location-button(type="button")
+        button.map__pin-button(type="button")

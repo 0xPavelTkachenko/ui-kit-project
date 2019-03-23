@@ -1,67 +1,58 @@
-$color-diamond = #4EB7A8
-$color-red = #E75735
+$color-diamond = #4eb7a8
+$color-red = #e75735
 
 .map
-  @require '../../fonts/lato'
-
-  font-family 'Lato'
-
   width 593px
-  height 272px
-
+  height 22.66666666rem
   overflow hidden
-  border-radius 3px
-
+  border-radius 0.25rem
   color #fff
 
-  &__map
-    height 203px
+  &__window
+    height 16.91666666rem
 
   &__footer
+    position relative
+    height 5.75rem
     display flex
     align-items center
-    justify-content space-between
-
-    height 69px
     background-color $color-diamond
 
   &__title
-    margin-left 26px
-
+    margin-right 2.1rem
+    margin-left 2.166666666rem
     font-size 2.5rem
-    word-spacing -2px
+    word-spacing -0.166666666rem
+    max-width 50%
+    white-space nowrap
+    overflow hidden
+    text-overflow ellipsis
 
   &__address
-    width 140px
-
-    margin-left -170px
-
+    width 24%
     font-weight bold
     text-transform uppercase
-    letter-spacing 1px
-    word-spacing 1px
+    letter-spacing 0.083333333rem
+    word-spacing 0.083333333rem
 
-  &__btns
-    margin-right 19px
+  &__buttons
+    margin-right 1.583333333rem
+    position absolute
+    right 0
 
-  &__location-btn, &__pin-btn
-    width 30px
-    height 30px
-
+  &__location-button, &__pin-button
+    width 2.5rem
+    height 2.5rem
     border none
-    outline none
-
     cursor pointer
 
-  &__location-btn
-    background url('./map-sprite.png') no-repeat 0 0
+  &__location-button
+    background url("./assets/map-sprite.png") no-repeat 0 0
+    margin-right 1.166666666rem
 
-    margin-right 14px
+  &__pin-button
+    background url("./assets/map-sprite.png") no-repeat -2.5rem 0
 
-  &__pin-btn
-    background url('./map-sprite.png') no-repeat -30px 0
-
-.map_color-red
-  .map
-    &__footer
+  &_red
+    & ^[0]__footer
       background-color $color-red

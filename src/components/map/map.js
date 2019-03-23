@@ -1,27 +1,49 @@
-function initMaps() {
-  document.querySelectorAll('.map').forEach((mapWrapper) => {
-    let mapOpt = {
-      center: {
-        lat: +mapWrapper.getAttribute('data-center-lat') || 0,
-        lng: +mapWrapper.getAttribute('data-center-lng') || 0
-      },
-      zoom: +mapWrapper.getAttribute('data-zoom') || 4
+import $ from 'jquery';
+
+class Map {
+  constructor(root, id) {
+    this._$root = $(root);
+    this._id = id;
+    this._useYandexMaps();
+  }
+
+  toString() {
+    return `{"class": "Map", "id": "${this._id}"}`;
+  }
+
+  _useYandexMaps() {
+    const $map = this._$root;
+    const $mapWindow = $map.find('.map__window');
+    const mapOptions = {
+      center: [+$map.attr('data-center-lat') || 0, +$map.attr('data-center-lng') || 0],
+      zoom: +$map.attr('data-zoom') || 4,
+      controls: ['zoomControl'],
     };
 
-    let map = new google.maps.Map(mapWrapper.querySelector('.map__map'), mapOpt);
+    const yandexMap = new ymaps.Map($mapWindow.get(0), mapOptions);
 
-    if (mapWrapper.hasAttribute('data-show-marker')) {
-      let markerOpt = {
-        lat: +mapWrapper.getAttribute('data-marker-lat') || 0,
-        lng: +mapWrapper.getAttribute('data-marker-lng') || 0
+    if ($map.attr('data-show-marker')) {
+      const markerCoords = [+$map.attr('data-marker-lat') || 0, +$map.attr('data-marker-lng') || 0];
+      const markerOptions = {
+        iconLayout: 'default#image',
+        iconImageHref: './assets/marker.png',
+        iconImageSize: [59, 60],
+        iconImageOffset: [-20, -54],
       };
-
-      new google.maps.Marker({
-        map: map,
-        position: markerOpt
-      });
+      const marker = new ymaps.Placemark(markerCoords, {}, markerOptions);
+      yandexMap.geoObjects.add(marker);
     }
-  });
+  }
 }
 
-window.initMaps = initMaps;
+const $maps = $('.js-map');
+
+const createMaps = function createYandexMaps() {
+  $maps.each(function createMap(id) {
+    new Map(this, id);
+  });
+};
+
+ymaps.ready(createMaps);
+
+export default Map;
