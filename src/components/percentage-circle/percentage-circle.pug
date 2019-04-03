@@ -1,7 +1,8 @@
 mixin percentage-circle(o)
   -
     o = o || {};
-    o.percent = o.percent || 0;
+    o.percent = typeof o.percent === "number" && !isNaN(o.percent) ? o.percent : 0;
+    o.strokeWidth = typeof o.strokeWidth === "number" && !isNaN(o.strokeWidth) ? o.strokeWidth : 3;
     o.color = typeof o.color === "string" ? "percentage-circle_" + o.color : undefined;
 
     if (o.percent < 0) {
@@ -10,4 +11,11 @@ mixin percentage-circle(o)
       o.percent = 100;
     }
 
-  .percentage-circle.js-percentage-circle(data-percent=o.percent, class=o.color)
+  svg.percentage-circle(viewBox="0 0 42 42", data-percent=o.percent, class=o.color)
+    circle.percentage-circle__background-ring(
+      cx="21", cy="21", r="15.91549430918954", stroke-width=o.strokeWidth)
+    circle.percentage-circle__tracker(
+      cx="21", cy="21", r="15.91549430918954", stroke-width=o.strokeWidth,
+      stroke-dasharray=`${o.percent} ${100 - o.percent}`, stroke-dashoffset="25")
+    text.percentage-circle__percent-text(
+      x="50%", y="50%", text-anchor="middle", alignment-baseline="middle")=`${o.percent}%`
