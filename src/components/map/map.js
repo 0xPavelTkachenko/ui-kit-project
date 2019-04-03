@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import ymaps from 'ymaps';
 
 class Map {
   constructor(root, id) {
@@ -12,38 +13,36 @@ class Map {
   }
 
   _useYandexMaps() {
-    const $map = this._$root;
-    const $mapWindow = $map.find('.map__window');
-    const mapOptions = {
-      center: [+$map.attr('data-center-lat') || 0, +$map.attr('data-center-lng') || 0],
-      zoom: +$map.attr('data-zoom') || 4,
-      controls: ['zoomControl'],
-    };
-
-    const yandexMap = new ymaps.Map($mapWindow.get(0), mapOptions);
-
-    if ($map.attr('data-show-marker')) {
-      const markerCoords = [+$map.attr('data-marker-lat') || 0, +$map.attr('data-marker-lng') || 0];
-      const markerOptions = {
-        iconLayout: 'default#image',
-        iconImageHref: './assets/marker.png',
-        iconImageSize: [59, 60],
-        iconImageOffset: [-20, -54],
+    ymaps.load().then(maps => {
+      const $map = this._$root;
+      const mapWindow = $map.find('.map__window').get(0);
+      const mapOptions = {
+        center: [+$map.attr('data-center-lat') || 0, +$map.attr('data-center-lng') || 0],
+        zoom: +$map.attr('data-zoom') || 4,
+        controls: ['zoomControl'],
       };
-      const marker = new ymaps.Placemark(markerCoords, {}, markerOptions);
-      yandexMap.geoObjects.add(marker);
-    }
+
+      const yandexMap = new maps.Map(mapWindow, mapOptions);
+
+      if ($map.attr('data-show-marker')) {
+        const markerCoords = [+$map.attr('data-marker-lat') || 0, +$map.attr('data-marker-lng') || 0];
+        const markerOptions = {
+          iconLayout: 'default#image',
+          iconImageHref: './assets/marker.png',
+          iconImageSize: [59, 60],
+          iconImageOffset: [-20, -54],
+        };
+        const marker = new maps.Placemark(markerCoords, {}, markerOptions);
+        yandexMap.geoObjects.add(marker);
+      }
+    }).catch(error => console.log('FAIL: ', error));
   }
 }
 
 const $maps = $('.js-map');
 
-const createMaps = function createYandexMaps() {
-  $maps.each(function createMap(id) {
-    new Map(this, id);
-  });
-};
-
-ymaps.ready(createMaps);
+$maps.each(function createMap(id) {
+  new Map(this, id);
+});
 
 export default Map;
