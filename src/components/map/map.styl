@@ -2,21 +2,23 @@ $color-diamond = #4eb7a8
 $color-red = #e75735
 
 .map
-  width 593px
-  height 22.66666666rem
-  overflow hidden
+  display flex
+  flex-direction column
+  justify-content flex-end
+  height 100%
   border-radius 0.25rem
   color #fff
 
   &__window
-    height 16.91666666rem
+    flex-grow 1
+    overflow hidden
 
   &__footer
-    position relative
     height 5.75rem
     display flex
     align-items center
     background-color $color-diamond
+    position relative
 
   &__title
     margin-right 2.1rem
@@ -48,10 +50,12 @@ $color-red = #e75735
 
   &__location-button
     background url("./assets/map-sprite.png") no-repeat 0 0
+    background-size cover
     margin-right 1.166666666rem
 
   &__pin-button
     background url("./assets/map-sprite.png") no-repeat -2.5rem 0
+    background-size cover
 
   &_red
     & ^[0]__footer
