@@ -1,8 +1,6 @@
 import $ from 'jquery';
-
-import '../../../libs/calendar/air-datepicker/css/datepicker.min.css';
-import '../../../libs/calendar/air-datepicker/js/datepicker.min';
-import '../../../libs/calendar/air-datepicker/js/i18n/datepicker.en';
+import 'air-datepicker/dist/js/datepicker.min';
+import 'air-datepicker/dist/css/datepicker.min.css';
 
 class Calendar {
   constructor(root, id) {
@@ -21,7 +19,6 @@ class Calendar {
 
     $calendar.datepicker(
       {
-        language: 'en',
         firstDay: 1,
         todayButton: new Date(),
         toggleSelected: false,
