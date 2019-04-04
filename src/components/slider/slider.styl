@@ -4,34 +4,75 @@ $color-red = #e75735
 
 .slider
   .irs
+    height 4.583333333rem
+
     &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
       background $color-diamond
 
     &-bar, &-bar-edge
       border-color $color-diamond
 
+    &-with-grid
+      height 6.25rem
+
     &-line
       height 0.416666666rem
+      top 2.75rem
       background $color-gray
       border none
       border-radius 0.666666666rem
+      border-width 0.083333333rem
+
+      &-left, &-mid, &-right
+        height 0.666666666rem
 
     &-slider
+      top 2.083333333rem
       width 1.666666666rem
       height 1.666666666rem
       border-radius 50%
       border none
       box-shadow none
 
-    &-grid-pol
-      display none
+    &-min, &-max
+      font-size 1rem
+      padding 0.083333333rem 0.416666666rem
+      border-radius 0.25rem
+
+    &-from, &-to, &-single
+      font-size 1.166666666rem
+      padding 0.083333333rem 0.416666666rem
+      border-radius 0.25rem
+
+    &-grid
+      height 2.25rem
 
     &-grid-text
+      line-height 0.75rem
+      padding 0 0.25rem
       font-size 1.166666666rem
       bottom 1.333333333rem
 
-    &-bar, &-bar-edge
+    &-grid-pol
+      display none
+
+    &-bar
       height 0.25rem
+      top 2.75rem
+      border-top-width 0.083333333rem
+      border-bottom-width 0.083333333rem
+
+      &-edge
+        height 0.25rem
+        top 2.75rem
+        width 1.166666666rem
+        border-width 0.083333333rem
+        border-radius 1.333333333rem 0 0 1.333333333rem
+
+    &-shadow
+      height 0.166666666rem
+      top 3.166666666rem
+      border-radius 0.416666666rem
 
     &-single
       padding 0.25rem 0.875rem
