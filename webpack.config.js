@@ -71,7 +71,7 @@ module.exports = {
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
+          name: '[name].[ext]',
           outputPath: 'assets/fonts/'
         }
       },
@@ -80,7 +80,7 @@ module.exports = {
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
+          name: '[name].[ext]',
           outputPath: 'assets/images/'
         }
       },
@@ -89,7 +89,7 @@ module.exports = {
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
+          name: '[name].[ext]',
           outputPath: 'assets/favicons/'
         }
       }
