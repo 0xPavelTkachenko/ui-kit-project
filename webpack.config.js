@@ -92,6 +92,15 @@ module.exports = {
           name: '[name].[ext]',
           outputPath: 'assets/favicons/'
         }
+      },
+      {
+        type: 'javascript/auto',
+        test: /\.json$/,
+        exclude: /(node_modules|.git)/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
       }
     ]
   },
