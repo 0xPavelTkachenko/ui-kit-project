@@ -1,0 +1,8 @@
+mixin menu(o)
+  -
+    o = o || {};
+    o.links = o.links || [];
+
+  .menu
+    each link in o.links
+      a.menu__link(href=link.href)=link.title

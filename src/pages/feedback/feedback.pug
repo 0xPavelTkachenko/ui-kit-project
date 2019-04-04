@@ -1,0 +1,41 @@
+extends ../../layouts/main/main.pug
+
+block append head
+  meta(name="description", content="Задать вопрос или оставить отзыв")
+  title Обратная связь
+
+block content
+  include ../../components/other/section/section
+  include ../../components/message-box/message-box
+  include ../../components/button/button
+  include ../../components/slider/slider
+
+  .feedback-section
+    +section({title: "Обратная связь"})
+      +message-box(
+        {
+          color: "red",
+          avatar: "assets/images/darth-vader.png",
+          name: "Дарт Вейдер",
+          message: "Здравствуйте! Могу ли я Вам чем-то помочь?",
+          buttonText: "Отправить"
+        }
+      )
+  
+  .rating-section
+    +section({title: "Оцените разговор"})
+      +slider(
+        {
+          min: 1,
+          max: 10,
+          start: 7,
+          grid: true,
+          snapGrid: true,
+          color: "red",
+          hideMinMax: true,
+          valueLabel: false,
+          hideValueLabel: true
+        }
+      )
+      .rating-section__button-wrapper
+        +button({text: "Оценить", color: "red"})

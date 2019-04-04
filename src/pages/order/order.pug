@@ -1,0 +1,29 @@
+extends ../../layouts/main/main.pug
+
+block append head
+  meta(name="description", content="Оставить заявку на создание портрета")
+  title Сделать заказ
+
+block content
+  include ../../components/other/section/section
+  include ../../components/other/ordered-list/ordered-list
+  include ../../components/other/order-form/order-form
+  include ../../components/progress-tracker/progress-tracker
+
+  .order-stages-section
+    +section({title: "Этапы создания арт портрета"})
+      +ordered-list(
+        {
+          items: [
+            "Вы оставляете заявку;",
+            "Мы рассматриваем заявку и в случае одобрения высылаем Вам письмо, в котором просим оплатить заказ;",
+            "После оплаты наши художники высылают Вам скетч. На этом этапе Вы согласовываете работу и можете сделать какие-либо правки, если Вас что-то не устраивает;",
+            "Художники продолжают работу и в конечном итоге высылают готовую работу."
+          ]
+        }
+      )
+      +progress-tracker({color: "red", stepCount: 4, activeStep: 4})
+
+  .order-section
+    +section({title: "Форма заказа"})
+      +order-form()

@@ -1,0 +1,45 @@
+doctype html
+html(lang="ru")
+  head
+    block head
+      meta(charset="utf-8")
+      meta(name="viewport" content="width=device-width, initial-scale=1.0")
+      meta(name="keywords", content="арт, заказать арт, арт на заказ")
+      link(rel="shortcut icon" type="image/x-icon" href="./assets/favicons/favicon.ico")
+  body
+    include ../../components/other/menu/menu
+    include ../../components/map/map
+    include ../../components/calendar/calendar
+
+    .main-layout
+
+      header.main-layout__header
+        h1.main-layout__title Арт портреты на заказ
+
+      nav.main-layout__nav
+        +menu(
+          {
+            links: [
+              {href: "index.html", title: "Главная"},
+              {href: "order.html", title: "Заказать"},
+              {href: "artists.html", title: "Наши художники"},
+              {href: "feedback.html", title: "Обратная связь"}
+            ]
+          }
+        )
+
+      main.main-layout__content
+        block content
+
+      footer.main-layout__footer
+        +map(
+          {
+            title: "Наш штаб",
+            address: "ул. Пушкина, дом Колотушкина",
+            zoom: 14,
+            center: {lat: 56.49541886, lng: 84.96118069},
+            showMarker: true,
+            marker: {lat: 56.49541886, lng: 84.96118069},
+            color: "red"
+          }
+        )

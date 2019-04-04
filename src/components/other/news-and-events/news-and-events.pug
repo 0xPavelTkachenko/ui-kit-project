@@ -1,0 +1,49 @@
+include ../../search/search
+include ../../toggle/toggle
+include ../../news/news
+include ../../event/event
+include ../../arrow-button/arrow-button
+  
+mixin news-and-events(o)
+  .news-and-events
+    .news-and-events__search
+      +search({color: "red", placeholder: "Поиск", notFoundMessage: "По вашему запросу ничего не найдено"})
+      .news-and-events__filter
+        label.news-and-events__exact-match
+          | Точное совпадение
+          .news-and-events__toggle-wrapper
+            +toggle({color: "red"})
+    .news-and-events__content
+      .news-and-events__item-wrapper
+        +news(
+          {
+            color: "red",
+            image: {
+              src: "assets/images/wanted.png",
+              left: "-12rem"
+            },
+            title: "Ищем художников!",
+            date: "1 января 2019",
+            text: "В связи с расширением штата мы открываем новую вакансию художника. Подробности внутри."
+          }
+        )
+      .news-and-events__item-wrapper
+        +event(
+          {
+            color: "red",
+            image: {
+              src: "assets/images/discounts.png",
+              left: "0"
+            },
+            buttonText: "Добавить в календарь",
+            day: "25",
+            month: "Янв",
+            title: "Скидки в честь дня студента!",
+            text: "Всем клиентам, которые предоставят студенческий билет, в этот день предоставляется скидка в 50%!"
+          }
+        )
+    .news-and-events__buttons
+      .button-left-wrapper
+        +arrow-button({color: "red", size: "small"})
+      .button-right-wrapper
+        +arrow-button({color: "red", size: "small", direction: "right"})

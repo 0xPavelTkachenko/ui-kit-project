@@ -1,0 +1,125 @@
+extends ../../layouts/main/main.pug
+
+block append head
+  meta(name="description", content="Наши художники - профессионалы своего дела")
+  title Наши художники
+
+block content
+  include ../../components/other/section/section
+  include ../../components/other/artist/artist
+
+  .artist-section
+    +section({title: "Наши художники"})
+      .artist-wrapper
+        +artist(
+          {
+            userProfile: {
+              name: "Кенни",
+              job: "Комикс",
+              avatar: "assets/images/kenny.png",
+              color: "red",
+              facebook: "https://facebook.com",
+              twitter: "https://twitter.com",
+              dribbble: "https://dribbble.com"
+            },
+            
+            percentageCircle: {
+              percent: 85,
+              color: "red"
+            },
+            
+            pieChart: {
+              data: [
+                {value: 40, color: "#e75735"},
+                {value: 35, color: "#4eb7a8"},
+                {value: 15, color: "#f4b342"},
+                {value: 10, color: "#41f468"}
+              ]
+            }
+          }
+        )
+      
+      .artist-wrapper
+        +artist(
+          {
+            userProfile: {
+              name: "Стэн",
+              job: "Гранж",
+              avatar: "assets/images/stan.png",
+              direction: "right",
+              facebook: "https://facebook.com",
+              twitter: "https://twitter.com",
+              dribbble: "https://dribbble.com"
+            },
+            
+            percentageCircle: {
+              percent: 80
+            },
+            
+            pieChart: {
+              data: [
+                {value: 30, color: "#e75735"},
+                {value: 40, color: "#4eb7a8"},
+                {value: 20, color: "#f4b342"},
+                {value: 15, color: "#41f468"}
+              ]
+            }
+          }
+        )
+      
+      .artist-wrapper
+        +artist(
+          {
+            userProfile: {
+              name: "Кайл",
+              job: "Акварель",
+              avatar: "assets/images/kyle.png",
+              color: "red",
+              facebook: "https://facebook.com",
+              twitter: "https://twitter.com",
+              dribbble: "https://dribbble.com"
+            },
+            
+            percentageCircle: {
+              percent: 95,
+              color: "red"
+            },
+            
+            pieChart: {
+              data: [
+                {value: 50, color: "#e75735"},
+                {value: 30, color: "#4eb7a8"},
+                {value: 10, color: "#f4b342"},
+                {value: 30, color: "#41f468"}
+              ]
+            }
+          }
+        )
+      
+      .artist-wrapper
+        +artist(
+          {
+            userProfile: {
+              name: "Эрик",
+              job: "Диджитал",
+              avatar: "assets/images/eric.png",
+              direction: "right",
+              facebook: "https://facebook.com",
+              twitter: "https://twitter.com",
+              dribbble: "https://dribbble.com"
+            },
+            
+            percentageCircle: {
+              percent: 75
+            },
+            
+            pieChart: {
+              data: [
+                {value: 55, color: "#e75735"},
+                {value: 70, color: "#4eb7a8"},
+                {value: 20, color: "#f4b342"},
+                {value: 35, color: "#41f468"}
+              ]
+            }
+          }
+        )

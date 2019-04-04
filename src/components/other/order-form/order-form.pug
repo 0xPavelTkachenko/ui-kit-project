@@ -1,0 +1,28 @@
+include ../../input/input
+include ../../dropdown/dropdown
+include ../../calendar/calendar
+include ../../check-box/check-box
+include ../../button/button
+
+mixin order-form(o)
+  -
+    o = o || {};
+    o.attr = o.attr || {};
+
+  form.order-form&attributes(o.attr)
+    .order-form__input-section
+      +input({attr: {placeholder: "Фамилия"}})
+      +input({attr: {placeholder: "Имя"}})
+      +input({attr: {placeholder: "Отчество"}})
+      +input({attr: {placeholder: "Эл. адрес"}})
+      +dropdown({data: ["Комикс", "Гранж", "Акварель", "Диджитал"], placeholder: "Выберите стиль", color: "red"})
+    .order-form__calendar-section
+      +calendar({color: "red"})
+    .order-form__submit-section
+      label.order-form__agreement-wrapper
+        .order-form__text-wrapper
+          | Я согласен с условиями обработки персональных данных
+        .order-form__check-box-wrapper
+          +check-box({color: "red"})
+      .order-form__submit-button-wrapper
+        +button({text: "Отправить", color: "red", attr: {type: "submit"}})

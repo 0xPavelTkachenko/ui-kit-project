@@ -1,0 +1,45 @@
+html
+  $font-size = 12px
+
+  color #000
+  background-color #fff
+  font-size $font-size
+  font-family "Lato", Arial, sans-serif
+
+  @media only screen and (max-width: 800px)
+    font-size $font-size * 0.5
+
+  @media only screen and (min-width: 800px) and (max-width: 960px)
+    font-size $font-size * 0.6
+
+  @media only screen and (min-width: 960px) and (max-width: 1152px)
+    font-size $font-size * 0.7
+
+  @media only screen and (min-width: 1152px) and (max-width: 1440px)
+    font-size $font-size * 0.8
+
+.main-layout
+  width 55%
+  min-width 320px
+  max-width 1920px
+  margin 0 auto
+
+  @media only screen and (max-width: 720px)
+    width 90%
+
+  &__header, &__nav, &__content
+    margin-bottom 2rem
+
+  &__title
+    margin 0
+    text-align center
+    font-size 3rem
+    font-weight bold
+
+  &__footer
+    padding 2rem
+    border-top 0.083333333rem solid #000
+    height 30rem
+
+  &__map-wrapper
+    box-shadow 0 0 1.5rem #000

@@ -16,7 +16,19 @@ module.exports = {
     }),
     new HtmlWebPackPlugin({
       filename: 'index.html',
-      template: './src/index.pug'
+      template: './src/pages/index/index.pug'
+    }),
+    new HtmlWebPackPlugin({
+      filename: 'order.html',
+      template: './src/pages/order/order.pug'
+    }),
+    new HtmlWebPackPlugin({
+      filename: 'artists.html',
+      template: './src/pages/artists/artists.pug'
+    }),
+    new HtmlWebPackPlugin({
+      filename: 'feedback.html',
+      template: './src/pages/feedback/feedback.pug'
     })
   ],
   module: {
@@ -59,15 +71,26 @@ module.exports = {
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
         options: {
-          name: "./fonts/[name].[ext]"
+          name: "[name].[ext]",
+          outputPath: 'assets/fonts/'
         }
       },
       {
-        test: /\.(png|ico)$/,
+        test: /\.png$/,
         exclude: /(node_modules|.git)/,
         loader: 'file-loader',
         options: {
-          name: "./assets/[name].[ext]"
+          name: "[name].[ext]",
+          outputPath: 'assets/images/'
+        }
+      },
+      {
+        test: /\.ico$/,
+        exclude: /(node_modules|.git)/,
+        loader: 'file-loader',
+        options: {
+          name: "[name].[ext]",
+          outputPath: 'assets/favicons/'
         }
       }
     ]

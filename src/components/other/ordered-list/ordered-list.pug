@@ -1,0 +1,8 @@
+mixin ordered-list(o)
+  -
+    o = o || {};
+    o.items = o.items || [];
+
+  ol.ordered-list
+    each item in o.items
+      li.ordered-list__list-item=item

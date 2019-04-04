@@ -1,0 +1,17 @@
+include ../../user-profile/user-profile
+include ../../percentage-circle/percentage-circle
+include ../../pie-chart/pie-chart
+
+mixin artist(o)
+  -
+    o = o || {};
+
+  .artist
+    +user-profile(o.userProfile)
+    .artist__skill-section
+      h2.artist__skill-section-title Навыки
+      .artist__skills
+        .artist__percentage-circle-wrapper
+          +percentage-circle(o.percentageCircle)
+        .artist__pie-chart-wrapper
+          +pie-chart(o.pieChart)

@@ -1,0 +1,16 @@
+$color-light-black = #2c2c2c
+
+.section
+  &__title
+    font-size 2rem
+    text-align center
+
+  &__content
+    padding 2rem
+    border 1px solid black
+    border-radius 0.25rem
+    box-shadow 1rem 1rem 0px #000
+
+  &_light-black
+    & ^[0]__content
+      background-color $color-light-black
