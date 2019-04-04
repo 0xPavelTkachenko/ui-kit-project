@@ -8,7 +8,7 @@ $color-dark-red = #d54c2c
 
 .calendar
   cursor default
-  border-radius 0.25rem
+  border-radius 0.125rem
   overflow hidden
 
   .datepicker
@@ -25,16 +25,16 @@ $color-dark-red = #d54c2c
       color $color-dark-gray
       background-color $color-light-gray
       border-radius 0
-      border-bottom 0.083333333rem solid #fff
-      border-right 0.083333333rem solid #fff
-      font-size 2rem
+      border-bottom 0.041666666rem solid #fff
+      border-right 0.041666666rem solid #fff
+      font-size 1rem
 
     &--cell.-current-
       color $color-diamond
 
     &--cell.-current-.-selected-
-      border-bottom 0.083333333rem solid #fff
-      border-right 0.083333333rem solid #fff
+      border-bottom 0.041666666rem solid #fff
+      border-right 0.041666666rem solid #fff
 
     &--cell.-current-.-selected-, &--cell.-selected-
       color #fff
@@ -47,12 +47,12 @@ $color-dark-red = #d54c2c
       display flex
       justify-content center
       align-items center
-      height 11.41666666rem
+      height 5.70833333rem
       color #fff
-      font-size 8rem
+      font-size 4rem
 
     &--nav-action
-      margin 0 0.833333333rem
+      margin 0 0.41666666rem
 
       svg
         transform scale(1.5)
@@ -62,26 +62,27 @@ $color-dark-red = #d54c2c
 
     &--nav-title
       color #fff
-      font-size 2.3rem
+      font-size 1.15rem
 
     &--nav-title:hover
       background-color unset
 
     &--days-names
-      height 2.833333333rem
+      height 1.41666666rem
       margin 0
 
     &--day-name
       color #fff
+      font-size 0.8rem
 
     &--cells-days
-      height 20.83333333rem
+      height 10.4166666rem
 
     &--cells-months
-      height 23.66666666rem
+      height 11.83333333rem
 
     &--cells-years
-      height 23.66666666rem
+      height 11.83333333rem
 
     &--years
       height unset
@@ -90,7 +91,7 @@ $color-dark-red = #d54c2c
       padding 0
 
     &--nav
-      height 4.5rem
+      height 2.25rem
       padding 0
       border 0
 
@@ -115,7 +116,7 @@ $color-dark-red = #d54c2c
 
     &--buttons
       padding 0
-      padding-left 2rem
+      padding-left 1rem
       background-color $color-gray
 
     &--button[data-action="today"]
@@ -123,15 +124,15 @@ $color-dark-red = #d54c2c
       -ms-flex 0
       flex 0
       justify-content flex-start
-      height 5.166666666rem
+      height 2.583333333rem
       color $color-dark-gray
       background-color $color-gray
-      font-size 1.3rem
+      font-size 0.65rem
       font-weight bold
       text-transform uppercase
-      letter-spacing 0.166666666rem
+      letter-spacing 0.083333333rem
       border 0
-      border-radius 0.25rem
+      border-radius 0.125rem
 
     &--button[data-action="today"]:hover
       background-color unset
