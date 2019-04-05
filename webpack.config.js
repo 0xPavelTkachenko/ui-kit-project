@@ -34,11 +34,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: /(node_modules|.git|libs)/,
-        loader: 'eslint-loader'
-      },
-      {
         test: /\.pug$/,
         exclude: /(node_modules|.git)/,
         loader: 'pug-loader'

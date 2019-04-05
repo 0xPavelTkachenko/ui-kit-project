@@ -1,25 +1,12 @@
 {
-  "name": "ui-kit-project",
-  "version": "1.0.0",
-  "scripts": {
-    "build": "webpack",
-    "server": "webpack-dev-server"
-  },
   "author": "Pavel Tkachenko",
   "dependencies": {
     "air-datepicker": "https://github.com/pasha-zolotukhin/air-datepicker.git",
-    "ion-rangeslider": "^2.2.0",
-    "jquery": "^3.3.1",
-    "ymaps": "^0.1.1"
-  },
-  "devDependencies": {
     "css-loader": "^1.0.0",
-    "eslint": "^5.13.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-loader": "^2.1.2",
-    "eslint-plugin-import": "^2.16.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "ion-rangeslider": "^2.2.0",
+    "jquery": "^3.3.1",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "style-loader": "^0.23.0",
@@ -27,6 +14,19 @@
     "stylus-loader": "^3.0.2",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
+    "ymaps": "^0.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "webpack-dev-server": "^3.2.1"
-  }
+  },
+  "name": "ui-kit-project",
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint src/ --ext .js",
+    "server": "webpack-dev-server"
+  },
+  "version": "1.0.0"
 }
