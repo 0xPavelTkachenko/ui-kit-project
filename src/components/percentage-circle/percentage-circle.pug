@@ -2,7 +2,7 @@ mixin percentage-circle(o)
   -
     o = o || {};
     o.percent = typeof o.percent === "number" && !isNaN(o.percent) ? o.percent : 0;
-    o.strokeWidth = typeof o.strokeWidth === "number" && !isNaN(o.strokeWidth) ? o.strokeWidth : 3;
+    o.strokeWidth = typeof o.strokeWidth === "number" && !isNaN(o.strokeWidth) ? o.strokeWidth : 2;
     o.color = typeof o.color === "string" ? "percentage-circle_" + o.color : undefined;
 
     if (o.percent < 0) {
@@ -18,4 +18,4 @@ mixin percentage-circle(o)
       cx="21", cy="21", r="15.91549430918954", stroke-width=o.strokeWidth,
       stroke-dasharray=`${o.percent} ${100 - o.percent}`, stroke-dashoffset="25")
     text.percentage-circle__percent-text(
-      x="50%", y="50%", text-anchor="middle", alignment-baseline="middle")=`${o.percent}%`
+      x="50%", y="50%", text-anchor="middle", alignment-baseline="middle")=o.percent
