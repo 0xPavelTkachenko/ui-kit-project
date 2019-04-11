@@ -1,7 +1,7 @@
 mixin pie-chart(o)
   -
     o = o || {};
-    o.strokeWidth = typeof o.strokeWidth === "number" && !isNaN(o.strokeWidth) ? o.strokeWidth : 5;
+    o.strokeWidth = typeof o.strokeWidth === "number" && !isNaN(o.strokeWidth) ? o.strokeWidth : 6;
     o.data = o.data || [];
     
     const valueSum = o.data.reduce((sum, data) => sum + data.value, 0);
