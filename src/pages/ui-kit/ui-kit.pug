@@ -1,0 +1,263 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="keywords", content="ui kit")
+    meta(name="description", content="Набор элементов для создания сайта.")
+    link(rel="shortcut icon" type="image/x-icon" href="./assets/favicons/favicon.ico")
+    title UI Kit
+  body
+    include ../../components/arrow-button/arrow-button
+    include ../../components/button/button
+    include ../../components/calendar/calendar
+    include ../../components/check-box/check-box
+    include ../../components/dropdown/dropdown
+    include ../../components/event/event
+    include ../../components/input/input
+    include ../../components/map/map
+    include ../../components/message-box/message-box
+    include ../../components/news/news
+    include ../../components/percentage-circle/percentage-circle
+    include ../../components/pie-chart/pie-chart
+    include ../../components/progress-tracker/progress-tracker
+    include ../../components/search/search
+    include ../../components/slider/slider
+    include ../../components/speech-bubble/speech-bubble
+    include ../../components/textarea/textarea
+    include ../../components/toggle/toggle
+    include ../../components/user-profile/user-profile
+    include ../../components/youtube-video-player/youtube-video-player
+
+    .main-wrapper
+
+      .main-wrapper__buttons
+        .buttons
+          .buttons__title-wrapper
+            h2.title Standard buttons
+          .buttons__row
+            .buttons__button-wrapper.buttons__button-wrapper_small
+              +button({text: "Button", size: "small"})
+            .buttons__button-wrapper
+              +button({text: "Button"})
+            .buttons__button-wrapper
+              +button({text: "Button", color: "red"})
+            .buttons__button-wrapper.buttons__button-wrapper_small
+              +button({text: "Button", size: "small", color: "red"})
+          .buttons__row
+            .buttons__button-wrapper.buttons__button-wrapper_small
+              +button({text: "Button", size: "small"})
+            .buttons__button-wrapper
+              +button({text: "Button"})
+            .buttons__button-wrapper
+              +button({text: "Button", color: "red"})
+            .buttons__button-wrapper.buttons__button-wrapper_small
+              +button({text: "Button", size: "small", color: "red"})
+          .buttons__row
+            .buttons__button-wrapper.buttons__button-wrapper_small
+              +button({text: "Button", size: "small", inversed: true})
+            .buttons__button-wrapper
+              +button({text: "Button", inversed: true})
+            .buttons__button-wrapper
+              +button({text: "Button", color: "red", inversed: true})
+            .buttons__button-wrapper.buttons__button-wrapper_small
+              +button({text: "Button", size: "small", color: "red", inversed: true})
+
+      .main-wrapper__arrow-buttons
+        .arrow-buttons
+          .arrow-buttons__title-wrapper
+            h2.title Arrow buttons
+          .arrow-buttons__container
+            +arrow-button({inversed: true})
+            +arrow-button({inversed: true, direction: "right"})
+            +arrow-button({disabled: true})
+            +arrow-button({disabled: true, direction: "right"})
+            +arrow-button()
+            +arrow-button({direction: "right"})
+
+      .main-wrapper__percentages-pie-chart
+        .percentages-pie-chart
+          .percentages-pie-chart__title-wrapper
+            h2.title Percentages / Pie chart
+          .percentages-pie-chart__container
+            .percentages-pie-chart__percentage-circle-wrapper
+              +percentage-circle({percent: 0, color: "red"})
+            .percentages-pie-chart__percentage-circle-wrapper
+              +percentage-circle({percent: 38, color: "red"})
+            .percentages-pie-chart__percentage-circle-wrapper
+              +percentage-circle({percent: 62, color: "red"})
+            .percentages-pie-chart__percentage-circle-wrapper
+              +percentage-circle({percent: 89, color: "red"})
+            .percentages-pie-chart__pie-chart-wrapper
+              +pie-chart({data: [
+                {value: 10, color: "#747474"},
+                {value: 27, color: "#e75735"},
+                {value: 30, color: "#4eb7a8"},
+                {value: 33, color: "#e5e5e5"}
+              ]})
+
+      .main-wrapper__sliders
+        .sliders
+          .sliders__title-wrapper
+            h2.title Sliders
+          .sliders__container
+            .sliders__slider-wrapper
+              +slider({start: 40, hideMinMax: true, hideBar: true, color: "red"})
+            .sliders__slider-wrapper
+              +slider({start: 75, hideMinMax: true, hideValueLabel: true, grid: true})
+
+      .main-wrapper__stages
+        .stages
+          .stages__title-wrapper
+            h2.title Stages
+          .stages__container
+            +progress-tracker({stepCount: 5, activeStep: 3, color: "red"})
+
+      .main-wrapper__form-elements
+        .form-elements
+          .form-elements__title-wrapper
+            h2.title Form elements
+          form.form-elements__form
+            .form-elements__form-row
+              +input({attr: {placeholder: "Your Name", required: true}})
+              .form-elements__success-info
+                +speech-bubble({size: "small"})
+                  .form-elements__speech-bubble-content-wrapper Thanks
+              .form-elements__failed-info
+                +speech-bubble({size: "small", color: "red"})
+                  .form-elements__speech-bubble-content-wrapper Error
+            .form-elements__form-row
+              +input({attr: {placeholder: "Your Email", type: "email", required: true}})
+              .form-elements__success-info
+                +speech-bubble({size: "small"})
+                  .form-elements__speech-bubble-content-wrapper Thanks
+              .form-elements__failed-info
+                +speech-bubble({size: "small", color: "red"})
+                  .form-elements__speech-bubble-content-wrapper Error
+            .form-elements__form-row
+              +textarea({attr: {placeholder: "Your Message"}})
+            .form-elements__form-row
+              .form-elements__button-wrapper
+                +button({text: "Submit", attr: {type: "submit"}})
+          .form-elements__toggles-tick-boxes
+            .form-elements__toggles
+              .form-elements__toggles-title-wrapper
+                .title Toggles
+              .form-elements__container
+                +toggle()
+                +toggle({checked: true})
+            .form-elements__tick-boxes
+              .form-elements__tick-boxes-title-wrapper
+                .title Tick boxes
+              .form-elements__container
+                +check-box({checked: true})
+                +check-box()
+
+      .main-wrapper__search-dropdown-user-profile
+        .search-dropdown-user-profile
+          .search-dropdown-user-profile__search-dropdown
+            .search-dropdown-user-profile__title-wrapper
+              h2.title Search / Dropdown
+            .search-dropdown-user-profile__search-dropdown-row
+              +search({color: "red"})
+            .search-dropdown-user-profile__search-dropdown-row
+              +search({color: "red"})
+            .search-dropdown-user-profile__search-dropdown-row
+              +dropdown({data: [
+                "This is option 1",
+                "This is option 2",
+                "This is option 3",
+                "This is option 4"
+              ]})
+          .search-dropdown-user-profile__user-profile
+            .search-dropdown-user-profile__title-wrapper
+              h2.title User profile
+            .search-dropdown-user-profile__user-profile-row
+              +user-profile({
+                name: "John Smith",
+                job: "UX Designer",
+                color: "gray",
+                avatar: "assets/images/stormtroopers.png",
+                facebook: "https://facebook.com",
+                twitter: "https://twitter.com",
+                dribbble: "https://dribbble.com"
+              })
+            .search-dropdown-user-profile__user-profile-row
+              +user-profile({
+                name: "Sarah Brown",
+                job: "Developer",
+                avatar: "assets/images/darth-vader.png",
+                facebook: "https://facebook.com",
+                twitter: "https://twitter.com",
+                dribbble: "https://dribbble.com"
+              })
+
+      .main-wrapper__news-events
+        .news-events
+          .news-events__title-wrapper
+            h2.title News & Events
+          .news-events__container
+            .news-events__item-wrapper
+              +news({
+                title: "It's all going downhill",
+                date: "24 August 2013",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.",
+                image: {
+                  src: "assets/images/cyclist.png",
+                  left: "-7.5rem"
+                },
+                color: "red"
+              })
+            .news-events__item-wrapper
+              +event({
+                day: "24",
+                month: "Aug",
+                title: "This is the title",
+                text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+                image: {
+                  src: "assets/images/new-york.png",
+                  left: "0"
+                },
+                buttonText: "Add to calendar"
+              })
+
+      .main-wrapper__location
+        .location
+          .location__title-wrapper
+            h2.title Location
+          .location__container
+            +map(
+              {
+                title: "Meet us!",
+                address: "1259 California St San Francisco, CA",
+                zoom: 14,
+                center: {lat: 56.49541886, lng: 84.96118069},
+                showMarker: true,
+                marker: {lat: 56.49541886, lng: 84.96118069},
+                color: "red"
+              }
+            )
+
+      .main-wrapper__calendar-messaging
+        .calendar-messaging
+          .calendar-messaging__container
+            .calendar-messaging__calendar-wrapper
+              .calendar-messaging__title-wrapper
+                h2.title Calendar
+              +calendar({color: "red"})
+            .calendar-messaging__message-box-wrapper
+              .calendar-messaging__title-wrapper
+                h2.title Messaging
+              +message-box({
+                name: "Sarah Brown",
+                avatar: "assets/images/darth-vader.png",
+                message: "Hey! So are we cool to meet at the art gallery? Say 8pm",
+                buttonText: "Reply"
+              })
+
+      .main-wrapper__video
+        .video
+          .video__title-wrapper
+            h2.title Video
+          .video__container
+            +youtube-video-player({id: "rPmGtZAUxNs"})

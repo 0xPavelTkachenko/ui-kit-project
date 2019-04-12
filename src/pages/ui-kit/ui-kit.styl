@@ -1,0 +1,245 @@
+html
+  $font-size = 12px
+
+  color #000
+  background-color #fff
+  font-size $font-size
+  font-family "Lato", Arial, sans-serif
+
+.main-wrapper
+  width 700px
+  margin 0 auto
+  display flex
+  flex-direction column
+  align-items center
+
+  &__buttons
+    width 67%
+    margin-top 4rem
+
+  &__arrow-buttons
+    width 60%
+    margin-top 4rem
+
+  &__percentages-pie-chart
+    width 90%
+    margin-top 4rem
+
+  &__sliders
+    width 85%
+    margin-top 2rem
+
+  &__stages
+    width 85%
+    margin-top 2rem
+
+  &__form-elements
+    width 86%
+    margin-top 4rem
+
+  &__search-dropdown-user-profile
+    width 85%
+    margin-top 8rem
+
+  &__news-events
+    width 85%
+    margin-top 7.6rem
+
+  &__location
+    width 85%
+    margin-top 4rem
+
+  &__calendar-messaging
+    width 85%
+    margin-top 4rem
+
+  &__video
+    width 85%
+    margin-top 4.6rem
+
+.title
+  margin 0
+  color #4f4f4f
+  text-align center
+  text-transform uppercase
+  font-size 1.5rem
+  font-weight bold
+  word-spacing 0.2rem
+  letter-spacing 0.1rem
+
+.buttons
+  display flex
+  flex-direction column
+
+  &__title-wrapper
+    margin-bottom 6rem
+
+  &__row
+    display flex
+    justify-content space-between
+    align-items center
+
+  &__row:not(:last-child)
+    margin-bottom 2rem
+
+  &__button-wrapper
+    width 10rem
+
+    &_small
+      width 6.7rem
+
+.arrow-buttons
+  &__title-wrapper
+    margin-bottom 3rem
+
+  &__container
+    display flex
+    justify-content space-between
+
+.percentages-pie-chart
+  &__title-wrapper
+    margin-bottom 1rem
+
+  &__container
+    display flex
+    justify-content space-between
+
+  &__percentage-circle-wrapper
+    width 10rem
+    height 10rem
+
+  &__pie-chart-wrapper
+    width 9rem
+    height 9rem
+
+.sliders
+  &__title-wrapper
+    margin-bottom 1rem
+
+  &__container
+    display flex
+    justify-content space-between
+
+  &__slider-wrapper
+    width 20.5rem
+
+.stages
+  &__title-wrapper
+    margin-bottom 2rem
+
+.form-elements
+  display flex
+  flex-wrap wrap
+
+  &__title-wrapper
+    margin-bottom 3.7rem
+    flex-basis 100%
+
+  &__form
+    width 24.6rem
+    margin-right 8rem
+
+  &__form-row:not(:last-child)
+    margin-bottom 0.5rem
+
+  &__form-row:nth-child(1), &__form-row:nth-child(2)
+    display flex
+    align-items center
+
+    .input
+      width 18rem
+
+    .input:valid ~ ^[0]__failed-info
+      display none
+
+    .input:invalid ~ ^[0]__failed-info
+      display block
+
+    .input:invalid ~ ^[0]__success-info
+      display none
+
+  &__form-row:last-child
+    display flex
+    justify-content flex-end
+
+  &__success-info, &__failed-info
+    flex-grow 1
+    margin-left 0.6rem
+
+  &__speech-bubble-content-wrapper
+    color #fff
+    text-align center
+    padding 0.6rem 0
+    text-transform uppercase
+    font-weight bold
+
+  &__button-wrapper
+    width 9.8rem
+
+  &__container
+    display flex
+    justify-content space-evenly
+
+  &__toggles-title-wrapper, &__tick-boxes-title-wrapper
+    margin-bottom 2.5rem
+
+  &__toggles
+    margin-bottom 3rem
+
+  &__toggles, &__tick-boxes
+    width 11rem
+
+.search-dropdown-user-profile
+  display flex
+  justify-content space-between
+
+  &__title-wrapper
+    margin-bottom 1.8rem
+
+  &__search-dropdown
+    width 24rem
+
+  &__user-profile
+    width 22.6rem
+
+  &__search-dropdown-row:not(:last-child)
+    margin-bottom 1.3rem
+
+  &__user-profile-row:not(:last-child)
+    margin-bottom 3rem
+
+.news-events
+  &__title-wrapper
+    margin-bottom 2.7rem
+
+  &__container
+    display flex
+    justify-content space-between
+
+  &__item-wrapper
+    width 24rem
+
+.location
+  &__title-wrapper
+    margin-bottom 2.5rem
+
+  &__container
+    height 22.5rem
+
+.calendar-messaging
+  &__title-wrapper
+    margin-bottom 2.2rem
+
+  &__container
+    display flex
+    justify-content space-between
+
+  &__calendar-wrapper
+    width 23.3rem
+
+  &__message-box-wrapper
+    width 24rem
+
+.video
+  &__title-wrapper
+    margin-bottom 2rem

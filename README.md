@@ -18,5 +18,6 @@ $ npm run lint
 $ npm run server
 ```
 
-## Ссылка на Github Pages
-https://pasha-zolotukhin.github.io/ui-kit-project/index.html
+## Ссылки на Github Pages
+[Макет](https://pasha-zolotukhin.github.io/ui-kit-project/ui-kit.html)  
+[Страницы](https://pasha-zolotukhin.github.io/ui-kit-project/index.html)

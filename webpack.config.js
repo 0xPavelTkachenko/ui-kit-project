@@ -29,6 +29,10 @@ module.exports = {
     new HtmlWebPackPlugin({
       filename: 'feedback.html',
       template: './src/pages/feedback/feedback.pug'
+    }),
+    new HtmlWebPackPlugin({
+      filename: 'ui-kit.html',
+      template: './src/pages/ui-kit/ui-kit.pug'
     })
   ],
   module: {
