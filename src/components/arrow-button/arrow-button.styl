@@ -7,7 +7,7 @@ $color-red = #e75735
   height 4.166666666rem
   cursor pointer
   display inline-block
-  background-color #fff
+  background-color $color-diamond
   border 0.25rem solid $color-diamond
   border-radius 50%
   position relative
@@ -17,7 +17,7 @@ $color-red = #e75735
     width 30%
     height 30%
     display inline-block
-    border solid $color-diamond
+    border solid #fff
     border-width 0.25rem 0 0 0.25rem
     position absolute
     top 50%
@@ -25,24 +25,39 @@ $color-red = #e75735
     transform translate(-30%, -50%) rotate(-45deg)
 
   &:hover
-    border-color $color-diamond
-    background-color $color-diamond
+    background-color #fff
 
     & ^[0]__triangle
-      border-color #fff
+      border-color $color-diamond
 
   &_red
+    background-color $color-red
     border-color $color-red
 
-    & ^[0]__triangle
+    &:hover ^[0]__triangle
       border-color $color-red
 
+  &_inversed
+    background-color #fff
+
+    & ^[0]__triangle
+      border-color $color-diamond
+
     &:hover
-      border-color $color-red
-      background-color $color-red
+      background-color $color-diamond
 
       & ^[0]__triangle
         border-color #fff
+
+    &^[0]_red
+      & ^[0]__triangle
+        border-color $color-red
+
+      &:hover
+        background-color $color-red
+
+        & ^[0]__triangle
+          border-color #fff
 
   &_disabled
     cursor default
