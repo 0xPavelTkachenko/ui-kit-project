@@ -101,9 +101,9 @@ html(lang="en")
           .sliders__title-wrapper
             h2.title Sliders
           .sliders__container
-            .sliders__slider-wrapper
+            .sliders__left-slider-wrapper
               +slider({start: 40, hideMinMax: true, hideBar: true, color: "red"})
-            .sliders__slider-wrapper
+            .sliders__right-slider-wrapper
               +slider({start: 75, hideMinMax: true, hideValueLabel: true, grid: true})
 
       .main-wrapper__stages
@@ -122,7 +122,7 @@ html(lang="en")
               +input({attr: {placeholder: "Your Name", required: true}})
               .form-elements__success-info
                 +speech-bubble({size: "small"})
-                  .form-elements__speech-bubble-content-wrapper Thanks
+                  .form-elements__speech-bubble-content-wrapper Thanks!
               .form-elements__failed-info
                 +speech-bubble({size: "small", color: "red"})
                   .form-elements__speech-bubble-content-wrapper Error
@@ -130,7 +130,7 @@ html(lang="en")
               +input({attr: {placeholder: "Your Email", type: "email", required: true}})
               .form-elements__success-info
                 +speech-bubble({size: "small"})
-                  .form-elements__speech-bubble-content-wrapper Thanks
+                  .form-elements__speech-bubble-content-wrapper Thanks!
               .form-elements__failed-info
                 +speech-bubble({size: "small", color: "red"})
                   .form-elements__speech-bubble-content-wrapper Error
@@ -143,20 +143,20 @@ html(lang="en")
             .form-elements__toggles
               .form-elements__toggles-title-wrapper
                 .title Toggles
-              .form-elements__container
+              .form-elements__toggles-container
                 +toggle()
                 +toggle({checked: true})
             .form-elements__tick-boxes
               .form-elements__tick-boxes-title-wrapper
                 .title Tick boxes
-              .form-elements__container
+              .form-elements__tick-boxes-container
                 +check-box({checked: true})
                 +check-box()
 
       .main-wrapper__search-dropdown-user-profile
         .search-dropdown-user-profile
           .search-dropdown-user-profile__search-dropdown
-            .search-dropdown-user-profile__title-wrapper
+            .search-dropdown-user-profile__search-dropdown-title-wrapper
               h2.title Search / Dropdown
             .search-dropdown-user-profile__search-dropdown-row
               +search({color: "red"})
@@ -170,7 +170,7 @@ html(lang="en")
                 "This is option 4"
               ]})
           .search-dropdown-user-profile__user-profile
-            .search-dropdown-user-profile__title-wrapper
+            .search-dropdown-user-profile__user-profile-title-wrapper
               h2.title User profile
             .search-dropdown-user-profile__user-profile-row
               +user-profile({
@@ -242,11 +242,11 @@ html(lang="en")
         .calendar-messaging
           .calendar-messaging__container
             .calendar-messaging__calendar-wrapper
-              .calendar-messaging__title-wrapper
+              .calendar-messaging__calendar-title-wrapper
                 h2.title Calendar
               +calendar({color: "red"})
             .calendar-messaging__message-box-wrapper
-              .calendar-messaging__title-wrapper
+              .calendar-messaging__messaging-title-wrapper
                 h2.title Messaging
               +message-box({
                 name: "Sarah Brown",

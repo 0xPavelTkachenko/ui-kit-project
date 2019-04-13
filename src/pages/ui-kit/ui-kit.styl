@@ -19,11 +19,11 @@ html
 
   &__arrow-buttons
     width 60%
-    margin-top 4rem
+    margin-top 4.75rem
 
   &__percentages-pie-chart
     width 90%
-    margin-top 4rem
+    margin-top 3.8rem
 
   &__sliders
     width 85%
@@ -39,23 +39,23 @@ html
 
   &__search-dropdown-user-profile
     width 85%
-    margin-top 8rem
+    margin-top 5.5rem
 
   &__news-events
     width 85%
-    margin-top 7.6rem
+    margin-top 7.7rem
 
   &__location
-    width 85%
+    width 84.5%
     margin-top 4rem
 
   &__calendar-messaging
     width 85%
-    margin-top 4rem
+    margin-top 4.1rem
 
   &__video
     width 85%
-    margin-top 4.6rem
+    margin-top 4.4rem
 
 .title
   margin 0
@@ -64,7 +64,7 @@ html
   text-transform uppercase
   font-size 1.5rem
   font-weight bold
-  word-spacing 0.2rem
+  word-spacing -0.1rem
   letter-spacing 0.1rem
 
 .buttons
@@ -72,15 +72,15 @@ html
   flex-direction column
 
   &__title-wrapper
-    margin-bottom 6rem
+    margin-bottom 5.9rem
 
   &__row
     display flex
     justify-content space-between
-    align-items center
+    align-items flex-end
 
   &__row:not(:last-child)
-    margin-bottom 2rem
+    margin-bottom 1.75rem
 
   &__button-wrapper
     width 10rem
@@ -98,19 +98,25 @@ html
 
 .percentages-pie-chart
   &__title-wrapper
-    margin-bottom 1rem
+    margin-bottom 1.4rem
 
   &__container
     display flex
-    justify-content space-between
 
   &__percentage-circle-wrapper
-    width 10rem
-    height 10rem
+    width 9.5rem
+    height 9.5rem
+
+  &__percentage-circle-wrapper:nth-child(3)
+    margin-left 1.5rem
+
+  &__percentage-circle-wrapper:nth-child(4)
+    margin-left 1.2rem
 
   &__pie-chart-wrapper
     width 9rem
     height 9rem
+    margin-left 1.3rem
 
 .sliders
   &__title-wrapper
@@ -118,10 +124,12 @@ html
 
   &__container
     display flex
-    justify-content space-between
 
-  &__slider-wrapper
-    width 20.5rem
+  &__left-slider-wrapper, &__right-slider-wrapper
+    width 21.6rem
+
+  &__right-slider-wrapper
+    margin-left 5.9rem
 
 .stages
   &__title-wrapper
@@ -132,7 +140,7 @@ html
   flex-wrap wrap
 
   &__title-wrapper
-    margin-bottom 3.7rem
+    margin-bottom 3.9rem
     flex-basis 100%
 
   &__form
@@ -164,53 +172,64 @@ html
 
   &__success-info, &__failed-info
     flex-grow 1
-    margin-left 0.6rem
+    margin 0 0.4rem
 
   &__speech-bubble-content-wrapper
     color #fff
     text-align center
     padding 0.6rem 0
     text-transform uppercase
+    font-size 0.9rem
     font-weight bold
 
   &__button-wrapper
     width 9.8rem
+    margin-right 0.3rem
 
-  &__container
-    display flex
-    justify-content space-evenly
+  &__toggles
+    margin-bottom 2.8rem
+
+  &__toggles, &__tick-boxes
+    width 11rem
 
   &__toggles-title-wrapper, &__tick-boxes-title-wrapper
     margin-bottom 2.5rem
 
-  &__toggles
-    margin-bottom 3rem
+  &__toggles-container, &__tick-boxes-container
+    display flex
+    justify-content space-between
 
-  &__toggles, &__tick-boxes
-    width 11rem
+  &__tick-boxes-container
+    padding 0 3.3rem 0 2.3rem
 
 .search-dropdown-user-profile
   display flex
   justify-content space-between
 
-  &__title-wrapper
-    margin-bottom 1.8rem
+  &__search-dropdown-title-wrapper
+    margin-bottom 1.7rem
+    padding-right 0.8rem
+
+  &__user-profile-title-wrapper
+    margin-bottom 2.5rem
+    padding-right 1.5rem
 
   &__search-dropdown
     width 24rem
 
   &__user-profile
     width 22.6rem
+    padding-right 0.2rem
 
   &__search-dropdown-row:not(:last-child)
-    margin-bottom 1.3rem
+    margin-bottom 1.4rem
 
   &__user-profile-row:not(:last-child)
-    margin-bottom 3rem
+    margin-bottom 2.1rem
 
 .news-events
   &__title-wrapper
-    margin-bottom 2.7rem
+    margin-bottom 2.8rem
 
   &__container
     display flex
@@ -221,14 +240,20 @@ html
 
 .location
   &__title-wrapper
-    margin-bottom 2.5rem
+    margin-bottom 2.6rem
 
   &__container
     height 22.5rem
 
 .calendar-messaging
-  &__title-wrapper
+  &__calendar-title-wrapper, &__messaging-title-wrapper
     margin-bottom 2.2rem
+
+  &__calendar-title-wrapper
+    padding-right 0.5rem
+
+  &__messaging-title-wrapper
+    padding-right 0.9rem
 
   &__container
     display flex
@@ -242,4 +267,4 @@ html
 
 .video
   &__title-wrapper
-    margin-bottom 2rem
+    margin-bottom 1.85rem
