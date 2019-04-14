@@ -117,41 +117,42 @@ html(lang="en")
         .form-elements
           .form-elements__title-wrapper
             h2.title Form elements
-          form.form-elements__form
-            .form-elements__form-row
-              +input({attr: {placeholder: "Your Name", required: true}})
-              .form-elements__success-info
-                +speech-bubble({size: "small"})
-                  .form-elements__speech-bubble-content-wrapper Thanks!
-              .form-elements__failed-info
-                +speech-bubble({size: "small", color: "red"})
-                  .form-elements__speech-bubble-content-wrapper Error
-            .form-elements__form-row
-              +input({attr: {placeholder: "Your Email", type: "email", required: true}})
-              .form-elements__success-info
-                +speech-bubble({size: "small"})
-                  .form-elements__speech-bubble-content-wrapper Thanks!
-              .form-elements__failed-info
-                +speech-bubble({size: "small", color: "red"})
-                  .form-elements__speech-bubble-content-wrapper Error
-            .form-elements__form-row
-              +textarea({attr: {placeholder: "Your Message"}})
-            .form-elements__form-row
-              .form-elements__button-wrapper
-                +button({text: "Submit", attr: {type: "submit"}})
-          .form-elements__toggles-tick-boxes
-            .form-elements__toggles
-              .form-elements__toggles-title-wrapper
-                .title Toggles
-              .form-elements__toggles-container
-                +toggle()
-                +toggle({checked: true})
-            .form-elements__tick-boxes
-              .form-elements__tick-boxes-title-wrapper
-                .title Tick boxes
-              .form-elements__tick-boxes-container
-                +check-box({checked: true})
-                +check-box()
+          .form-elements__container
+            form.form-elements__form
+              .form-elements__form-row
+                +input({attr: {placeholder: "Your Name", required: true}})
+                .form-elements__success-info
+                  +speech-bubble({size: "small"})
+                    .form-elements__speech-bubble-content-wrapper Thanks!
+                .form-elements__failed-info
+                  +speech-bubble({size: "small", color: "red"})
+                    .form-elements__speech-bubble-content-wrapper Error
+              .form-elements__form-row
+                +input({attr: {placeholder: "Your Email", type: "email", required: true}})
+                .form-elements__success-info
+                  +speech-bubble({size: "small"})
+                    .form-elements__speech-bubble-content-wrapper Thanks!
+                .form-elements__failed-info
+                  +speech-bubble({size: "small", color: "red"})
+                    .form-elements__speech-bubble-content-wrapper Error
+              .form-elements__form-row
+                +textarea({attr: {placeholder: "Your Message"}})
+              .form-elements__form-row
+                .form-elements__button-wrapper
+                  +button({text: "Submit", attr: {type: "submit"}})
+            .form-elements__toggles-tick-boxes
+              .form-elements__toggles
+                .form-elements__toggles-title-wrapper
+                  .title Toggles
+                .form-elements__toggles-container
+                  +toggle()
+                  +toggle({checked: true})
+              .form-elements__tick-boxes
+                .form-elements__tick-boxes-title-wrapper
+                  .title Tick boxes
+                .form-elements__tick-boxes-container
+                  +check-box({checked: true})
+                  +check-box()
 
       .main-wrapper__search-dropdown-user-profile
         .search-dropdown-user-profile
