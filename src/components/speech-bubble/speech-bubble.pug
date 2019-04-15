@@ -1,11 +1,11 @@
-mixin speech-bubble(o)
+mixin speech-bubble(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "speech-bubble_" + o.color : undefined;
-    o.size = typeof o.size === "string" ? "speech-bubble_" + o.size : undefined;
-    o.direction = typeof o.direction === "string" ? "speech-bubble_" + o.direction : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "speech-bubble_" + options.color : undefined;
+    options.size = typeof options.size === "string" ? "speech-bubble_" + options.size : undefined;
+    options.direction = typeof options.direction === "string" ? "speech-bubble_" + options.direction : undefined;
 
-  .speech-bubble(class=o.color, class=o.size, class=o.direction)
+  .speech-bubble(class=options.color, class=options.size, class=options.direction)
     .speech-bubble__triangle
     .speech-bubble__content
       block

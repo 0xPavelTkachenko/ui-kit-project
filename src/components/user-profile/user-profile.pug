@@ -1,23 +1,23 @@
 include ../speech-bubble/speech-bubble
 
-mixin user-profile(o)
+mixin user-profile(options)
   -
-    o = o || {};
-    o.avatar = typeof o.avatar === "string" ? o.avatar : "./assets/no-avatar.png";
-    o.speechBubbleColor = typeof o.color === "string" ? o.color : undefined;
-    o.color = typeof o.color === "string" ? "user-profile_" + o.color : undefined;
-    o.speechBubbleDirection = typeof o.direction === "string" ? o.direction : undefined;
-    o.direction = typeof o.direction === "string" ? "user-profile_" + o.direction : undefined;
+    options = options || {};
+    options.avatar = typeof options.avatar === "string" ? options.avatar : "./assets/no-avatar.png";
+    options.speechBubbleColor = typeof options.color === "string" ? options.color : undefined;
+    options.color = typeof options.color === "string" ? "user-profile_" + options.color : undefined;
+    options.speechBubbleDirection = typeof options.direction === "string" ? options.direction : undefined;
+    options.direction = typeof options.direction === "string" ? "user-profile_" + options.direction : undefined;
 
-  .user-profile(class=o.color, class=o.direction)
+  .user-profile(class=options.color, class=options.direction)
     .user-profile__avatar-wrapper
-      img.user-profile__avatar(src=o.avatar, alt="avatar")
+      img.user-profile__avatar(src=options.avatar, alt="avatar")
     .user-profile__speech-bubble-wrapper
-      +speech-bubble({color: o.speechBubbleColor, direction: o.speechBubbleDirection})
+      +speech-bubble({color: options.speechBubbleColor, direction: options.speechBubbleDirection})
         .user-profile__info
-          .user-profile__name=o.name
-          .user-profile__job=o.job
+          .user-profile__name=options.name
+          .user-profile__job=options.job
           .user-profile__contacts
-            a.user-profile__facebook(href=o.facebook, target="_blank", rel="noopener noreferrer")
-            a.user-profile__twitter(href=o.twitter, target="_blank", rel="noopener noreferrer")
-            a.user-profile__dribbble(href=o.dribbble, target="_blank", rel="noopener noreferrer")
+            a.user-profile__facebook(href=options.facebook, target="_blank", rel="noopener noreferrer")
+            a.user-profile__twitter(href=options.twitter, target="_blank", rel="noopener noreferrer")
+            a.user-profile__dribbble(href=options.dribbble, target="_blank", rel="noopener noreferrer")

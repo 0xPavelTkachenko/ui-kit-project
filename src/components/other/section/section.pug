@@ -1,9 +1,9 @@
-mixin section(o)
+mixin section(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "section_" + o.color : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "section_" + options.color : undefined;
 
-  section.section(class=o.color)
-    h2.section__title=o.title
+  section.section(class=options.color)
+    h2.section__title=options.title
     .section__content
       block

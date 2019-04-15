@@ -1,11 +1,11 @@
-mixin dropdown(o)
+mixin dropdown(options)
   -
-    o = o || {};
-    o.data = o.data || [];
-    o.placeholder = o.placeholder || "Choose An Option";
-    o.color = typeof o.color === "string" ? "dropdown_" + o.color : undefined;
+    options = options || {};
+    options.data = options.data || [];
+    options.placeholder = options.placeholder || "Choose An Option";
+    options.color = typeof options.color === "string" ? "dropdown_" + options.color : undefined;
 
-  .dropdown.js-dropdown(class=o.color, data-placeholder=o.placeholder)
+  .dropdown.js-dropdown(class=options.color, data-placeholder=options.placeholder)
     select
-      each d in o.data
-        option=d
+      each data in options.data
+        option=data

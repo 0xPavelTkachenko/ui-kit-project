@@ -1,10 +1,10 @@
-mixin toggle(o)
+mixin toggle(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "toggle_" + o.color : undefined;
-    o.checked = typeof o.checked === "boolean" ? o.checked : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "toggle_" + options.color : undefined;
+    options.checked = typeof options.checked === "boolean" ? options.checked : undefined;
 
-  label.toggle(class=o.color)
-    input.toggle__checkbox(type="checkbox", checked=o.checked)
+  label.toggle(class=options.color)
+    input.toggle__checkbox(type="checkbox", checked=options.checked)
     span.toggle__pseudo-checkbox
       span.toggle__circle

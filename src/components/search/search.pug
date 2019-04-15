@@ -1,10 +1,14 @@
-mixin search(o)
+mixin search(options)
   -
-    o = o || {};
-    o.placeholder = o.placeholder || "Search";
-    o.notFoundMessage = o.notFoundMessage || "I've not found what I'm looking for...";
-    o.color = typeof o.color === "string" ? "search_" + o.color : undefined;
+    options = options || {};
+    options.placeholder = options.placeholder || "Search";
+    options.notFoundMessage = options.notFoundMessage || "I've not found what I'm looking for...";
+    options.color = typeof options.color === "string" ? "search_" + options.color : undefined;
 
-  .search.js-search(class=o.color)
-    input.search__input(type="search", data-placeholder=o.placeholder, data-not-found-message=o.notFoundMessage)&attributes(o.attr)
+  .search.js-search(class=options.color)
+    input.search__input(
+      type="search",
+      data-placeholder=options.placeholder,
+      data-not-found-message=options.notFoundMessage
+    )&attributes(options.attr)
     .search__button

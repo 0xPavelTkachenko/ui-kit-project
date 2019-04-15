@@ -1,9 +1,14 @@
-mixin button(o)
+mixin button(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "button_" + o.color : undefined;
-    o.size = typeof o.size === "string" ? "button_" + o.size : undefined;
-    o.padding = typeof o.padding === "string" ? "button_" + o.padding : undefined;
-    o.inversed = o.inversed === true ? "button_inversed" : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "button_" + options.color : undefined;
+    options.size = typeof options.size === "string" ? "button_" + options.size : undefined;
+    options.padding = typeof options.padding === "string" ? "button_" + options.padding : undefined;
+    options.inversed = options.inversed === true ? "button_inversed" : undefined;
 
-  button.button.js-button(class=o.color, class=o.size, class=o.padding, class=o.inversed)&attributes(o.attr)=o.text
+  button.button.js-button(
+    class=options.color,
+    class=options.size,
+    class=options.padding,
+    class=options.inversed
+  )&attributes(options.attr)=options.text

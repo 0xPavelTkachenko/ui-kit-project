@@ -1,23 +1,23 @@
-mixin slider(o)
+mixin slider(options)
   -
-    o = o || {};
-    o.min = o.min || 0;
-    o.max = o.max || 100;
-    o.grid = o.grid === true ? "true" : undefined;
-    o.snapGrid = o.snapGrid === true ? "true" : undefined;
-    o.hideBar = o.hideBar === true ? "slider_non-bar" : undefined;
-    o.hideValueLabel = o.hideValueLabel === true ? "true" : undefined;
-    o.hideMinMax = o.hideMinMax === true ? "true" : undefined;
-    o.color = typeof o.color === "string" ? " slider_" + o.color : "";
+    options = options || {};
+    options.min = options.min || 0;
+    options.max = options.max || 100;
+    options.grid = options.grid === true ? "true" : undefined;
+    options.snapGrid = options.snapGrid === true ? "true" : undefined;
+    options.hideBar = options.hideBar === true ? "slider_non-bar" : undefined;
+    options.hideValueLabel = options.hideValueLabel === true ? "true" : undefined;
+    options.hideMinMax = options.hideMinMax === true ? "true" : undefined;
+    options.color = typeof options.color === "string" ? " slider_" + options.color : "";
 
-  .slider.js-slider(class=o.color, class=o.hideBar)
+  .slider.js-slider(class=options.color, class=options.hideBar)
     input(
-      data-min=o.min,
-      data-max=o.max,
-      data-grid=o.grid,
-      data-grid-snap=o.snapGrid,
-      data-hide-from-to=o.hideValueLabel,
-      data-hide-min-max=o.hideMinMax,
-      data-from=o.start,
-      data-step=o.step
+      data-min=options.min,
+      data-max=options.max,
+      data-grid=options.grid,
+      data-grid-snap=options.snapGrid,
+      data-hide-from-to=options.hideValueLabel,
+      data-hide-min-max=options.hideMinMax,
+      data-from=options.start,
+      data-step=options.step
     )

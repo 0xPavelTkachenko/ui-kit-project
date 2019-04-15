@@ -1,29 +1,29 @@
-mixin progress-tracker(o)
+mixin progress-tracker(options)
   -
-    o = o || {};
-    o.stepCount = typeof o.stepCount === "number" ? o.stepCount : 0;
-    o.activeStep = typeof o.activeStep === "number" ? o.activeStep : 0;
-    o.color = typeof o.color === "string" ? "progress-tracker_" + o.color : undefined;
+    options = options || {};
+    options.stepCount = typeof options.stepCount === "number" ? options.stepCount : 0;
+    options.activeStep = typeof options.activeStep === "number" ? options.activeStep : 0;
+    options.color = typeof options.color === "string" ? "progress-tracker_" + options.color : undefined;
 
-    if (o.stepCount < 0) {
-      o.stepCount = 0;
+    if (options.stepCount < 0) {
+      options.stepCount = 0;
     }
 
-    if (o.activeStep < 0) {
-      o.activeStep = 0;
-    } else if (o.activeStep > o.stepCount) {
-      o.activeStep = o.stepCount
+    if (options.activeStep < 0) {
+      options.activeStep = 0;
+    } else if (options.activeStep > options.stepCount) {
+      options.activeStep = options.stepCount
     }
 
-  .progress-tracker(class=o.color)
-    - for (let i = 1; i <= o.activeStep; i++)
-    -   if (i !== o.activeStep)
+  .progress-tracker(class=options.color)
+    - for (let i = 1; i <= options.activeStep; i++)
+    -   if (i !== options.activeStep)
           .progress-tracker__step.progress-tracker__step_complete
             .progress-tracker__marker=i
     -   else
           .progress-tracker__step.progress-tracker__step_active
             .progress-tracker__marker=i
 
-    - for (let i = o.activeStep + 1; i <= o.stepCount; i++)
+    - for (let i = options.activeStep + 1; i <= options.stepCount; i++)
         .progress-tracker__step
           .progress-tracker__marker=i

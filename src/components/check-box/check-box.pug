@@ -1,9 +1,9 @@
-mixin check-box(o)
+mixin check-box(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "check-box_" + o.color : undefined;
-    o.checked = typeof o.checked === "boolean" ? o.checked : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "check-box_" + options.color : undefined;
+    options.checked = typeof options.checked === "boolean" ? options.checked : undefined;
 
-  label.check-box(class=o.color)
-    input.check-box__checkbox(type="checkbox", checked=o.checked)
+  label.check-box(class=options.color)
+    input.check-box__checkbox(type="checkbox", checked=options.checked)
     span.check-box__pseudo-checkbox

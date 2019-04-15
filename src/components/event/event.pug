@@ -1,20 +1,26 @@
 include ../info-block/info-block
 include ../button/button
 
-mixin event(o)
+mixin event(options)
   -
-    o = o || {};
-    o.infoBlockColor = typeof o.color === "string" ? o.color : undefined;
-    o.buttonColor = typeof o.color === "string" ? o.color : undefined;
-    o.color = typeof o.color === "string" ? "event_" + o.color : undefined;
+    options = options || {};
+    options.infoBlockColor = typeof options.color === "string" ? options.color : undefined;
+    options.buttonColor = typeof options.color === "string" ? options.color : undefined;
+    options.color = typeof options.color === "string" ? "event_" + options.color : undefined;
 
-  .event(class=o.color)
-    +info-block({color: o.infoBlockColor, image: o.image})
+  .event(class=options.color)
+    +info-block({color: options.infoBlockColor, image: options.image})
       .event__content
         .event__date
-          .event__day=o.day
-          .event__month=o.month
-        .event__title=o.title
-        .event__text=o.text
+          .event__day=options.day
+          .event__month=options.month
+        .event__title=options.title
+        .event__text=options.text
         .event__button-wrapper
-          +button({inversed: true, color: o.buttonColor, text: o.buttonText, size: "small", padding: "non-padding"})
+          +button({
+            inversed: true,
+            color: options.buttonColor,
+            text: options.buttonText,
+            size: "small",
+            padding: "non-padding"
+          })

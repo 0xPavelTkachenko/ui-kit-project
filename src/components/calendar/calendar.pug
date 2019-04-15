@@ -1,6 +1,6 @@
-mixin calendar(o)
+mixin calendar(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "calendar_" + o.color : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "calendar_" + options.color : undefined;
 
-  .calendar.js-calendar(class=o.color)
+  .calendar.js-calendar(class=options.color)

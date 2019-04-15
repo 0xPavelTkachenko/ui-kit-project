@@ -1,10 +1,10 @@
-mixin youtube-video-player(o)
+mixin youtube-video-player(options)
   -
-    o = o || {};
-    o.id = typeof o.id === "string" ? 'https://www.youtube.com/embed/' + o.id + "?rel=0" : undefined;
+    options = options || {};
+    options.id = typeof options.id === "string" ? 'https://www.youtube.com/embed/' + options.id + "?rel=0" : undefined;
 
   iframe.youtube-video-player(
-    src=o.id,
+    src=options.id,
     frameborder="0",
     allow="autoplay; encrypted-media",
     allowfullscreen

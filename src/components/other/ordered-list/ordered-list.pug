@@ -1,8 +1,8 @@
-mixin ordered-list(o)
+mixin ordered-list(options)
   -
-    o = o || {};
-    o.items = o.items || [];
+    options = options || {};
+    options.items = options.items || [];
 
   ol.ordered-list
-    each item in o.items
+    each item in options.items
       li.ordered-list__list-item=item

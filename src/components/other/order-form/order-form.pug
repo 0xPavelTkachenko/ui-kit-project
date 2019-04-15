@@ -4,12 +4,12 @@ include ../../calendar/calendar
 include ../../check-box/check-box
 include ../../button/button
 
-mixin order-form(o)
+mixin order-form(options)
   -
-    o = o || {};
-    o.attr = o.attr || {};
+    options = options || {};
+    options.attr = options.attr || {};
 
-  form.order-form&attributes(o.attr)
+  form.order-form&attributes(options.attr)
     .order-form__input-section
       +input({attr: {placeholder: "Фамилия"}})
       +input({attr: {placeholder: "Имя"}})

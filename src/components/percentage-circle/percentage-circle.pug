@@ -1,21 +1,21 @@
-mixin percentage-circle(o)
+mixin percentage-circle(options)
   -
-    o = o || {};
-    o.percent = typeof o.percent === "number" && !isNaN(o.percent) ? o.percent : 0;
-    o.strokeWidth = typeof o.strokeWidth === "number" && !isNaN(o.strokeWidth) ? o.strokeWidth : 2;
-    o.color = typeof o.color === "string" ? "percentage-circle_" + o.color : undefined;
+    options = options || {};
+    options.percent = typeof options.percent === "number" && !isNaN(options.percent) ? options.percent : 0;
+    options.strokeWidth = typeof options.strokeWidth === "number" && !isNaN(options.strokeWidth) ? options.strokeWidth : 2;
+    options.color = typeof options.color === "string" ? "percentage-circle_" + options.color : undefined;
 
-    if (o.percent < 0) {
-      o.percent = 0;
-    } else if (o.percent > 100) {
-      o.percent = 100;
+    if (options.percent < 0) {
+      options.percent = 0;
+    } else if (options.percent > 100) {
+      options.percent = 100;
     }
 
-  svg.percentage-circle(viewBox="0 0 42 42", data-percent=o.percent, class=o.color)
+  svg.percentage-circle(viewBox="0 0 42 42", data-percent=options.percent, class=options.color)
     circle.percentage-circle__background-ring(
-      cx="21", cy="21", r="15.91549430918954", stroke-width=o.strokeWidth)
+      cx="21", cy="21", r="15.91549430918954", stroke-width=options.strokeWidth)
     circle.percentage-circle__tracker(
-      cx="21", cy="21", r="15.91549430918954", stroke-width=o.strokeWidth,
-      stroke-dasharray=`${o.percent} ${100 - o.percent}`, stroke-dashoffset="25")
+      cx="21", cy="21", r="15.91549430918954", stroke-width=options.strokeWidth,
+      stroke-dasharray=`${options.percent} ${100 - options.percent}`, stroke-dashoffset="25")
     text.percentage-circle__percent-text(
-      x="50%", y="50%", text-anchor="middle", alignment-baseline="middle")=o.percent
+      x="50%", y="50%", text-anchor="middle", alignment-baseline="middle")=options.percent

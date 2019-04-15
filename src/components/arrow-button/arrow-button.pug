@@ -1,15 +1,17 @@
-mixin arrow-button(o)
+mixin arrow-button(options)
   -
-    o = o || {};
-    o.color = typeof o.color === "string" ? "arrow-button_" + o.color : undefined;
-    o.size = typeof o.size === "string" ? "arrow-button_" + o.size : undefined;
-    o.inversed = o.inversed === true ? "arrow-button_inversed" : undefined;
-    o.direction = typeof o.direction === "string" ? "arrow-button_" + o.direction : undefined;
-    o.disabled = typeof o.disabled === "boolean" ? "arrow-button_disabled" : undefined;
+    options = options || {};
+    options.color = typeof options.color === "string" ? "arrow-button_" + options.color : undefined;
+    options.size = typeof options.size === "string" ? "arrow-button_" + options.size : undefined;
+    options.inversed = options.inversed === true ? "arrow-button_inversed" : undefined;
+    options.disabled = typeof options.disabled === "boolean" ? "arrow-button_disabled" : undefined;
+    options.direction = typeof options.direction === "string"
+      ? "arrow-button_" + options.direction
+      : undefined;
 
   button.arrow-button(
-    class=o.color, class=o.size,
-    class=o.inversed, class=o.direction,
-    class=o.disabled
-  )&attributes(o.attr)
+    class=options.color, class=options.size,
+    class=options.inversed, class=options.direction,
+    class=options.disabled
+  )&attributes(options.attr)
     span.arrow-button__triangle

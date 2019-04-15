@@ -1,8 +1,8 @@
-mixin menu(o)
+mixin menu(options)
   -
-    o = o || {};
-    o.links = o.links || [];
+    options = options || {};
+    options.links = options.links || [];
 
   .menu
-    each link in o.links
+    each link in options.links
       a.menu__link(href=link.href)=link.title

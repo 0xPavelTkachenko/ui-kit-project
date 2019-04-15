@@ -2,28 +2,28 @@ include ../speech-bubble/speech-bubble
 include ../textarea/textarea
 include ../button/button
 
-mixin message-box(o)
+mixin message-box(options)
   -
-    o = o || {};
-    o.avatar = typeof o.avatar === "string" ? o.avatar : "./assets/no-avatar.png";
-    o.buttonColor = typeof o.color === "string" ? o.color : undefined;
-    o.color = typeof o.color === "string" ? "message-box_" + o.color : undefined;
+    options = options || {};
+    options.avatar = typeof options.avatar === "string" ? options.avatar : "./assets/no-avatar.png";
+    options.buttonColor = typeof options.color === "string" ? options.color : undefined;
+    options.color = typeof options.color === "string" ? "message-box_" + options.color : undefined;
 
-  .message-box(class=o.color)
-    .message-box__name=o.name
+  .message-box(class=options.color)
+    .message-box__name=options.name
     .message-box__container
       .message-box__row
         .message-box__chat-wrapper
           button.message-box__chat(type="button")
         .message-box__avatar-wrapper
-          img.message-box__avatar(src=o.avatar, alt="avatar")
+          img.message-box__avatar(src=options.avatar, alt="avatar")
         .message-box__camera-wrapper
           button.message-box__camera(type="button")
       .message-box__speech-bubble-wrapper
         +speech-bubble({color: "white", direction: "top"})
           .message-box__message
-            | #{o.message}
+            | #{options.message}
       .message-box__textarea-wrapper
         +textarea()
       .message-box__button-wrapper
-        +button({text: o.buttonText, color: o.buttonColor})
+        +button({text: options.buttonText, color: options.buttonColor})
