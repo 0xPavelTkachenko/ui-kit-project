@@ -1,7 +1,7 @@
 mixin check-box(options)
   -
     options = options || {};
-    options.color = typeof options.color === "string" ? "check-box_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "check-box_color_" + options.color : undefined;
     options.checked = typeof options.checked === "boolean" ? options.checked : undefined;
 
   label.check-box(class=options.color)

@@ -3,7 +3,7 @@ mixin map(options)
     options = options || {};
     options.center = options.center || {};
     options.marker = options.marker || {};
-    options.color = typeof options.color === "string" ? "map_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "map_color_" + options.color : undefined;
 
   .map.js-map(
     class=options.color,

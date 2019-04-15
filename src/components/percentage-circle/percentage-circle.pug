@@ -3,7 +3,7 @@ mixin percentage-circle(options)
     options = options || {};
     options.percent = typeof options.percent === "number" && !isNaN(options.percent) ? options.percent : 0;
     options.strokeWidth = typeof options.strokeWidth === "number" && !isNaN(options.strokeWidth) ? options.strokeWidth : 2;
-    options.color = typeof options.color === "string" ? "percentage-circle_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "percentage-circle_color_" + options.color : undefined;
 
     if (options.percent < 0) {
       options.percent = 0;

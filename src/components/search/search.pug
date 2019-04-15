@@ -3,7 +3,7 @@ mixin search(options)
     options = options || {};
     options.placeholder = options.placeholder || "Search";
     options.notFoundMessage = options.notFoundMessage || "I've not found what I'm looking for...";
-    options.color = typeof options.color === "string" ? "search_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "search_color_" + options.color : undefined;
 
   .search.js-search(class=options.color)
     input.search__input(

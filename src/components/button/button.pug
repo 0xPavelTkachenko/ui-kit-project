@@ -1,9 +1,9 @@
 mixin button(options)
   -
     options = options || {};
-    options.color = typeof options.color === "string" ? "button_" + options.color : undefined;
-    options.size = typeof options.size === "string" ? "button_" + options.size : undefined;
-    options.padding = typeof options.padding === "string" ? "button_" + options.padding : undefined;
+    options.color = typeof options.color === "string" ? "button_color_" + options.color : undefined;
+    options.size = typeof options.size === "string" ? "button_size_" + options.size : undefined;
+    options.padding = typeof options.padding === "string" ? "button_padding_" + options.padding : undefined;
     options.inversed = options.inversed === true ? "button_inversed" : undefined;
 
   button.button.js-button(

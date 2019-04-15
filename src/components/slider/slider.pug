@@ -8,7 +8,7 @@ mixin slider(options)
     options.hideBar = options.hideBar === true ? "slider_non-bar" : undefined;
     options.hideValueLabel = options.hideValueLabel === true ? "true" : undefined;
     options.hideMinMax = options.hideMinMax === true ? "true" : undefined;
-    options.color = typeof options.color === "string" ? " slider_" + options.color : "";
+    options.color = typeof options.color === "string" ? " slider_color_" + options.color : "";
 
   .slider.js-slider(class=options.color, class=options.hideBar)
     input(

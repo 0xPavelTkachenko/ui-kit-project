@@ -7,7 +7,7 @@ mixin message-box(options)
     options = options || {};
     options.avatar = typeof options.avatar === "string" ? options.avatar : "./assets/no-avatar.png";
     options.buttonColor = typeof options.color === "string" ? options.color : undefined;
-    options.color = typeof options.color === "string" ? "message-box_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "message-box_color_" + options.color : undefined;
 
   .message-box(class=options.color)
     .message-box__name=options.name

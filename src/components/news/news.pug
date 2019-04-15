@@ -4,7 +4,7 @@ mixin news(options)
   -
     options = options || {};
     options.infoBlockColor = typeof options.color === "string" ? options.color : undefined;
-    options.color = typeof options.color === "string" ? "news_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "news_color_" + options.color : undefined;
 
   .news(class=options.color)
     +info-block({color: options.infoBlockColor, image: options.image})

@@ -5,7 +5,7 @@ mixin info-block(options)
     options.image.src = typeof options.image.src === "string" ? options.image.src : "./assets/no-image.png";
     options.image.left = typeof options.image.left === "string" ? options.image.left : "50%";
     options.image.top = typeof options.image.top === "string" ? options.image.top : "50%";
-    options.color = typeof options.color === "string" ? "info-block_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "info-block_color_" + options.color : undefined;
     
     const imageStyle = `object-position: ${options.image.left} ${options.image.top}`
 

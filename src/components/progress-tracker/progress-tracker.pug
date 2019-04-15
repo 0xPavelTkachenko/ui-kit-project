@@ -3,7 +3,7 @@ mixin progress-tracker(options)
     options = options || {};
     options.stepCount = typeof options.stepCount === "number" ? options.stepCount : 0;
     options.activeStep = typeof options.activeStep === "number" ? options.activeStep : 0;
-    options.color = typeof options.color === "string" ? "progress-tracker_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "progress-tracker_color_" + options.color : undefined;
 
     if (options.stepCount < 0) {
       options.stepCount = 0;

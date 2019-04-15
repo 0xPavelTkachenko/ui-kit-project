@@ -3,7 +3,7 @@ mixin dropdown(options)
     options = options || {};
     options.data = options.data || [];
     options.placeholder = options.placeholder || "Choose An Option";
-    options.color = typeof options.color === "string" ? "dropdown_" + options.color : undefined;
+    options.color = typeof options.color === "string" ? "dropdown_color_" + options.color : undefined;
 
   .dropdown.js-dropdown(class=options.color, data-placeholder=options.placeholder)
     select
