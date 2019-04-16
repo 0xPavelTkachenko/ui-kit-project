@@ -1,25 +1,20 @@
-$color-gray = #e5e5e5
-$color-diamond = #4eb7a8
-$color-red = #e75735
-$color-light-gray = #f2f2f2
-$color-dark-diamond = #46ab9d
-$color-dark-red = #bf3e1f
+@require "../colors"
 
 .message-box
   border-radius 0.25rem
 
   &__name
     color #fff
-    background-color $color-diamond
+    background-color $diamond
     text-align center
     font-size 2.5rem
     padding-top 1.666666666rem
     padding-bottom 2.166666666rem
-    border-bottom 2.833333333rem solid $color-dark-diamond
+    border-bottom 2.833333333rem solid $dark-diamond
 
   &__container
     padding 0 1.833333333rem 2.333333333rem 1.833333333rem
-    background-color $color-light-gray
+    background-color $light-gray
 
   &__row
     display flex
@@ -30,7 +25,7 @@ $color-dark-red = #bf3e1f
   &__avatar-wrapper
     width 7rem
     height 7rem
-    border 0.416666666rem solid $color-gray
+    border 0.416666666rem solid $gray
     border-radius 50%
     transform translateY(-50%)
     background-color #fff
@@ -73,5 +68,5 @@ $color-dark-red = #bf3e1f
 
   &_color_red
     & ^[0]__name
-      background-color $color-red
-      border-bottom 2.833333333rem solid $color-dark-red
+      background-color $red
+      border-bottom 2.833333333rem solid $darkest-red

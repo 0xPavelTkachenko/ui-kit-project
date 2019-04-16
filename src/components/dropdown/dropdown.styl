@@ -1,12 +1,10 @@
-$color-gray = #e5e5e5
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .dropdown
   .minict_wrapper
     width 100%
     height 2.333333333rem
-    background-color $color-gray
+    background-color $gray
     border none
     border-radius 0.25rem
     padding-top 0.333333333rem
@@ -18,7 +16,7 @@ $color-red = #e75735
       content ""
       width 2.75rem
       height 100%
-      background-color $color-diamond
+      background-color $diamond
       border-radius 0 0.25rem 0.25rem 0
       position absolute
       top 0
@@ -51,7 +49,7 @@ $color-red = #e75735
 
     ul li
       color #fff
-      background-color $color-diamond
+      background-color $diamond
 
     ul li:hover
       background-color #fcfcfc
@@ -60,7 +58,7 @@ $color-red = #e75735
   &_color_red
     .minict_wrapper
       &::before
-        background-color $color-red
+        background-color $red
 
       ul li
-        background-color $color-red
+        background-color $red

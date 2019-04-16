@@ -1,5 +1,4 @@
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .map
   display flex
@@ -17,7 +16,7 @@ $color-red = #e75735
     height 5.75rem
     display flex
     align-items center
-    background-color $color-diamond
+    background-color $diamond
     position relative
 
   &__title
@@ -59,4 +58,4 @@ $color-red = #e75735
 
   &_color_red
     & ^[0]__footer
-      background-color $color-red
+      background-color $red

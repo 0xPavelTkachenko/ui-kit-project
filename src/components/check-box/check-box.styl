@@ -1,6 +1,4 @@
-$color-gray = #e5e5e5
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .check-box
   display inline-block
@@ -16,7 +14,7 @@ $color-red = #e75735
     border-radius 50%
     background url("./assets/check-mark.png") center center no-repeat
     background-size 45.83% 33.33%
-    background-color $color-gray
+    background-color $gray
     cursor pointer
     display inline-block
     transition-duration 0.7s
@@ -24,8 +22,8 @@ $color-red = #e75735
 
   &__checkbox:checked + &__pseudo-checkbox
     background-image url("./assets/check-mark-checked.png")
-    background-color $color-diamond
+    background-color $diamond
 
   &_color_red
     & ^[0]__checkbox:checked + ^[0]__pseudo-checkbox
-      background-color $color-red
+      background-color $red

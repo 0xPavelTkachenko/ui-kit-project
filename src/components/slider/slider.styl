@@ -1,5 +1,4 @@
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .slider
   .rangeslider
@@ -19,7 +18,7 @@ $color-red = #e75735
     &__hint::after
       content ""
       display block
-      background-color $color-diamond
+      background-color $diamond
       width 0.7rem
       height 0.7rem
       position absolute
@@ -33,4 +32,4 @@ $color-red = #e75735
 .slider_color_red
   .rangeslider
     &__handle, &__hint, &__hint::after, &__tracker
-      background-color $color-red
+      background-color $red

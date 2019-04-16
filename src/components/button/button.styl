@@ -1,9 +1,4 @@
-$color-diamond = #4eb7a8
-$color-red = #e75735
-$color-light-diamond = #71c5b9
-$color-light-red = #eb785d
-$color-dark-diamond = #28a290
-$color-dark-red = #bf3e1f
+@require "../colors"
 
 @keyframes ripple-effect
   to
@@ -13,8 +8,8 @@ $color-dark-red = #bf3e1f
 .button
   width 100%
   height 2.666666666rem
-  background-color $color-diamond
-  box-shadow 0 0.25rem $color-dark-diamond
+  background-color $diamond
+  box-shadow 0 0.25rem $darkest-diamond
   position relative
   padding 0 2.714166666rem
   font-size 1rem
@@ -30,8 +25,8 @@ $color-dark-red = #bf3e1f
   text-overflow ellipsis
 
   &:hover
-    background-color $color-light-diamond
-    box-shadow 0 0.25rem $color-diamond
+    background-color $light-diamond
+    box-shadow 0 0.25rem $diamond
 
   &:active
     box-shadow none
@@ -47,12 +42,12 @@ $color-dark-red = #bf3e1f
     transform scale(0)
 
   &_color_red
-    background-color $color-red
-    box-shadow 0 0.25rem $color-dark-red
+    background-color $red
+    box-shadow 0 0.25rem $darkest-red
 
     &:hover
-      background-color $color-light-red
-      box-shadow 0 0.25rem $color-red
+      background-color $light-red
+      box-shadow 0 0.25rem $red
 
     &:active
       box-shadow none
@@ -66,33 +61,33 @@ $color-dark-red = #bf3e1f
     padding 0
 
   &_inversed
-    color $color-diamond
+    color $diamond
     background-color #fff
-    border-top 0.083333333rem solid $color-diamond
-    border-right 0.083333333rem solid $color-diamond
-    border-left 0.083333333rem solid $color-diamond
-    box-shadow 0 0.25rem $color-dark-diamond
+    border-top 0.083333333rem solid $diamond
+    border-right 0.083333333rem solid $diamond
+    border-left 0.083333333rem solid $diamond
+    box-shadow 0 0.25rem $dark-diamond
 
     &:hover
       color #fff
-      background-color $color-diamond
-      box-shadow 0 0.25rem $color-dark-diamond
+      background-color $diamond
+      box-shadow 0 0.25rem $dark-diamond
       border none
 
     &:active
       box-shadow none
 
     &^[0]_color_red
-      color $color-red
-      border-top 0.083333333rem solid $color-red
-      border-right 0.083333333rem solid $color-red
-      border-left 0.083333333rem solid $color-red
-      box-shadow 0 0.25rem $color-dark-red
+      color $red
+      border-top 0.083333333rem solid $red
+      border-right 0.083333333rem solid $red
+      border-left 0.083333333rem solid $red
+      box-shadow 0 0.25rem $dark-red
 
       &:hover
         color #fff
-        background-color $color-red
-        box-shadow 0 0.25rem $color-dark-red
+        background-color $red
+        box-shadow 0 0.25rem $dark-red
 
       &:active
         box-shadow none

@@ -1,6 +1,4 @@
-$color-gray = #e5e5e5
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .speech-bubble
   position relative
@@ -8,7 +6,7 @@ $color-red = #e75735
   &__triangle
     width 1.666666666rem
     height 1.666666666rem
-    background-color $color-diamond
+    background-color $diamond
     border-radius 0.5rem
     position absolute
     left -0.333333333rem
@@ -17,22 +15,22 @@ $color-red = #e75735
 
   &__content
     position relative
-    background-color $color-diamond
+    background-color $diamond
     border-radius 0.666666666rem
 
   &_color_red
     & ^[0]__triangle
-      background-color $color-red
+      background-color $red
 
     & ^[0]__content
-      background-color $color-red
+      background-color $red
 
   &_color_gray
     & ^[0]__triangle
-      background-color $color-gray
+      background-color $gray
 
     & ^[0]__content
-      background-color $color-gray
+      background-color $gray
 
   &_color_white
     & ^[0]__triangle

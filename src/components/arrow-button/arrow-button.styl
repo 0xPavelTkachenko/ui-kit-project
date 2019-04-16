@@ -1,14 +1,12 @@
-$color-gray = #e5e5e5
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .arrow-button
   width 4.166666666rem
   height 4.166666666rem
   cursor pointer
   display inline-block
-  background-color $color-diamond
-  border 0.25rem solid $color-diamond
+  background-color $diamond
+  border 0.25rem solid $diamond
   border-radius 50%
   position relative
   outline 0
@@ -28,48 +26,48 @@ $color-red = #e75735
     background-color #fff
 
     & ^[0]__triangle
-      border-color $color-diamond
+      border-color $diamond
 
   &_color_red
-    background-color $color-red
-    border-color $color-red
+    background-color $red
+    border-color $red
 
     &:hover ^[0]__triangle
-      border-color $color-red
+      border-color $red
 
   &_inversed
     background-color #fff
 
     & ^[0]__triangle
-      border-color $color-diamond
+      border-color $diamond
 
     &:hover
-      background-color $color-diamond
+      background-color $diamond
 
       & ^[0]__triangle
         border-color #fff
 
     &^[0]_color_red
       & ^[0]__triangle
-        border-color $color-red
+        border-color $red
 
       &:hover
-        background-color $color-red
+        background-color $red
 
         & ^[0]__triangle
           border-color #fff
 
   &_disabled
     cursor default
-    border-color $color-gray
-    background-color $color-gray
+    border-color $gray
+    background-color $gray
 
     & ^[0]__triangle
       border-color #fff
 
     &:hover
-      border-color $color-gray
-      background-color $color-gray
+      border-color $gray
+      background-color $gray
 
       & ^[0]__triangle
         border-color #fff

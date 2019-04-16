@@ -1,7 +1,4 @@
-$color-gray = #e5e5e5
-$color-dark-gray = #4f4f4f
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .user-profile
   display flex
@@ -10,7 +7,7 @@ $color-red = #e75735
   &__avatar-wrapper
     width 7rem
     height 7rem
-    border 0.44rem solid $color-gray
+    border 0.44rem solid $gray
     border-radius 50%
     margin-right 1rem
     overflow hidden
@@ -68,10 +65,10 @@ $color-red = #e75735
 
   &_color_gray
     & ^[0]__name
-      color $color-red
+      color $red
 
     & ^[0]__job
-      color $color-dark-gray
+      color $darkest-gray
 
     & ^[0]__facebook, & ^[0]__twitter, & ^[0]__dribbble
       background-image url("./assets/contacts-sprite-gray.png")

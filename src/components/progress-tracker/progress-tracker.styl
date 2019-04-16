@@ -1,6 +1,4 @@
-$color-gray = #e5e5e5
-$color-diamond = #4eb7a8
-$color-red = #e75735
+@require "../colors"
 
 .progress-tracker
   display flex
@@ -29,20 +27,20 @@ $color-red = #e75735
     height 2.416666666rem
     min-width 2.416666666rem
     color #fff
-    background-color $color-gray
+    background-color $gray
     border-radius 50%
     font-size 1.1666rem
     cursor default
     font-weight bold
 
   &__step::after
-    background-color $color-gray
+    background-color $gray
 
   &__step_complete::after, &__step_complete > &__marker, &__step_active > &__marker
-    background-color $color-diamond
+    background-color $diamond
 
   &_color_red
     & ^[0]__step_complete::after,
     & ^[0]__step_complete > ^[0]__marker,
     & ^[0]__step_active > ^[0]__marker
-      background-color $color-red
+      background-color $red

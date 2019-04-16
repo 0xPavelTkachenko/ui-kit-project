@@ -1,10 +1,4 @@
-$color-gray = #e5e5e5
-$color-light-gray = #f2f2f2
-$color-dark-gray = #8b8b8b
-$color-diamond = #4eb7a8
-$color-dark-diamond = #3cac9f
-$color-red = #e75735
-$color-dark-red = #d54c2c
+@require "../colors"
 
 .calendar
   cursor default
@@ -18,19 +12,19 @@ $color-dark-red = #d54c2c
     &::before, &--day-name, &--cell.-selected-,
     &--cell.-selected-.-current-,
     &--cell.-selected-.-focus-
-      background-color $color-diamond
+      background-color $diamond
 
     &--cell
       height unset
-      color $color-dark-gray
-      background-color $color-light-gray
+      color $dark-gray
+      background-color $light-gray
       border-radius 0
       border-bottom 0.083333333rem solid #fff
       border-right 0.083333333rem solid #fff
       font-size 1.5rem
 
     &--cell.-current-
-      color $color-diamond
+      color $diamond
 
     &--cell.-current-.-selected-
       border-bottom 0.083333333rem solid #fff
@@ -40,7 +34,7 @@ $color-dark-red = #d54c2c
       color #fff
 
     &--nav
-      background-color $color-dark-diamond
+      background-color $dark-diamond
 
     &::before
       content attr(data-date)
@@ -100,7 +94,7 @@ $color-dark-red = #d54c2c
 
     &--cell:hover
       color unset
-      background-color $color-gray
+      background-color $gray
 
     &--cell-day:nth-child(7n)
       border-right 0
@@ -117,7 +111,7 @@ $color-dark-red = #d54c2c
     &--buttons
       padding 0
       padding-left 1.4rem
-      background-color $color-gray
+      background-color $gray
 
     &--button[data-action="today"]
       -webkit-flex 0
@@ -125,8 +119,8 @@ $color-dark-red = #d54c2c
       flex 0
       justify-content flex-start
       height 4.1rem
-      color $color-dark-gray
-      background-color $color-gray
+      color $dark-gray
+      background-color $gray
       font-size 1rem
       font-weight bold
       text-transform uppercase
@@ -142,10 +136,10 @@ $color-dark-red = #d54c2c
       &::before, &--day-name, &--cell.-selected-,
       &--cell.-selected-.-current-,
       &--cell.-selected-.-focus-
-        background-color $color-red
+        background-color $red
 
       &--cell.-current-
-        color $color-red
+        color $red
 
       &--nav
-        background-color $color-dark-red
+        background-color $dark-red

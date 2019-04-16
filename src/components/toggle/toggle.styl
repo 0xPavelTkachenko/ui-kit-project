@@ -1,6 +1,4 @@
-$color-diamond = #4eb7a8
-$color-red = #e75735
-$color-gray = #e5e5e5
+@require "../colors"
 
 .toggle
   &__checkbox
@@ -24,13 +22,13 @@ $color-gray = #e5e5e5
     top 50%
 
   &__checkbox:not(:checked) + &__pseudo-checkbox
-    background-color $color-diamond
+    background-color $diamond
     animation to-color-gray 0.2s linear
     animation-iteration-count 1
     animation-fill-mode forwards
 
   &__checkbox:checked + &__pseudo-checkbox
-    background-color $color-gray
+    background-color $gray
     animation to-color-diamond 0.2s linear
     animation-iteration-count 1
     animation-fill-mode forwards
@@ -74,10 +72,10 @@ $color-gray = #e5e5e5
 
   &_color_red
     & ^[0]__checkbox:not(:checked) + ^[0]__pseudo-checkbox
-      background-color $color-red
+      background-color $red
 
     & ^[0]__checkbox:checked + ^[0]__pseudo-checkbox
-      background-color $color-gray
+      background-color $gray
       animation to-color-red 0.2s linear
       animation-iteration-count 1
       animation-fill-mode forwards
@@ -92,12 +90,12 @@ $color-gray = #e5e5e5
 
 @keyframes to-color-diamond
   to
-    background-color $color-diamond
+    background-color $diamond
 
 @keyframes to-color-red
   to
-    background-color $color-red
+    background-color $red
 
 @keyframes to-color-gray
   to
-    background-color $color-gray
+    background-color $gray

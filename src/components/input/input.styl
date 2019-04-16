@@ -1,10 +1,9 @@
-$color-gray = #e5e5e5
-$color-dark-gray = #4f4f4f
+@require "../colors"
 
 .input
   width 100%
   color #777777
-  background-color $color-gray
+  background-color $gray
   border 0.25rem solid #fff
   border-radius 0.25rem
   height 2.833333333rem
@@ -16,5 +15,5 @@ $color-dark-gray = #4f4f4f
   letter-spacing 0.1rem
 
   &:focus
-    box-shadow 0 0 0.333333333rem $color-dark-gray
+    box-shadow 0 0 0.333333333rem $darkest-gray
     outline none
