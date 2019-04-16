@@ -1,6 +1,10 @@
 mixin calendar(options)
   -
     options = options || {};
-    options.color = typeof options.color === "string" ? "calendar_color_" + options.color : undefined;
 
-  .calendar.js-calendar(class=options.color)
+    const { color } = options;
+
+    let className = "calendar js-calendar";
+    className += color ? ` calendar_color_${color}` : "";
+
+  div(class=className)

@@ -1,23 +1,31 @@
 mixin slider(options)
   -
     options = options || {};
-    options.min = options.min || 0;
-    options.max = options.max || 100;
-    options.grid = options.grid === true ? "true" : undefined;
-    options.snapGrid = options.snapGrid === true ? "true" : undefined;
-    options.hideBar = options.hideBar === true ? "slider_non-bar" : undefined;
-    options.hideValueLabel = options.hideValueLabel === true ? "true" : undefined;
-    options.hideMinMax = options.hideMinMax === true ? "true" : undefined;
-    options.color = typeof options.color === "string" ? " slider_color_" + options.color : "";
 
-  .slider.js-slider(class=options.color, class=options.hideBar)
+    const { color, hideBar } = options;
+    let { min, max, grid, snapGrid, hideValueLabel, hideMinMax, start, step } = options;
+
+    let className = "slider js-slider";
+    className += color ? ` slider_color_${color}` : "";
+    className += hideBar ? " slider_non-bar" : "";
+
+    min = min || 0;
+    max = max || 100;
+    grid = grid ? "true" : false;
+    snapGrid = snapGrid ? "true" : false;
+    hideValueLabel = hideValueLabel ? "true" : false;
+    hideMinMax = hideMinMax ? "true" : false;
+    start = start || min;
+    step = step || 1;
+
+  div(class=className)
     input(
-      data-min=options.min,
-      data-max=options.max,
-      data-grid=options.grid,
-      data-grid-snap=options.snapGrid,
-      data-hide-from-to=options.hideValueLabel,
-      data-hide-min-max=options.hideMinMax,
-      data-from=options.start,
-      data-step=options.step
+      data-min=min,
+      data-max=max,
+      data-grid=grid,
+      data-grid-snap=snapGrid,
+      data-hide-from-to=hideValueLabel,
+      data-hide-min-max=hideMinMax,
+      data-from=start,
+      data-step=step
     )

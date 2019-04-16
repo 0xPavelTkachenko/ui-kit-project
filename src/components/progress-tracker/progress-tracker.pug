@@ -1,29 +1,36 @@
 mixin progress-tracker(options)
   -
     options = options || {};
-    options.stepCount = typeof options.stepCount === "number" ? options.stepCount : 0;
-    options.activeStep = typeof options.activeStep === "number" ? options.activeStep : 0;
-    options.color = typeof options.color === "string" ? "progress-tracker_color_" + options.color : undefined;
 
-    if (options.stepCount < 0) {
-      options.stepCount = 0;
+    const { color } = options;
+
+    let className = "progress-tracker";
+    className += color ? ` progress-tracker_color_${color}` : "";
+
+    let { stepCount, activeStep } = options;
+
+    stepCount = stepCount || 0;
+    activeStep = activeStep || 0;
+
+    if (stepCount < 0) {
+      stepCount = 0;
     }
 
-    if (options.activeStep < 0) {
-      options.activeStep = 0;
-    } else if (options.activeStep > options.stepCount) {
-      options.activeStep = options.stepCount
+    if (activeStep < 0) {
+      activeStep = 0;
+    } else if (activeStep > stepCount) {
+      activeStep = stepCount
     }
 
-  .progress-tracker(class=options.color)
-    - for (let i = 1; i <= options.activeStep; i++)
-    -   if (i !== options.activeStep)
+  div(class=className)
+    - for (let i = 1; i <= activeStep; i++)
+    -   if (i !== activeStep)
           .progress-tracker__step.progress-tracker__step_complete
             .progress-tracker__marker=i
     -   else
           .progress-tracker__step.progress-tracker__step_active
             .progress-tracker__marker=i
 
-    - for (let i = options.activeStep + 1; i <= options.stepCount; i++)
+    - for (let i = activeStep + 1; i <= stepCount; i++)
         .progress-tracker__step
           .progress-tracker__marker=i

@@ -4,23 +4,22 @@ include ../button/button
 mixin event(options)
   -
     options = options || {};
-    options.infoBlockColor = typeof options.color === "string" ? options.color : undefined;
-    options.buttonColor = typeof options.color === "string" ? options.color : undefined;
-    options.color = typeof options.color === "string" ? "event_color_" + options.color : undefined;
 
-  .event(class=options.color)
-    +info-block({color: options.infoBlockColor, image: options.image})
+    const { color, image, day, month, title, text, buttonText } = options;
+
+  .event
+    +info-block({color: color, image: image})
       .event__content
         .event__date
-          .event__day=options.day
-          .event__month=options.month
-        .event__title=options.title
-        .event__text=options.text
+          .event__day=day
+          .event__month=month
+        .event__title=title
+        .event__text=text
         .event__button-wrapper
           +button({
             inversed: true,
-            color: options.buttonColor,
-            text: options.buttonText,
+            color: color,
+            text: buttonText,
             size: "small",
             padding: "non-padding"
           })

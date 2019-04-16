@@ -1,11 +1,17 @@
 mixin dropdown(options)
   -
     options = options || {};
-    options.data = options.data || [];
-    options.placeholder = options.placeholder || "Choose An Option";
-    options.color = typeof options.color === "string" ? "dropdown_color_" + options.color : undefined;
 
-  .dropdown.js-dropdown(class=options.color, data-placeholder=options.placeholder)
+    const { color } = options;
+    let { data, placeholder } = options;
+
+    let className = "dropdown js-dropdown";
+    className += color ? ` dropdown_color_${color}` : "";
+
+    data = data || [];
+    placeholder = placeholder || "Choose An Option";
+
+  div(class=className, data-placeholder=placeholder)
     select
-      each data in options.data
-        option=data
+      each dataObject in data
+        option=dataObject

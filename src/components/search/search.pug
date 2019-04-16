@@ -1,14 +1,21 @@
 mixin search(options)
   -
     options = options || {};
-    options.placeholder = options.placeholder || "Search";
-    options.notFoundMessage = options.notFoundMessage || "I've not found what I'm looking for...";
-    options.color = typeof options.color === "string" ? "search_color_" + options.color : undefined;
 
-  .search.js-search(class=options.color)
+    const { color, attr } = options;
+
+    let className = "search js-search";
+    className += color ? ` search_color_${color}` : "";
+
+    let { placeholder, notFoundMessage } = options;
+
+    placeholder = placeholder || "Search";
+    notFoundMessage = notFoundMessage || "I've not found what I'm looking for...";
+
+  div(class=className)
     input.search__input(
       type="search",
-      data-placeholder=options.placeholder,
-      data-not-found-message=options.notFoundMessage
-    )&attributes(options.attr)
+      data-placeholder=placeholder,
+      data-not-found-message=notFoundMessage
+    )&attributes(attr)
     .search__button

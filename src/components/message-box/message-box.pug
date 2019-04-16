@@ -5,25 +5,31 @@ include ../button/button
 mixin message-box(options)
   -
     options = options || {};
-    options.avatar = typeof options.avatar === "string" ? options.avatar : "./assets/no-avatar.png";
-    options.buttonColor = typeof options.color === "string" ? options.color : undefined;
-    options.color = typeof options.color === "string" ? "message-box_color_" + options.color : undefined;
 
-  .message-box(class=options.color)
-    .message-box__name=options.name
+    const { color, name, message, buttonText } = options;
+
+    let className = "message-box";
+    className += color ? ` message-box_color_${color}` : "";
+
+    let { avatar } = options;
+
+    avatar = avatar || "./assets/no-avatar.png";
+
+  div(class=className)
+    .message-box__name=name
     .message-box__container
       .message-box__row
         .message-box__chat-wrapper
           button.message-box__chat(type="button")
         .message-box__avatar-wrapper
-          img.message-box__avatar(src=options.avatar, alt="avatar")
+          img.message-box__avatar(src=avatar, alt="avatar")
         .message-box__camera-wrapper
           button.message-box__camera(type="button")
       .message-box__speech-bubble-wrapper
         +speech-bubble({color: "white", direction: "top"})
           .message-box__message
-            | #{options.message}
+            | #{message}
       .message-box__textarea-wrapper
         +textarea()
       .message-box__button-wrapper
-        +button({text: options.buttonText, color: options.buttonColor})
+        +button({text: buttonText, color: color})

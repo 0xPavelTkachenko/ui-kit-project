@@ -1,10 +1,13 @@
 mixin youtube-video-player(options)
   -
     options = options || {};
-    options.id = typeof options.id === "string" ? 'https://www.youtube.com/embed/' + options.id + "?rel=0" : undefined;
+
+    const { id } = options;
+
+    const src = id ? `https://www.youtube.com/embed/${id}?rel=0` : undefined;
 
   iframe.youtube-video-player(
-    src=options.id,
+    src=src,
     frameborder="0",
     allow="autoplay; encrypted-media",
     allowfullscreen

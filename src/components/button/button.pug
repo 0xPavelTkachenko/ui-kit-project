@@ -1,14 +1,13 @@
 mixin button(options)
   -
     options = options || {};
-    options.color = typeof options.color === "string" ? "button_color_" + options.color : undefined;
-    options.size = typeof options.size === "string" ? "button_size_" + options.size : undefined;
-    options.padding = typeof options.padding === "string" ? "button_padding_" + options.padding : undefined;
-    options.inversed = options.inversed === true ? "button_inversed" : undefined;
 
-  button.button.js-button(
-    class=options.color,
-    class=options.size,
-    class=options.padding,
-    class=options.inversed
-  )&attributes(options.attr)=options.text
+    const { color, size, padding, inversed, text, attr } = options;
+
+    let className = "button js-button";
+    className += color ? ` button_color_${color}` : "";
+    className += size ? ` button_size_${size}` : "";
+    className += padding ? ` button_padding_${padding}` : "";
+    className += inversed ? " button_inversed" : "";
+
+  button(class=className)&attributes(attr)=text

@@ -1,23 +1,30 @@
 mixin map(options)
   -
     options = options || {};
-    options.center = options.center || {};
-    options.marker = options.marker || {};
-    options.color = typeof options.color === "string" ? "map_color_" + options.color : undefined;
 
-  .map.js-map(
-    class=options.color,
-    data-center-lat=options.center.lat,
-    data-center-lng=options.center.lng,
-    data-marker-lat=options.marker.lat,
-    data-marker-lng=options.marker.lng,
-    data-show-marker=options.showMarker ? "true" : false,
-    data-zoom=options.zoom
+    const { showMarker, zoom, color, title, address } = options;
+
+    let className = "map js-map";
+    className += color ? ` map_color_${color}` : "";
+
+    let { center, marker } = options;
+
+    center = center || {};
+    marker = marker || {};
+
+  div(
+    class=className,
+    data-center-lat=center.lat,
+    data-center-lng=center.lng,
+    data-marker-lat=marker.lat,
+    data-marker-lng=marker.lng,
+    data-show-marker=showMarker ? "true" : false,
+    data-zoom=zoom
   )
     .map__window
     .map__footer
-      .map__title=options.title
-      .map__address=options.address
+      .map__title=title
+      .map__address=address
       .map__buttons
         button.map__location-button(type="button")
         button.map__pin-button(type="button")

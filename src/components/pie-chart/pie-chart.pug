@@ -1,12 +1,16 @@
 mixin pie-chart(options)
   -
     options = options || {};
-    options.strokeWidth = typeof options.strokeWidth === "number" && !isNaN(options.strokeWidth) ? options.strokeWidth : 6;
-    options.data = options.data || [];
 
-    const valueSum = options.data.reduce((sum, data) => sum + data.value, 0);
+    let { strokeWidth, data } = options;
+
+    strokeWidth = strokeWidth || 6;
+    data = data || [];
+
+    const valueSum = data.reduce((sum, data) => sum + data.value, 0);
+
     let offset = 0;
-    const segmentData = options.data.map(dataObject => {
+    const segmentData = data.map(dataObject => {
       let segment = {
         color: dataObject.color || "#000",
         value: (dataObject.value / valueSum) * 100,
@@ -18,9 +22,10 @@ mixin pie-chart(options)
       return segment;
     });
 
-  svg.pie-chart(viewBox="0 0 42 42", class=options.color)
+  svg.pie-chart(viewBox="0 0 42 42")
     each segment in segmentData
       circle.pie-chart__segment(
         cx="21", cy="21", r="15.91549430918954",
-        stroke-width=options.strokeWidth, stroke-dasharray=`${segment.value} ${100 - segment.value}`,
-        stroke-dashoffset=`${segment.offset}`, stroke=segment.color)
+        stroke-width=strokeWidth, stroke-dasharray=`${segment.value} ${100 - segment.value}`,
+        stroke-dashoffset=`${segment.offset}`, stroke=segment.color
+      )

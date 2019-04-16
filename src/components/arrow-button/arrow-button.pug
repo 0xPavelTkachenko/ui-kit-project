@@ -1,17 +1,15 @@
 mixin arrow-button(options)
   -
     options = options || {};
-    options.color = typeof options.color === "string" ? "arrow-button_color_" + options.color : undefined;
-    options.size = typeof options.size === "string" ? "arrow-button_size_" + options.size : undefined;
-    options.inversed = options.inversed === true ? "arrow-button_inversed" : undefined;
-    options.disabled = typeof options.disabled === "boolean" ? "arrow-button_disabled" : undefined;
-    options.direction = typeof options.direction === "string"
-      ? "arrow-button_direction_" + options.direction
-      : undefined;
 
-  button.arrow-button(
-    class=options.color, class=options.size,
-    class=options.inversed, class=options.direction,
-    class=options.disabled
-  )&attributes(options.attr)
+    const { color, size, direction, inversed, disabled, attr } = options;
+
+    let className = "arrow-button";
+    className += color ? ` arrow-button_color_${color}` : "";
+    className += size ? ` arrow-button_size_${size}` : "";
+    className += direction ? ` arrow-button_direction_${direction}` : "";
+    className += inversed ? " arrow-button_inversed" : "";
+    className += disabled ? " arrow-button_disabled" : "";
+
+  button(class=className)&attributes(attr)
     span.arrow-button__triangle

@@ -3,12 +3,12 @@ include ../info-block/info-block
 mixin news(options)
   -
     options = options || {};
-    options.infoBlockColor = typeof options.color === "string" ? options.color : undefined;
-    options.color = typeof options.color === "string" ? "news_color_" + options.color : undefined;
 
-  .news(class=options.color)
-    +info-block({color: options.infoBlockColor, image: options.image})
+    const { color, image, title, date, text } = options;
+
+  .news
+    +info-block({color: color, image: image})
       .news__content
-        .news__title=options.title
-        .news__date=options.date
-        .news__text=options.text
+        .news__title=title
+        .news__date=date
+        .news__text=text
