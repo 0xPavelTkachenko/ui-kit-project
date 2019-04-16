@@ -2,10 +2,11 @@ mixin search(options)
   -
     options = options || {};
 
-    const { color, attr } = options;
+    const { color, failed, attr } = options;
 
     let className = "search js-search";
     className += color ? ` search_color_${color}` : "";
+    className += failed ? " search_failed" : "";
 
     let { placeholder, notFoundMessage } = options;
 
