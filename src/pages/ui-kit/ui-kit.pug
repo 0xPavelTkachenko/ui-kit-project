@@ -35,45 +35,49 @@ html(lang="en")
         .buttons
           .buttons__title-wrapper
             h2.title Standard buttons
-          .buttons__row
-            .buttons__button-wrapper.buttons__button-wrapper_small
-              +button({text: "Button", size: "small"})
-            .buttons__button-wrapper
-              +button({text: "Button"})
-            .buttons__button-wrapper
-              +button({text: "Button", color: "red"})
-            .buttons__button-wrapper.buttons__button-wrapper_small
-              +button({text: "Button", size: "small", color: "red"})
-          .buttons__row
-            .buttons__button-wrapper.buttons__button-wrapper_small
-              +button({text: "Button", size: "small"})
-            .buttons__button-wrapper
-              +button({text: "Button"})
-            .buttons__button-wrapper
-              +button({text: "Button", color: "red"})
-            .buttons__button-wrapper.buttons__button-wrapper_small
-              +button({text: "Button", size: "small", color: "red"})
-          .buttons__row
-            .buttons__button-wrapper.buttons__button-wrapper_small
-              +button({text: "Button", size: "small", inversed: true})
-            .buttons__button-wrapper
-              +button({text: "Button", inversed: true})
-            .buttons__button-wrapper
-              +button({text: "Button", color: "red", inversed: true})
-            .buttons__button-wrapper.buttons__button-wrapper_small
-              +button({text: "Button", size: "small", color: "red", inversed: true})
+          .buttons__container
+            .buttons__row
+              .buttons__button-wrapper.buttons__button-wrapper_small
+                +button({text: "Button", size: "small"})
+              .buttons__button-wrapper
+                +button({text: "Button"})
+              .buttons__button-wrapper
+                +button({text: "Button", color: "red"})
+              .buttons__button-wrapper.buttons__button-wrapper_small
+                +button({text: "Button", size: "small", color: "red"})
+            .buttons__row
+              .buttons__button-wrapper.buttons__button-wrapper_small
+                +button({text: "Button", size: "small"})
+              .buttons__button-wrapper
+                +button({text: "Button"})
+              .buttons__button-wrapper
+                +button({text: "Button", color: "red"})
+              .buttons__button-wrapper.buttons__button-wrapper_small
+                +button({text: "Button", size: "small", color: "red"})
+            .buttons__row
+              .buttons__button-wrapper.buttons__button-wrapper_small
+                +button({text: "Button", size: "small", inversed: true})
+              .buttons__button-wrapper
+                +button({text: "Button", inversed: true})
+              .buttons__button-wrapper
+                +button({text: "Button", color: "red", inversed: true})
+              .buttons__button-wrapper.buttons__button-wrapper_small
+                +button({text: "Button", size: "small", color: "red", inversed: true})
 
       .main-wrapper__arrow-buttons
         .arrow-buttons
           .arrow-buttons__title-wrapper
             h2.title Arrow buttons
           .arrow-buttons__container
-            +arrow-button({inversed: true})
-            +arrow-button({inversed: true, direction: "right"})
-            +arrow-button({disabled: true})
-            +arrow-button({disabled: true, direction: "right"})
-            +arrow-button()
-            +arrow-button({direction: "right"})
+            .arrow-buttons__button-pair
+              +arrow-button({inversed: true})
+              +arrow-button({inversed: true, direction: "right"})
+            .arrow-buttons__button-pair
+              +arrow-button({disabled: true})
+              +arrow-button({disabled: true, direction: "right"})
+            .arrow-buttons__button-pair
+              +arrow-button()
+              +arrow-button({direction: "right"})
 
       .main-wrapper__percentages-pie-chart
         .percentages-pie-chart
