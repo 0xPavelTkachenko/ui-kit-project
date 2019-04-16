@@ -1,7 +1,9 @@
 import $ from 'jquery';
-import 'ion-rangeslider';
-import 'ion-rangeslider/css/ion.rangeSlider.css';
-import 'ion-rangeslider/css/ion.rangeSlider.skinHTML5.css';
+
+import RangeSlider from '../../../libs/slider/rangeslider/js/rangeslider';
+import '../../../libs/slider/rangeslider/css/rangeslider.css';
+
+RangeSlider.init($);
 
 class Slider {
   constructor(root, id) {
@@ -15,15 +17,7 @@ class Slider {
   }
 
   _useJqueryPlugin() {
-    const $input = this._$root.find('input');
-
-    $input.ionRangeSlider({ keyboard: false });
-
-    $('document').ready(this._recalculateSlider.bind($input));
-  }
-
-  _recalculateSlider() {
-    this.data('ionRangeSlider').update();
+    this._$root.rangeslider();
   }
 }
 

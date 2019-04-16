@@ -1,105 +1,36 @@
-$color-gray = #e5e5e5
 $color-diamond = #4eb7a8
 $color-red = #e75735
 
 .slider
-  .irs
-    height 4.583333333rem
+  .rangeslider
+    height 0.435rem
 
-    &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
-      background $color-diamond
+    &__handle
+      width 1.65rem
+      height 1.65rem
 
-    &-bar, &-bar-edge
-      border-color $color-diamond
+    &__hint
+      font-size 1.1rem
+      padding 0.2rem 0.76rem
+      height 2rem
+      bottom calc(100% + 0.7rem)
+      border-radius 0.45rem
 
-    &-with-grid
-      height 6.25rem
-
-    &-line
-      height 0.416666666rem
-      top 2.75rem
-      background $color-gray
-      border none
-      border-radius 0.666666666rem
-      border-width 0.083333333rem
-
-      &-left, &-mid, &-right
-        height 0.666666666rem
-
-    &-slider
-      top 2.083333333rem
-      width 1.666666666rem
-      height 1.666666666rem
-      border-radius 50%
-      border none
-      box-shadow none
-
-    &-min, &-max
-      font-size 1rem
-      padding 0.083333333rem 0.416666666rem
-      border-radius 0.25rem
-
-    &-from, &-to, &-single
-      font-size 1.166666666rem
-      padding 0.083333333rem 0.416666666rem
-      border-radius 0.25rem
-
-    &-grid
-      height 2.25rem
-
-    &-grid-text
-      line-height 0.75rem
-      padding 0 0.25rem
-      font-size 1.166666666rem
-      bottom 1.333333333rem
-
-    &-grid-pol
-      display none
-
-    &-bar
-      height 0.25rem
-      top 2.75rem
-      border-top-width 0.083333333rem
-      border-bottom-width 0.083333333rem
-
-      &-edge
-        height 0.25rem
-        top 2.75rem
-        width 1.166666666rem
-        border-width 0.083333333rem
-        border-radius 1.333333333rem 0 0 1.333333333rem
-
-    &-shadow
-      height 0.166666666rem
-      top 3.166666666rem
-      border-radius 0.416666666rem
-
-    &-single
-      padding 0.25rem 0.875rem
-      border-radius 0.5rem
-      margin-top -0.583333333rem
-
-    &-single::after
+    &__hint::after
       content ""
-      width 0.833333333rem
-      height 0.833333333rem
       display block
+      background-color $color-diamond
+      width 0.7rem
+      height 0.7rem
       position absolute
       left 50%
       transform translateX(-50%) rotate(45deg)
-      border-radius 0.25rem
-      z-index -1
-      bottom -0.25rem
+      border-radius 0.2rem
 
-  &_color_red
-    .irs
-      &-slider, &-slider:hover, &-slider.state_hover, &-bar, &-bar-edge, &-single, &-single::after
-        background $color-red
+    &__grid
+      margin-top 0.7rem
 
-      &-bar, &-bar-edge
-        border-color $color-red
-
-  &_non-bar
-    .irs
-      &-bar, &-bar-edge
-        display none
+.slider_color_red
+  .rangeslider
+    &__handle, &__hint, &__hint::after, &__tracker
+      background-color $color-red

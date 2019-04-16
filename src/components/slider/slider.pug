@@ -2,30 +2,18 @@ mixin slider(options)
   -
     options = options || {};
 
-    const { color, hideBar } = options;
-    let { min, max, grid, snapGrid, hideValueLabel, hideMinMax, start, step } = options;
+    const { min, max, start, step, displayHint, displayTracker, displayGrid, color } = options;
 
     let className = "slider js-slider";
     className += color ? ` slider_color_${color}` : "";
-    className += hideBar ? " slider_non-bar" : "";
 
-    min = min || 0;
-    max = max || 100;
-    grid = grid ? "true" : false;
-    snapGrid = snapGrid ? "true" : false;
-    hideValueLabel = hideValueLabel ? "true" : false;
-    hideMinMax = hideMinMax ? "true" : false;
-    start = start || min;
-    step = step || 1;
-
-  div(class=className)
-    input(
-      data-min=min,
-      data-max=max,
-      data-grid=grid,
-      data-grid-snap=snapGrid,
-      data-hide-from-to=hideValueLabel,
-      data-hide-min-max=hideMinMax,
-      data-from=start,
-      data-step=step
-    )
+  div(
+    class=className,
+    data-min=min,
+    data-max=max,
+    data-from=start,
+    data-step=step,
+    data-display-hint=displayHint ? "true" : false,
+    data-display-tracker=displayTracker ? "true" : false,
+    data-display-grid=displayGrid ? "true" : false
+  )

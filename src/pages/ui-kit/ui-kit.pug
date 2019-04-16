@@ -102,9 +102,9 @@ html(lang="en")
             h2.title Sliders
           .sliders__container
             .sliders__left-slider-wrapper
-              +slider({start: 40, hideMinMax: true, hideBar: true, color: "red"})
+              +slider({start: 40, displayHint: true, color: "red"})
             .sliders__right-slider-wrapper
-              +slider({start: 75, hideMinMax: true, hideValueLabel: true, grid: true})
+              +slider({start: 75, displayTracker: true, displayGrid: true, step: 25})
 
       .main-wrapper__stages
         .stages
