@@ -2,7 +2,17 @@ mixin slider(options)
   -
     options = options || {};
 
-    const { min, max, start, step, displayHint, displayTracker, displayGrid, color } = options;
+    const {
+      min,
+      max,
+      start,
+      step,
+      gridStep,
+      displayHint,
+      displayTracker,
+      displayGrid,
+      color
+    } = options;
 
     let className = "slider js-slider";
     className += color ? ` slider_color_${color}` : "";
@@ -13,6 +23,7 @@ mixin slider(options)
     data-max=max,
     data-from=start,
     data-step=step,
+    data-grid-step=gridStep,
     data-display-hint=displayHint ? "true" : false,
     data-display-tracker=displayTracker ? "true" : false,
     data-display-grid=displayGrid ? "true" : false
