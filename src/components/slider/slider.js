@@ -15,7 +15,7 @@ class Slider {
   }
 
   _useJqueryPlugin() {
-    this._$root.rangeslider();
+    this._$root.rangeSlider();
   }
 }
 
