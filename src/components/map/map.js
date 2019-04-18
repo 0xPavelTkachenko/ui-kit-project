@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import ymaps from 'ymaps';
 
 class Map {

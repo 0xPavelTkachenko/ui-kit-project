@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 import '../../../libs/dropdown/minimalect/js/jquery.minimalect.min';
 import '../../../libs/dropdown/minimalect/css/jquery.minimalect.min.css';
 

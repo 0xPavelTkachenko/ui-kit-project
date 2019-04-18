@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 class Search {
   constructor(root, id) {
     this._$root = $(root);

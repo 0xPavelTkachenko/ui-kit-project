@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 import RangeSlider from '../../../libs/slider/rangeslider/js/rangeslider';
 import '../../../libs/slider/rangeslider/css/rangeslider.css';
 

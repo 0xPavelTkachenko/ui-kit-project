@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 class Button {
   constructor(root, id) {
     this._$root = $(root);
