@@ -1,5 +1,5 @@
-import RangeSlider from '../../../libs/slider/rangeslider/js/rangeslider';
-import '../../../libs/slider/rangeslider/css/rangeslider.css';
+import RangeSlider from '../../../libs/slider/range-slider/js/range-slider';
+import '../../../libs/slider/range-slider/css/range-slider.css';
 
 RangeSlider.init($);
 
