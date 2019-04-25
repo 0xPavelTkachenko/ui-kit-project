@@ -1,6 +1,11 @@
 # UI Kit
 Набор элементов для создания сайта.
 
+## Клонирование репозитория
+```console
+$ git clone https://github.com/pasha-zolotukhin/ui-kit-project.git
+```
+
 ## Сборка проекта
 ```console
 $ cd ui-kit-project
