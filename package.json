@@ -1,7 +1,7 @@
 {
   "author": "Pavel Tkachenko",
   "dependencies": {
-    "air-datepicker": "https://github.com/pasha-zolotukhin/air-datepicker.git",
+    "air-datepicker": "https://github.com/p-tka4enko/air-datepicker.git",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",

@@ -3,7 +3,7 @@
 
 ## Клонирование репозитория
 ```console
-$ git clone https://github.com/pasha-zolotukhin/ui-kit-project.git
+$ git clone https://github.com/p-tka4enko/ui-kit-project.git
 ```
 
 ## Сборка проекта
@@ -24,5 +24,5 @@ $ npm run server
 ```
 
 ## Ссылки на Github Pages
-[Макет](https://pasha-zolotukhin.github.io/ui-kit-project/ui-kit.html)  
-[Страницы](https://pasha-zolotukhin.github.io/ui-kit-project/index.html)
+[Макет](https://p-tka4enko.github.io/ui-kit-project/ui-kit.html)  
+[Страницы](https://p-tka4enko.github.io/ui-kit-project/index.html)
