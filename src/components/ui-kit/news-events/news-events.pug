@@ -1,0 +1,32 @@
+include ../../news/news
+include ../../event/event
+include ../title/title
+
+mixin news-events()
+  .news-events
+    .news-events__title-wrapper
+      +title({text: "News & Events"})
+    .news-events__container
+      .news-events__item-wrapper
+        +news({
+          title: "It's all going downhill",
+          date: "24 August 2013",
+          text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed condimentum aliquet venenatis. Etiam a nisi nunc, a tincidunt eros.",
+          image: {
+            src: "assets/images/cyclist.png",
+            left: "-7.5rem"
+          },
+          color: "red"
+        })
+      .news-events__item-wrapper
+        +event({
+          day: "24",
+          month: "Aug",
+          title: "This is the title",
+          text: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",
+          image: {
+            src: "assets/images/new-york.png",
+            left: "0"
+          },
+          buttonText: "Add to calendar"
+        })

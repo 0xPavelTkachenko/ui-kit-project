@@ -1,0 +1,41 @@
+.percentages-pie-chart
+  &__title-wrapper
+    margin-bottom 1.4rem
+
+  &__container
+    display flex
+
+    @media only screen and (max-width: 400px)
+      flex-wrap wrap
+      justify-content center
+
+  &__percentage-circle-wrapper
+    width 9.5rem
+    height 9.5rem
+
+  &__percentage-circle-wrapper:nth-child(1), &__percentage-circle-wrapper:nth-child(2)
+    @media only screen and (max-width: 400px)
+      flex-basis 35%
+
+  &__percentage-circle-wrapper:nth-child(3)
+    margin-left 1.5rem
+
+    @media only screen and (max-width: 400px)
+      margin-left 0
+      flex-basis 33%
+
+  &__percentage-circle-wrapper:nth-child(4)
+    margin-left 1.2rem
+
+    @media only screen and (max-width: 400px)
+      margin-left 0
+      flex-basis 33%
+
+  &__pie-chart-wrapper
+    width 9rem
+    height 9rem
+    margin-left 1.3rem
+
+    @media only screen and (max-width: 400px)
+      margin-left 0
+      flex-basis 33%

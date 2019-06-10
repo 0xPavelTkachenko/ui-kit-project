@@ -1,0 +1,19 @@
+include ../../map/map
+include ../title/title
+
+mixin location()
+  .location
+    .location__title-wrapper
+      +title({text: "Location"})
+    .location__container
+      +map(
+        {
+          title: "Meet us!",
+          address: "1259 California St San Francisco, CA",
+          zoom: 14,
+          center: {lat: 56.49541886, lng: 84.96118069},
+          showMarker: true,
+          marker: {lat: 56.49541886, lng: 84.96118069},
+          color: "red"
+        }
+      )

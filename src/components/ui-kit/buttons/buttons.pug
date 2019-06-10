@@ -1,0 +1,35 @@
+include ../../button/button
+include ../title/title
+
+mixin buttons()
+  .buttons
+    .buttons__title-wrapper
+      +title({text: "Standard buttons"})
+    .buttons__container
+      .buttons__row
+        .buttons__button-wrapper.buttons__button-wrapper_small
+          +button({text: "Button", size: "small"})
+        .buttons__button-wrapper
+          +button({text: "Button"})
+        .buttons__button-wrapper
+          +button({text: "Button", color: "red"})
+        .buttons__button-wrapper.buttons__button-wrapper_small
+          +button({text: "Button", size: "small", color: "red"})
+      .buttons__row
+        .buttons__button-wrapper.buttons__button-wrapper_small
+          +button({text: "Button", size: "small"})
+        .buttons__button-wrapper
+          +button({text: "Button"})
+        .buttons__button-wrapper
+          +button({text: "Button", color: "red"})
+        .buttons__button-wrapper.buttons__button-wrapper_small
+          +button({text: "Button", size: "small", color: "red"})
+      .buttons__row
+        .buttons__button-wrapper.buttons__button-wrapper_small
+          +button({text: "Button", size: "small", inversed: true})
+        .buttons__button-wrapper
+          +button({text: "Button", inversed: true})
+        .buttons__button-wrapper
+          +button({text: "Button", color: "red", inversed: true})
+        .buttons__button-wrapper.buttons__button-wrapper_small
+          +button({text: "Button", size: "small", color: "red", inversed: true})

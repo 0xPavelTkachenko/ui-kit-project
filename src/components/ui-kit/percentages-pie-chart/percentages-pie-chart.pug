@@ -1,0 +1,24 @@
+include ../../percentage-circle/percentage-circle
+include ../../pie-chart/pie-chart
+include ../title/title
+
+mixin percentages-pie-chart()
+  .percentages-pie-chart
+    .percentages-pie-chart__title-wrapper
+      +title({text: "Percentages / Pie chart"})
+    .percentages-pie-chart__container
+      .percentages-pie-chart__percentage-circle-wrapper
+        +percentage-circle({percent: 0, color: "red"})
+      .percentages-pie-chart__percentage-circle-wrapper
+        +percentage-circle({percent: 38, color: "red"})
+      .percentages-pie-chart__percentage-circle-wrapper
+        +percentage-circle({percent: 62, color: "red"})
+      .percentages-pie-chart__percentage-circle-wrapper
+        +percentage-circle({percent: 89, color: "red"})
+      .percentages-pie-chart__pie-chart-wrapper
+        +pie-chart({data: [
+          {value: 10, color: "#747474"},
+          {value: 27, color: "#e75735"},
+          {value: 30, color: "#4eb7a8"},
+          {value: 33, color: "#e5e5e5"}
+        ]})

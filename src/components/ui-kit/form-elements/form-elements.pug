@@ -1,0 +1,48 @@
+include ../../input/input
+include ../../speech-bubble/speech-bubble
+include ../../textarea/textarea
+include ../../button/button
+include ../../toggle/toggle
+include ../../check-box/check-box
+include ../title/title
+
+mixin form-elements()
+  .form-elements
+    .form-elements__title-wrapper
+      +title({text: "Form elements"})
+    .form-elements__container
+      form.form-elements__form
+        .form-elements__form-row
+          +input({attr: {placeholder: "Your Name", required: true}})
+          .form-elements__success-info
+            +speech-bubble({size: "small"})
+              .form-elements__speech-bubble-content-wrapper Thanks!
+          .form-elements__failed-info
+            +speech-bubble({size: "small", color: "red"})
+              .form-elements__speech-bubble-content-wrapper Error
+        .form-elements__form-row
+          +input({attr: {placeholder: "Your Email", type: "email", required: true}})
+          .form-elements__success-info
+            +speech-bubble({size: "small"})
+              .form-elements__speech-bubble-content-wrapper Thanks!
+          .form-elements__failed-info
+            +speech-bubble({size: "small", color: "red"})
+              .form-elements__speech-bubble-content-wrapper Error
+        .form-elements__form-row
+          +textarea({attr: {placeholder: "Your Message"}})
+        .form-elements__form-row
+          .form-elements__button-wrapper
+            +button({text: "Submit", attr: {type: "submit"}})
+      .form-elements__toggles-tick-boxes
+        .form-elements__toggles
+          .form-elements__toggles-title-wrapper
+            +title({text: "Toggles"})
+          .form-elements__toggles-container
+            +toggle()
+            +toggle({checked: true})
+        .form-elements__tick-boxes
+          .form-elements__tick-boxes-title-wrapper
+            +title({text: "Tick boxes"})
+          .form-elements__tick-boxes-container
+            +check-box({checked: true})
+            +check-box()

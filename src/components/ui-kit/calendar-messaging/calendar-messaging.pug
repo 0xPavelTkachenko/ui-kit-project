@@ -1,0 +1,20 @@
+include ../../calendar/calendar
+include ../../message-box/message-box
+include ../title/title
+
+mixin calendar-messaging()
+  .calendar-messaging
+    .calendar-messaging__container
+      .calendar-messaging__calendar-wrapper
+        .calendar-messaging__calendar-title-wrapper
+          +title({text: "Calendar"})
+        +calendar({color: "red"})
+      .calendar-messaging__message-box-wrapper
+        .calendar-messaging__messaging-title-wrapper
+          +title({text: "Messaging"})
+        +message-box({
+          name: "Sarah Brown",
+          avatar: "assets/images/darth-vader.png",
+          message: "Hey! So are we cool to meet at the art gallery? Say 8pm",
+          buttonText: "Reply"
+        })

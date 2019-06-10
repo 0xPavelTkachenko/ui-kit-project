@@ -1,0 +1,12 @@
+include ../../slider/slider
+include ../title/title
+
+mixin sliders()
+  .sliders
+    .sliders__title-wrapper
+      +title({text: "Sliders"})
+    .sliders__container
+      .sliders__left-slider-wrapper
+        +slider({start: 40, displayHint: true, color: "red"})
+      .sliders__right-slider-wrapper
+        +slider({start: 75, displayTracker: true, displayGrid: true, step: 25})

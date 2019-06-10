@@ -1,0 +1,43 @@
+include ../../search/search
+include ../../dropdown/dropdown
+include ../../user-profile/user-profile
+include ../title/title
+
+mixin search-dropdown-user-profile()
+  .search-dropdown-user-profile
+    .search-dropdown-user-profile__search-dropdown
+      .search-dropdown-user-profile__search-dropdown-title-wrapper
+        +title({text: "Search / Dropdown"})
+      .search-dropdown-user-profile__search-dropdown-row
+        +search({color: "red"})
+      .search-dropdown-user-profile__search-dropdown-row
+        +search({color: "red", failed: true})
+      .search-dropdown-user-profile__search-dropdown-row
+        +dropdown({data: [
+          "This is option 1",
+          "This is option 2",
+          "This is option 3",
+          "This is option 4"
+        ]})
+    .search-dropdown-user-profile__user-profile
+      .search-dropdown-user-profile__user-profile-title-wrapper
+        +title({text: "User profile"})
+      .search-dropdown-user-profile__user-profile-row
+        +user-profile({
+          name: "John Smith",
+          job: "UX Designer",
+          color: "gray",
+          avatar: "assets/images/stormtroopers.png",
+          facebook: "https://facebook.com",
+          twitter: "https://twitter.com",
+          dribbble: "https://dribbble.com"
+        })
+      .search-dropdown-user-profile__user-profile-row
+        +user-profile({
+          name: "Sarah Brown",
+          job: "Developer",
+          avatar: "assets/images/darth-vader.png",
+          facebook: "https://facebook.com",
+          twitter: "https://twitter.com",
+          dribbble: "https://dribbble.com"
+        })

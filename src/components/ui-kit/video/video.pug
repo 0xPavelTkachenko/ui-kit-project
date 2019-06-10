@@ -1,0 +1,9 @@
+include ../../youtube-video-player/youtube-video-player
+include ../title/title
+
+mixin video()
+  .video
+    .video__title-wrapper
+      +title({text: "Video"})
+    .video__container
+      +youtube-video-player({id: "rPmGtZAUxNs"})

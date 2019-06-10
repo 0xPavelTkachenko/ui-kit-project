@@ -1,0 +1,9 @@
+include ../../progress-tracker/progress-tracker
+include ../title/title
+
+mixin stages()
+  .stages
+    .stages__title-wrapper
+      +title({text: "Stages"})
+    .stages__container
+      +progress-tracker({stepCount: 5, activeStep: 3, color: "red"})

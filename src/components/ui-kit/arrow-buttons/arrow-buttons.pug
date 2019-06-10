@@ -1,0 +1,17 @@
+include ../../arrow-button/arrow-button
+include ../title/title
+
+mixin arrow-buttons()
+  .arrow-buttons
+    .arrow-buttons__title-wrapper
+      +title({text: "Arrow buttons"})
+    .arrow-buttons__container
+      .arrow-buttons__button-pair
+        +arrow-button({inversed: true})
+        +arrow-button({inversed: true, direction: "right"})
+      .arrow-buttons__button-pair
+        +arrow-button({disabled: true})
+        +arrow-button({disabled: true, direction: "right"})
+      .arrow-buttons__button-pair
+        +arrow-button()
+        +arrow-button({direction: "right"})
